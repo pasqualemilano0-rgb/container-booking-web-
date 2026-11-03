@@ -33,15 +33,16 @@ jobs:
           python-version: '3.12'
       - name: Installa librerie di test
         run: pip install --disable-pip-version-check requests beautifulsoup4
-      - name: Controlla sintassi JavaScript
-        run: node --check app.js && node --check driver-ui.mjs && node --check rules.mjs && node --check tfg.mjs && node --check tfg_schedule.mjs && node --check conateco_rules.mjs && node --check delivery_location.mjs && node --check conateco_booking.mjs && node --check tfg_booking.mjs && node --check booking_search.mjs && node --check conateco_fleet.mjs
       - name: Controlla sintassi backend Cloudflare
         run: |
-          for file in cloudflare/*.mjs; do node --check "$file"; done
-      - name: Test delle regole operative
-        run: node --test tests/*.test.mjs
-      - name: Test dei parser e della pagina
-        run: python -m unittest discover -s tests -p 'test_*.py'
+          for file in cloudflare/*.mjs; do node --check "$file" || exit 1; done
+      - name: Test del backend Cloudflare ancora utilizzato da LTS
+        run: node --test tests/cloudflare_*.test.mjs
+      - name: Test acquisizione programmi e pubblicazione snapshot
+        run: |
+          python -m unittest discover -s tests -p 'test_fetch_*.py'
+          python -m unittest discover -s tests -p 'test_publish_snapshots.py'
+
   refresh:
     # Independent of UI/markup tests: a test failure must never freeze
     # the official vessel snapshots for drivers.

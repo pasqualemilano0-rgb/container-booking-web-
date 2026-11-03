@@ -1,0 +1,56 @@
+name: Diagnosi TLS TFG (solo QA)
+on:
+  push:
+    branches: [qa/tfg-v013]
+    paths:
+      - '.github/workflows/qa-tfg-tls.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Verifica certificato e chain HTTPS senza bypass
+        shell: bash
+        run: |
+          set -u
+          openssl version
+          echo "=== Certificate chain: sanitized summary ==="
+          openssl s_client -connect tfg.bucci.it:443 -servername tfg.bucci.it -showcerts </dev/null >/tmp/tfg-chain.txt 2>&1 || true
+          grep -E 'depth=|verify error|verify return|subject=|issuer=|Certificate chain|Verify return code|notAfter|notBefore' /tmp/tfg-chain.txt | head -40 || true
+          echo "=== AIA certificate issuer URLs ==="
+          sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p' /tmp/tfg-chain.txt | \
+            awk '/-----BEGIN CERTIFICATE-----/ { c++ } c==1 { print }' > /tmp/tfg-leaf.pem
+          openssl x509 -in /tmp/tfg-leaf.pem -noout -subject -issuer -dates -ext authorityInfoAccess -ext subjectAltName || true
+          echo "=== Verified curl result ==="
+          curl -sSI --max-time 15 https://tfg.bucci.it/@/TFGW_TP_ETA || true
+          echo "=== Chain certificates from Sectigo documented HTTP distribution ==="
+          for filename in SectigoPublicServerAuthenticationCADVR36.crt SectigoPublicServerAuthenticationRootR46_USERTrust.crt SectigoPublicServerAuthenticationRootR46.crt; do
+            echo "Fetching $filename"
+            if curl -fsSL --max-time 12 "http://crt.sectigo.com/$filename" -o "/tmp/$filename"; then
+              echo "bytes: $(wc -c <"/tmp/$filename")"
+              if openssl x509 -inform DER -in "/tmp/$filename" -out "/tmp/$filename.pem" 2>/dev/null ||
+                openssl x509 -in "/tmp/$filename" -out "/tmp/$filename.pem" 2>/dev/null; then
+                openssl x509 -in "/tmp/$filename.pem" -noout -subject -issuer -fingerprint -sha256
+              fi
+            fi
+          done
+          echo "=== Verify using untrusted intermediates against system roots ==="
+          if test -s /tmp/SectigoPublicServerAuthenticationCADVR36.crt.pem; then
+            cat /tmp/SectigoPublicServerAuthenticationCADVR36.crt.pem               /tmp/SectigoPublicServerAuthenticationRootR46_USERTrust.crt.pem 2>/dev/null >/tmp/untrusted-chain.pem || true
+            openssl verify -purpose sslserver -CAfile /etc/ssl/certs/ca-certificates.crt               -untrusted /tmp/untrusted-chain.pem /tmp/tfg-leaf.pem || true
+          fi
+          echo "=== Sectigo official DV R36 intermediate from Sectigo official repository ==="
+          curl --fail --silent --show-error --location --max-time 20 \
+            'https://crt.sectigo.com/SectigoPublicServerAuthenticationCADVR36.crt' -o /tmp/intermediate.crt || true
+          if test -s /tmp/intermediate.crt; then
+            openssl x509 -inform DER -in /tmp/intermediate.crt -out /tmp/intermediate.pem 2>/dev/null || \
+              openssl x509 -in /tmp/intermediate.crt -out /tmp/intermediate.pem || true
+            echo "Intermediate certificate identity:"
+            openssl x509 -in /tmp/intermediate.pem -noout -subject -issuer -dates || true
+            echo "Chain verification using system trusted roots:"
+            openssl verify -purpose sslserver -CAfile /etc/ssl/certs/ca-certificates.crt \
+              -untrusted /tmp/intermediate.pem /tmp/tfg-leaf.pem || true
+          fi

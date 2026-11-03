@@ -1,0 +1,107 @@
+name: Verifica disponibilità sito pubblico
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/check-pages.yml'
+  schedule:
+    # Verifica indipendente ogni ora: controlla il sito realmente servito,
+    # non soltanto il risultato verde del deploy GitHub Pages.
+    - cron: '11 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Diagnostica pubblica DNS e HTTPS GitHub Pages e Cloudflare
+        shell: bash
+        run: |
+          set -u
+          echo '=== DNS github.io ==='
+          getent ahosts pasqualemilano0-rgb.github.io | head -n 4 || true
+          echo '=== DNS Cloudflare ==='
+          getent ahosts container-booking-backend.pasqualemilano0.workers.dev | head -n 4 || true
+          echo '=== HTTPS status con tempo e indirizzo remoto ==='
+          for url in \
+            'https://pasqualemilano0-rgb.github.io/container-booking-web-/' \
+            'https://pasqualemilano0-rgb.github.io/container-booking-web-/app.js' \
+            'https://container-booking-backend.pasqualemilano0.workers.dev/api/health'; do
+            echo "URL $url"
+            curl --silent --show-error --location --max-time 20 --output /dev/null \
+              --write-out 'HTTP=%{http_code} IP=%{remote_ip} TLS=%{ssl_verify_result} redirect=%{url_effective} total=%{time_total}s\n' \
+              "$url" || true
+          done
+      - name: HTTP check sito e percorsi pubblicati
+        shell: bash
+        run: |
+          set -euo pipefail
+          base='https://pasqualemilano0-rgb.github.io/container-booking-web-'
+          urls=(
+            "$base/"
+            "$base/index.html"
+            "$base/app.js"
+            "$base/driver-ui.mjs"
+            "$base/delivery_location.mjs"
+            "$base/booking_search.mjs"
+            "$base/conateco_booking.mjs"
+            "$base/conateco_fleet.mjs"
+            "$base/tfg_booking.mjs"
+            "$base/data/tfg_schedule.json"
+            "$base/data/conateco.json"
+            "$base/data/sct.json"
+            'https://container-booking-backend.pasqualemilano0.workers.dev/api/health'
+            'https://container-booking-backend.pasqualemilano0.workers.dev/api/monitor/status'
+          )
+          failed=0
+          for url in "${urls[@]}"; do
+            echo "::group::HTTP check $url"
+            body="$(mktemp)"
+            status='000'
+            # Riprova prima di considerare un errore di propagazione un guasto.
+            for attempt in 1 2 3 4 5 6; do
+              status="$(curl --location --silent --show-error \
+                --connect-timeout 8 --max-time 18 \
+                --output "$body" --write-out '%{http_code}' \
+                "$url" || true)"
+              if [[ "$status" == 200 ]]; then break; fi
+              echo "Tentativo $attempt: HTTP ${status:-000}"
+              if [[ "$attempt" -lt 6 ]]; then sleep 8; fi
+            done
+            if [[ "$status" != 200 ]]; then
+              echo "::error title=GitHub Pages non disponibile::URL $url ritorna HTTP ${status:-000}"
+              failed=1
+            elif [[ "$url" == "$base/" || "$url" == "$base/index.html" ]]; then
+              if ! grep -qi '<title>\|Container Booking' "$body"; then
+                echo "::error title=Pagina non valida::La pagina $url non contiene HTML identificabile"
+                failed=1
+              else
+                echo 'HTTP 200: pagina HTML trovata'
+              fi
+            elif [[ "$url" == "$base/data/"* ]]; then
+              if ! python3 -m json.tool "$body" >/dev/null; then
+                echo "::error title=JSON non valido::Il file $url non è JSON leggibile"
+                failed=1
+              else
+                echo 'HTTP 200: JSON valido'
+              fi
+            else
+              if [[ ! -s "$body" ]]; then
+                echo "::error title=Risorsa vuota::Il file $url è vuoto"
+                failed=1
+              else
+                echo 'HTTP 200: script presente'
+              fi
+            fi
+            rm -f "$body"
+            echo '::endgroup::'
+          done
+          if [[ "$failed" -ne 0 ]]; then
+            echo '::error::Il sito pubblico non ha superato la verifica end-to-end.'
+            exit 1
+          fi
+          echo 'GitHub Pages: sito pubblico e risorse verificati.'

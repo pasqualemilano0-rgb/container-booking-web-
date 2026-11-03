@@ -1,0 +1,583 @@
+/* Container Booking v0.18 - esperienza mobile semplificata per autisti */
+:root {--ink:#193344;--muted:#5b7080;--border:#dae5ea;--mint:#075bc9;--green:#167b40;--red:#b72229;--amber:#995500;color-scheme:light}
+html {overflow-x:hidden}
+body {background:#f3f6fa;color:#193344}
+.shell {width:min(100%,680px);padding:0 14px max(24px,env(safe-area-inset-bottom))}
+main {padding-top:5px}
+.truck-top {background:white;border:0;border-bottom:1px solid #e5ecf1;min-height:72px;margin:0 -14px;padding:12px 16px;gap:11px}
+.truck-top .app-brand-copy h1 {font-size:clamp(17px,4.5vw,23px);line-height:1.2;color:#102c40;letter-spacing:-.04em}
+.truck-top .app-brand-copy .eyebrow {color:#547084;letter-spacing:1.1px}
+.truck-top .lts-brand-logo {flex-shrink:0;object-fit:contain}
+.driver-notice {margin:15px 0;color:#5b7180;font-size:12px;line-height:1.45;padding:10px 12px;border-left:3px solid #adc6d3;background:#edf4f7;border-radius:8px}
+.search-panel {background:#fff;border:1px solid #e2eaf0;box-shadow:0 5px 20px #17374e10;border-radius:20px;padding:20px;margin:0}
+.search-panel .panel-head h2 {font-size:21px;line-height:1.2;color:#143044;margin:0}
+.search-panel .ports {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:16px 0 20px;min-width:0}
+.search-panel .ports .port-logo-choice {display:flex;flex-direction:column;justify-content:center;align-items:center;min-width:0;width:100%;min-height:117px;gap:5px;padding:10px 6px;border-radius:16px;border:2px solid #dbe5ef;background:#f4f8fd;overflow:hidden;text-align:center}
+.search-panel .ports .port-logo-choice:has(input:checked) {border-color:#075bc9;background:#e7f1ff;box-shadow:inset 0 0 0 1px #075bc9}
+.search-panel .ports .port-choice-head {display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;width:100%;min-width:0;flex-wrap:nowrap}
+.search-panel .ports .driver-port-icon {display:block;font-size:28px;line-height:1}
+.search-panel .ports .terminal-title {display:block;max-width:100%;font-size:clamp(16px,4.8vw,23px);line-height:1.15;font-weight:900;white-space:nowrap;overflow-wrap:normal;word-break:normal;color:#153c65}
+.search-panel .ports .port-logo-choice:has(input:checked) .terminal-title {color:#075bc9}
+.search-panel .ports .terminal-sub {display:block;max-width:100%;font-size:11px;line-height:1.25;color:#536b7d;white-space:normal;overflow-wrap:normal;word-break:normal}
+.booking-collapsible {border:0;background:transparent;margin:0;padding:0;box-shadow:none}
+.booking-collapsible > summary {display:none!important}
+.booking-collapsible #napoli-booking-controls {padding:0;margin:0}
+#napoli-booking-controls .field-label,.driver-field-label {display:block;margin:2px 0 8px;color:#16374c;font-size:14px;font-weight:850;letter-spacing:.2px}
+#napoli-booking-controls .query-wrap input,.sct-picker #sct-filter {display:block;width:100%;height:58px;min-height:58px;padding:12px 48px 12px 14px;background:white;border:2px solid #bcd0df;border-radius:12px;color:#183544;font-size:18px;font-weight:700;outline:none}
+.sct-picker #sct-filter {padding-right:14px}
+#napoli-booking-controls .query-wrap input:focus,.sct-picker #sct-filter:focus {border-color:#075bc9;box-shadow:0 0 0 3px #075bc922}
+#napoli-booking-controls .field-help {margin:10px 0 12px;font-size:12px;line-height:1.4;color:#586f7c}
+#search-btn,#sct-search-btn {width:100%;min-height:60px;border:0;border-radius:12px;background:#075bc9;color:white;font-size:18px;font-weight:900;letter-spacing:.2px;text-align:center;display:flex;justify-content:center;align-items:center;box-shadow:none}
+#search-btn:hover,#sct-search-btn:hover {background:#034baf}
+#sct-search-btn:disabled {opacity:.52;cursor:not-allowed}
+.sct-picker {border:0;background:transparent;padding:0;margin:0;box-shadow:none;gap:10px}
+#sct-alert {font-size:12px;font-weight:650;line-height:1.35;margin:2px 0 0;padding:9px 11px;border-radius:8px}
+.driver-vessel-results[hidden],.napoli-advanced[hidden] {display:none!important}
+.driver-vessel-results {padding-top:10px}
+.driver-vessel-results .vessel-row {min-height:65px}
+.driver-extra {margin-top:4px;border:1px solid #e2eaf1;border-radius:11px;background:#f8fafc;padding:0 12px}
+.driver-extra > summary {cursor:pointer;padding:13px 0;font-weight:750;font-size:13px;color:#075bc9;min-height:46px}
+.driver-extra .mini-field {margin:4px 0 12px}
+.driver-extra select {min-height:52px;width:100%;background:white;color:#163448}
+.driver-extra .picker-check {margin:10px 0}
+.driver-extra .picker-status {margin:10px 0;overflow-wrap:anywhere}
+.driver-extra .text-btn {margin:8px 0 10px}
+.napoli-advanced {background:#fff;border:1px solid #e0e9ef;border-radius:15px;margin-top:12px;overflow:hidden}
+.napoli-advanced > summary {cursor:pointer;padding:17px 16px;min-height:58px;font-size:15px;font-weight:850;color:#075bc9;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.napoli-advanced > summary span {font-size:11px;color:#607789;font-weight:650;text-align:right}
+.napoli-advanced-body {padding:0 13px 15px}
+.napoli-advanced-body .napoli-terminal-switch {margin:0}
+.napoli-advanced-body .cnt-fleet,.napoli-advanced-body .tfg-fleet {margin-top:10px}
+.results-panel {background:white;border:1px solid #d9e6ef;box-shadow:0 5px 20px #14345112;border-radius:18px;margin-top:14px;padding:16px}
+.results-panel .rheader {align-items:flex-start;flex-wrap:wrap;gap:8px}
+.results-panel .rheader h3 {font-size:20px;line-height:1.3}
+.results-panel .result-label {font-size:13px;line-height:1.25;padding:9px 12px;border-radius:10px;white-space:normal;font-weight:900}
+.results-panel .result-label.good {background:#e0f8e6;color:#126b35}
+.results-panel .result-label.bad {background:#ffebed;color:#ac202a}
+.results-panel .result-label.warn,.results-panel .result-label.unknown {background:#fff2d9;color:#875000}
+.results-panel .result-label.neutral {background:#e5edf7;color:#294e7a}
+.results-panel .primary {background:#075bc9;color:#fff;justify-content:center}
+.results-panel .secondary-btn {color:#0b548f}
+.results-panel .fact {font-size:14px;line-height:1.4}
+.sources {margin-top:12px;padding:8px 3px}
+.sources .source-grid {grid-template-columns:1fr}
+.sources .source-grid a {font-size:14px;min-height:48px}
+.app-footer {padding:13px 0;margin-top:9px}
+@media(max-width:390px) {
+  .shell {padding-left:11px;padding-right:11px}
+  .truck-top {margin-left:-11px;margin-right:-11px}
+  .search-panel {padding:14px}
+  .search-panel .ports {gap:9px}
+  .search-panel .ports .port-logo-choice {min-height:110px;padding:8px 4px}
+  .search-panel .ports .terminal-title {font-size:clamp(15px,5vw,19px)}
+  .search-panel .ports .terminal-sub {font-size:10px}
+  .truck-top .lts-brand-logo {width:70px;height:34px}
+}
+@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto}}
+
+
+/* v0.20 | LTS Container Booking: interfaccia coerente, essenziale, leggibile */
+:root{
+  --driver-navy:#153143;
+  --driver-blue:#006f89;
+  --driver-surface:#fff;
+  --driver-paper:#f3f7fa;
+  --driver-outline:#d9e6ec;
+}
+html{scroll-padding-top:14px}
+body{background:linear-gradient(180deg,#eaf2f7 0,#f3f7fa 245px,#f3f7fa 100%)}
+.shell{width:min(100%,700px)}
+.truck-top{border-radius:0 0 18px 18px;box-shadow:0 4px 18px #113b5310}
+.truck-top .app-brand-copy{min-width:0}
+.truck-top .app-brand-copy h1{font-size:clamp(18px,4.7vw,24px);letter-spacing:-.55px;overflow-wrap:normal}
+.truck-top .app-brand-copy .eyebrow{font-size:10px;color:#567589}
+.driver-notice{background:#e8f0f4;border-left-color:#347d90;font-size:12px;line-height:1.42;padding:9px 12px;color:#445e6a}
+.search-panel{border-color:#e3edf1;box-shadow:0 8px 28px #294d6011;padding:21px 19px}
+.search-panel .panel-head h2{font-size:clamp(20px,5vw,24px);font-weight:850;letter-spacing:-.5px}
+.search-panel .ports{margin:17px 0 18px}
+.search-panel .ports .port-logo-choice{
+  background:#f7fafc;border:2px solid #dbe7ed;min-height:110px;
+  box-shadow:0 2px 4px #1b475108;transition:background .14s ease,border-color .14s ease
+}
+.search-panel .ports .port-logo-choice:has(input:checked){
+  background:#eaf5f8;border-color:#006f89;box-shadow:inset 0 0 0 1px #006f89
+}
+.search-panel .ports .port-logo-choice:has(input:checked) .terminal-title{color:#006f89}
+.search-panel .ports .driver-port-icon{font-size:25px}
+.search-panel .ports .terminal-title{color:#173c4f}
+.search-panel .ports .terminal-sub{font-weight:650;letter-spacing:0}
+#napoli-booking-controls .field-label,.driver-field-label{
+  color:#173e51;font-size:13px;letter-spacing:.45px
+}
+#napoli-booking-controls .query-wrap input,.sct-picker #sct-filter{
+  color:#17394b;background:#fff;border-color:#cadde5;border-radius:13px;
+  min-height:58px;height:58px;font-size:18px
+}
+#napoli-booking-controls .query-wrap input:focus,.sct-picker #sct-filter:focus{
+  border-color:#006f89;box-shadow:0 0 0 4px #006f891c
+}
+#search-btn,#sct-search-btn{
+  background:#006f89;border-radius:13px;min-height:58px;
+  font-size:17px;letter-spacing:.25px;box-shadow:0 4px 10px #006f891a
+}
+#search-btn:hover,#sct-search-btn:hover{background:#005d74}
+.napoli-shortcuts[hidden]{display:none!important}
+.napoli-shortcuts{margin-top:19px;padding-top:16px;border-top:1px solid #e1eaf0}
+.shortcuts-heading{font-size:12px;letter-spacing:.8px;color:#537080;font-weight:850;margin:0 0 11px}
+.shortcuts-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.ship-shortcut{
+  display:flex;align-items:center;gap:8px;min-width:0;min-height:88px;
+  padding:12px 9px;border:1.5px solid #d5e5ec;border-radius:14px;
+  background:#f6fafb;color:#173849;text-align:left;cursor:pointer;
+  transition:border-color .14s ease,background .14s ease
+}
+.ship-shortcut:hover,.ship-shortcut:focus-visible{
+  border-color:#006f89;background:#e9f5f8
+}
+.shortcut-symbol{
+  display:grid;place-items:center;flex:0 0 39px;width:39px;height:39px;
+  background:#dff4f8;color:#067993;border-radius:10px;font-weight:900;
+  font-size:12px;letter-spacing:-.3px
+}
+.shortcut-tfg{background:#e5edff;color:#245bb0}
+.shortcut-copy{min-width:0;display:flex;flex-direction:column;gap:2px}
+.shortcut-copy strong{font-size:13px;font-weight:850;line-height:1.2;overflow-wrap:normal;word-break:normal}
+.shortcut-copy small{font-size:11px;color:#587586;line-height:1.25}
+.shortcut-arrow{font-size:23px;color:#006f89;margin-left:auto;line-height:1}
+.shortcuts-tip{font-size:11px;color:#647d8a;line-height:1.45;margin:11px 0 0}
+.sct-picker{gap:9px}
+.sct-picker #sct-alert{margin-top:5px}
+.driver-vessel-results .vessel-list-heading{padding-top:4px}
+.driver-vessel-results .vessel-list-heading strong{font-size:15px}
+.vessel-list .vessel-row{
+  border:1.5px solid #dce8ed;box-shadow:0 2px 6px #20455808;
+  background:#fff;border-radius:13px;min-height:82px;align-items:center
+}
+.vessel-list .vessel-row:focus-visible{border-color:#006f89;outline:3px solid #006f892a}
+.vessel-list .vessel-row:hover{border-color:#77b6c8}
+.vessel-list .vessel-name{font-weight:850;color:#193e51;overflow-wrap:anywhere}
+.vessel-list .vessel-meta{color:#617884}
+.vessel-list .result-label{border-radius:9px;font-weight:800}
+.napoli-advanced{margin-top:14px;border-radius:15px;border-color:#d9e6ed}
+.napoli-advanced > summary{min-height:61px;gap:10px}
+.napoli-advanced[open] > summary{border-bottom:1px solid #e7eff3}
+.napoli-advanced .napoli-advanced-body{padding:12px}
+.napoli-advanced .napoli-terminal-switch{padding:11px 8px}
+.napoli-advanced .napoli-terminal-tabs .terminal-tab{min-height:76px}
+#tfg-fleet,#cnt-fleet{
+  scroll-margin-top:14px;border:1px solid #dbe8ed;border-radius:14px;
+  background:#fff;padding:15px 12px;box-shadow:none
+}
+#tfg-fleet .ops-alert,#cnt-fleet .ops-alert{margin-top:4px;line-height:1.45}
+#tfg-fleet .picker-status,#cnt-fleet .picker-status{font-size:12px}
+#tfg-fleet .text-btn,#cnt-fleet .text-btn{min-height:46px}
+.results-panel{border-radius:17px;border-color:#d6e4e9;box-shadow:0 5px 18px #1e506015}
+.results-panel .result-label{line-height:1.32}
+.results-panel .rheader h3{color:#193b4c}
+.results-panel .facts{border-radius:11px}
+.results-panel .primary{background:#006f89}
+.driver-extra{background:#f8fafb;border-color:#dfeaf0}
+.driver-extra > summary{color:#006f89}
+.sources>summary{color:#006f89}
+button:focus-visible,a:focus-visible{outline:3px solid #006f89;outline-offset:3px}
+@media(max-width:380px){
+  .search-panel{padding:15px 12px}
+  .shortcuts-grid{gap:7px}
+  .ship-shortcut{padding:9px 7px;gap:5px;min-height:84px}
+  .shortcut-symbol{flex-basis:34px;width:34px;height:34px;font-size:11px}
+  .shortcut-copy strong{font-size:12px}
+  .shortcut-copy small{font-size:10px}
+  .shortcut-arrow{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ship-shortcut,.search-panel .ports .port-logo-choice{transition:none!important}
+}
+
+/* v0.21 — lo stato pubblicato da TFG resta leggibile anche quando è da riconfermare. */
+#tfg-fleet .tfg-published-state {
+  display:block;
+  color:#426375;
+  font-size:12px;
+  font-weight:750;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+  padding-left:8px;
+  border-left:3px solid #bfd2de;
+}
+#tfg-fleet .vessel-main {gap:7px}
+#tfg-fleet .vessel-right .result-label.unknown {
+  color:#6d4c12;
+  background:#fff2d8;
+  padding:9px 8px;
+}
+#tfg-fleet .ops-alert[data-state="warning"] {
+  font-size:13px;
+  line-height:1.43;
+  padding:13px 15px;
+}
+@media(max-width:390px){
+  #tfg-fleet .tfg-published-state {font-size:11.5px}
+  #tfg-fleet .vessel-right .result-label {font-size:10px;line-height:1.3}
+}
+
+/* v0.26: fail-safe visivo anche quando un altro script ritarda la sincronizzazione. */
+#napoli-advanced:has(input[name="napoli-terminal"][value="tfg"]:checked) #cnt-fleet,
+#napoli-advanced:has(input[name="napoli-terminal"][value="cnt"]:checked) #tfg-fleet {
+  display:none!important;
+}
+#cnt-fleet[hidden], #tfg-fleet[hidden] {display:none!important}
+
+/* Pulsante interno gestito dall'aggiornamento automatico, mai da mostrare. */
+#refresh-app[hidden]{display:none!important}
+
+/* v0.30: unico selettore accessibile, scelta attiva ben evidente */
+#napoli-terminal-switch {display:none!important}
+.napoli-shortcuts .ship-shortcut[aria-pressed="true"]{
+  background:#e4f4f8;
+  border-color:#006f89;
+  box-shadow:inset 0 0 0 2px #006f89;
+}
+.napoli-shortcuts .ship-shortcut[aria-pressed="true"] .shortcut-copy strong{
+  color:#005d75;
+}
+.napoli-shortcuts .ship-shortcut[aria-pressed="false"]{
+  box-shadow:none;
+}
+
+/* v0.36 - Luogo di scarico chiaramente distinto dallo stato di accettazione. */
+.delivery-chip{
+  display:grid;gap:3px;max-width:100%;width:100%;min-width:0;
+  padding:11px 12px;border-radius:10px;background:#e5f5fb;
+  border:2px solid #8fcbdc;color:#035d79;
+  line-height:1.25;overflow-wrap:anywhere;white-space:normal;text-align:left
+}
+.delivery-chip-label{
+  display:block;font-size:10px;letter-spacing:.035em;
+  font-weight:850;color:#315e73
+}
+.delivery-chip-value{
+  display:block;font-size:clamp(17px,4.4vw,22px);
+  line-height:1.17;font-weight:950;color:#005c78
+}
+.delivery-chip-unknown{
+  background:#fff5e2;color:#865900;border-color:#f0d49c
+}
+.delivery-chip-unknown .delivery-chip-value,
+.delivery-chip-unknown .delivery-chip-label{color:#785018}
+.delivery-chip-external-notice{
+  display:block;font-size:11px;line-height:1.4;font-weight:800;
+  color:#87500a
+}
+.delivery-spot{
+  display:grid;gap:7px;margin:13px 0 15px;padding:17px 15px;
+  background:#e5f5fb;border:2px solid #75b7ce;border-left-width:7px;
+  border-radius:14px;min-width:0
+}
+.delivery-spot-label{
+  font-weight:900;font-size:11px;letter-spacing:.045em;
+  color:#305d73;line-height:1.35
+}
+.delivery-spot-value{
+  font-size:clamp(21px,5.8vw,30px);line-height:1.1;font-weight:950;
+  color:#005c78;overflow-wrap:anywhere
+}
+.delivery-spot-note{
+  font-size:12px;line-height:1.45;color:#365968;font-weight:600
+}
+.delivery-spot-unknown{
+  background:#fff5e2;border-color:#e8c17c;color:#784f12
+}
+.delivery-spot-unknown .delivery-spot-value{color:#785018}
+.delivery-spot-unknown .delivery-spot-label,
+.delivery-spot-unknown .delivery-spot-note{color:#745421}
+.delivery-spot-external-notice{
+  font-size:12px;line-height:1.4;font-weight:900;color:#87500a
+}
+#tfg-fleet .vessel-main,#cnt-fleet .vessel-main{gap:8px;min-width:0}
+#tfg-fleet .vessel-row,#cnt-fleet .vessel-row{align-items:center;min-height:118px}
+@media(max-width:390px){
+  #tfg-fleet .vessel-right,#cnt-fleet .vessel-right{flex-basis:41%}
+  .delivery-chip{padding:9px 8px}
+  .delivery-chip-label{font-size:9px}
+  .delivery-chip-value{font-size:16px}
+}
+
+/* v0.38 — CO.NA.TE.CO.: campo accettazioneesterni, separato dal punto di scarico. */
+.depot-acceptance-chip,.depot-acceptance-panel{
+  display:grid;gap:6px;width:100%;min-width:0;
+  border:2px solid #c4d5dc;border-left-width:5px;border-radius:12px;
+  padding:12px;background:#f0f5f8;color:#264653;
+  overflow-wrap:anywhere;text-align:left
+}
+.depot-acceptance-chip .depot-acceptance-label,
+.depot-acceptance-panel .depot-acceptance-label{
+  font-size:10px;font-weight:900;line-height:1.35;letter-spacing:.04em;
+}
+.depot-acceptance-chip .depot-acceptance-value,
+.depot-acceptance-panel .depot-acceptance-value{
+  display:block;font-size:clamp(17px,4.1vw,23px);font-weight:950;line-height:1.2
+}
+.depot-acceptance-chip .depot-acceptance-hint,
+.depot-acceptance-panel .depot-acceptance-note{
+  display:block;font-size:11px;line-height:1.45;font-weight:650;margin:0
+}
+.depot-acceptance-reported{
+  background:#e7f5fc;border-color:#6aaed0;color:#075777
+}
+.depot-acceptance-stale{
+  background:#fff3db;border-color:#e3b66a;color:#79500f
+}
+.depot-acceptance-unknown,.depot-acceptance-not-reported{
+  background:#f3f6f7;border-color:#cbd6dc;color:#485d67
+}
+.depot-acceptance-panel{margin:12px 0 13px;padding:16px}
+.depot-acceptance-panel .depot-acceptance-value{
+  font-size:clamp(22px,5vw,30px)
+}
+#cnt-fleet .vessel-main{gap:7px}
+#cnt-fleet .vessel-row{min-height:120px}
+@media(max-width:390px){
+  .depot-acceptance-chip{padding:9px 8px}
+  .depot-acceptance-chip .depot-acceptance-value{font-size:16px}
+}
+
+/* v0.39 — CO.NA.TE.CO. location indications are NOT confirmed booking destinations. */
+.delivery-spot-indicative,.delivery-chip-indicative{
+  background:#fff4dc;border-color:#e1b766;color:#684914
+}
+.delivery-chip-indicative .delivery-chip-label,
+.delivery-chip-indicative .delivery-chip-value,
+.delivery-spot-indicative .delivery-spot-label,
+.delivery-spot-indicative .delivery-spot-value{color:#785018}
+.delivery-chip-caution,.delivery-spot-caution{
+  display:block;font-size:11px;line-height:1.4;font-weight:900;color:#8a4e00
+}
+.delivery-spot-caution{font-size:12px}
+#cnt-fleet .delivery-chip-value{font-size:clamp(18px,4.8vw,24px)}
+
+/* v0.40 — Tipografia compatta per smartphone, con tap target leggibili. */
+.truck-top .app-brand-copy h1{font-size:clamp(17px,4.2vw,20px)}
+.search-panel{padding:16px 14px}
+.search-panel .panel-head h2{font-size:clamp(17px,4.2vw,19px);line-height:1.25}
+.search-panel .ports{gap:8px;margin:12px 0 14px}
+.search-panel .ports .port-logo-choice{min-height:88px;padding:8px 5px}
+.search-panel .ports .terminal-title{font-size:clamp(15px,4vw,17px)}
+.search-panel .ports .driver-port-icon{font-size:22px}
+#napoli-booking-controls .field-label,.driver-field-label{font-size:12px}
+#napoli-booking-controls .query-wrap input,.sct-picker #sct-filter{
+  height:53px;min-height:53px;font-size:16px
+}
+#search-btn,#sct-search-btn{min-height:54px;font-size:15px}
+.napoli-shortcuts{margin-top:13px;padding-top:11px}
+.shortcuts-heading{font-size:11px;margin-bottom:8px}
+.ship-shortcut{min-height:74px;padding:9px 8px}
+.shortcut-copy strong{font-size:12px}
+.shortcut-copy small{font-size:10px}
+.shortcut-arrow{font-size:19px}
+.napoli-advanced > summary{font-size:14px;min-height:52px;padding:13px 12px}
+#tfg-fleet,#cnt-fleet{padding:11px 9px}
+#tfg-fleet .picker-heading h3,#cnt-fleet .picker-heading h3{font-size:15px}
+#tfg-fleet .vessel-list-heading strong,#cnt-fleet .vessel-list-heading strong,
+.driver-vessel-results .vessel-list-heading strong{font-size:13px}
+.vessel-list .vessel-name{font-size:14px;line-height:1.25}
+.vessel-list .vessel-meta{font-size:11.5px;line-height:1.35}
+#tfg-fleet .vessel-row,#cnt-fleet .vessel-row{
+  min-height:90px;padding:9px 8px;gap:7px
+}
+#tfg-fleet .vessel-main,#cnt-fleet .vessel-main{gap:5px}
+#tfg-fleet .vessel-right,#cnt-fleet .vessel-right{flex-basis:43%;gap:4px}
+#tfg-fleet .vessel-right .result-label,#cnt-fleet .vessel-right .result-label{
+  font-size:10.5px;line-height:1.2;padding:6px 7px
+}
+#tfg-fleet .tfg-published-state{font-size:11px}
+.delivery-chip{
+  padding:7px 8px;gap:3px;border-width:1.5px;border-radius:9px
+}
+.delivery-chip-label{font-size:9.5px}
+.delivery-chip-value,#cnt-fleet .delivery-chip-value{
+  font-size:clamp(15px,3.9vw,17px);line-height:1.2
+}
+.delivery-chip-caution,.delivery-chip-external-notice{font-size:10px;line-height:1.35}
+.delivery-spot{
+  margin:10px 0 12px;padding:12px;gap:5px;border-left-width:5px
+}
+.delivery-spot-label{font-size:10px}
+.delivery-spot-value{font-size:clamp(19px,4.7vw,22px);line-height:1.15}
+.delivery-spot-note{font-size:11.5px;line-height:1.4}
+.delivery-spot-caution,.delivery-spot-external-notice{font-size:11px}
+.depot-acceptance-panel{padding:12px;margin:10px 0}
+.depot-acceptance-panel .depot-acceptance-value{font-size:clamp(18px,4.3vw,21px)}
+.results-panel{padding:12px}
+.results-panel .rheader h3{font-size:17px}
+.results-panel .fact{font-size:13px;line-height:1.35}
+.results-panel .result-label{font-size:11.5px;padding:7px 9px}
+.results-panel .result-notice,.results-panel .note{font-size:12.5px;line-height:1.4}
+@media(max-width:390px){
+  .search-panel{padding:12px}
+  #tfg-fleet .vessel-right,#cnt-fleet .vessel-right{flex-basis:41%}
+  .delivery-chip-value,#cnt-fleet .delivery-chip-value{font-size:15px}
+  .delivery-chip-label{font-size:9px}
+  .shortcut-copy strong{font-size:12px}
+}
+
+/* v0.41: ricerca booking Napoli: percorsi espliciti, controlli compatti. */
+.booking-feedback:empty{display:none}
+.booking-feedback{font-size:12px;line-height:1.35;font-weight:750;color:#ad2931;
+  margin:7px 0 2px;padding:7px 9px;border-radius:7px;background:#fff0f1}
+#query[aria-invalid="true"]{border-color:#c13542!important;box-shadow:0 0 0 2px #c135421c}
+.booking-terminal-picker{margin:6px 0 13px;padding:11px 0 9px;
+  border-top:1px solid #e2ebef;border-bottom:1px solid #e2ebef}
+.booking-terminal-picker h4{font-size:14px;font-weight:850;color:#193b4d;margin:0 0 5px}
+.booking-terminal-picker>.tiny{font-size:11.5px;line-height:1.35;margin:0 0 9px}
+.booking-terminal-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.booking-terminal-choice{min-width:0;min-height:48px;padding:9px 7px;
+  border:1.5px solid #c7dce3;border-radius:9px;background:#f7fafb;
+  color:#31586b;font-size:12px;line-height:1.3;font-weight:800;cursor:pointer}
+.booking-terminal-choice[aria-pressed="true"]{
+  border-color:#006f89;background:#e4f2f7;box-shadow:inset 0 0 0 1px #006f89;color:#005c73}
+.booking-terminal-choice:focus-visible{outline:3px solid #6cb2c7;outline-offset:2px}
+.booking-method[hidden]{display:none!important}
+.napoli-primary-check.booking-method{margin:4px 0 10px;padding-top:6px;border-top:0}
+.napoli-primary-check.booking-method .note{font-size:12px;line-height:1.4}
+.napoli-primary-check.booking-method>.secondary-btn{display:flex;justify-content:center;margin-top:8px;
+  min-height:44px;font-size:12px}
+@media(max-width:340px){
+  .booking-terminal-choice{font-size:11px;min-height:48px}
+}
+
+/* v0.42 — La verifica booking apre il portale, non simula una ricerca interna. */
+.booking-quick-select{margin:0 0 11px}
+.booking-quick-title{display:block;margin:0 0 5px;font-size:10px;line-height:1.25;
+  letter-spacing:.06em;font-weight:850;color:#516d7c}
+.booking-quick-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.booking-quick-options button{width:100%;min-width:0;min-height:45px;border-radius:10px;
+  padding:9px 7px;font-size:13px;line-height:1.25;font-weight:850;
+  color:#194255;background:#f3f8fa;border:1.5px solid #cbdfe7;cursor:pointer}
+.booking-quick-options button[aria-pressed="true"]{
+  background:#e2f2f8;border-color:#006f89;box-shadow:inset 0 0 0 1px #006f89;color:#00576f}
+.booking-quick-options button:focus-visible{outline:3px solid #7fb8cb;outline-offset:2px}
+#query-help{font-size:11.5px;line-height:1.35;margin:8px 0 11px}
+#search-btn{min-height:51px;font-size:14px;line-height:1.3}
+.results-panel .rheader{gap:6px}
+.results-panel .rheader h3{font-size:16px;line-height:1.25}
+.results-panel .rheader .result-label{font-size:11px;padding:6px 8px}
+.results-panel>.result-notice{font-size:12px;line-height:1.35;margin:7px 0}
+.results-panel .napoli-reference{margin:7px 0;padding:8px 10px;gap:8px}
+.results-panel .napoli-reference-number strong{font-size:clamp(15px,3.9vw,18px)}
+.results-panel .napoli-reference .secondary-btn{font-size:11px;min-height:44px;padding:8px 9px}
+.booking-action-panel{padding:10px 0 4px;display:grid;gap:7px}
+.booking-action-panel h4{font-size:13px;line-height:1.25;margin:0}
+.results-panel .booking-external-link{display:flex;align-items:center;justify-content:center;
+  min-height:51px;padding:11px 9px;border-radius:10px;font-size:13px;line-height:1.3;
+  text-align:center;text-decoration:none;font-weight:900}
+.booking-copy-status{margin:0;font-size:11.5px;line-height:1.35;font-weight:750;color:#3d5c69}
+.booking-action-panel>.tiny{margin:0;font-size:11px;color:#627986}
+.booking-postcheck{margin:10px 0 0;padding:0 9px;border:1px solid #d9e6eb;
+  border-radius:9px;background:#f8fbfc}
+.booking-postcheck>summary{min-height:43px;padding:10px 0;font-size:12px;font-weight:750;
+  color:#006f89;line-height:1.35;cursor:pointer}
+.booking-postcheck .tfg-import{margin:5px 0 10px;padding:9px}
+.booking-postcheck .secondary-btn{font-size:11.5px}
+@media(max-width:350px){
+  .booking-quick-options button{font-size:11.5px;padding:8px 5px}
+  #search-btn{font-size:12.5px}
+  .results-panel .napoli-reference{flex-wrap:wrap}
+}
+
+/* v0.43 — Ricerca diretta Booking Export CO.NA.TE.CO. */
+.booking-loading{padding:12px 14px;border:1px solid #b9dce7;border-radius:10px;
+  background:#eef8fb;color:#16586d;font-size:13px;font-weight:800;line-height:1.4}
+.booking-source{font-size:11px;line-height:1.4;color:#4b6571;margin:8px 0}
+.booking-vessel-result{display:grid;gap:6px;padding:16px 14px;margin:12px 0 8px;
+  border:1px solid #b9dce7;border-radius:12px;background:#eef8fb;color:#193b4c}
+.booking-vessel-label{font-size:11px;font-weight:800;letter-spacing:.04em}
+.booking-vessel-name{font-size:clamp(24px,7vw,32px);line-height:1.15;
+  overflow-wrap:anywhere}
+.booking-vessel-acceptance{display:grid;gap:8px;margin:10px 0;padding:14px;
+  border:1px solid #d6e4e9;border-radius:12px;background:#f8fafb;color:#435d6c}
+.booking-vessel-acceptance[data-state="good"]{border-color:#a8d9c4;background:#effaf4}
+.booking-vessel-acceptance[data-state="bad"]{border-color:#edb8c4;background:#fff4f6}
+.booking-vessel-acceptance .booking-acceptance-label{justify-self:start;white-space:normal;
+  font-size:14px;font-weight:850;line-height:1.4;overflow-wrap:anywhere}
+.booking-acceptance-source{font-size:11px;line-height:1.4}
+.booking-voyage-warning{color:#754600;background:#fff3d8;border:1px solid #edcf84;border-radius:9px;padding:9px 10px;font-size:12px;line-height:1.35;font-weight:850;overflow-wrap:anywhere}
+.booking-terminal-details{margin:12px 0;border:1px solid #d6e4e9;border-radius:10px;
+  padding:0 12px}
+.booking-terminal-details>summary{cursor:pointer;min-height:44px;padding:12px 0;
+  color:#006f89;font-size:13px;font-weight:750}
+.booking-terminal-details>summary:focus-visible{outline:3px solid #006f89;outline-offset:3px}
+.booking-vessel-caption{font-size:11px;font-weight:900;letter-spacing:.045em;
+  margin:13px 0 4px;color:#435d6c}
+.booking-api-actions{display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:8px;margin:13px 0 6px}
+.booking-api-actions>*{display:flex;align-items:center;justify-content:center;
+  font-size:11px;line-height:1.25;text-align:center;min-height:44px;padding:9px 10px;
+  border-radius:9px;min-width:0}
+#results .booking-api-actions a{font-size:11px}
+@media(max-width:360px){
+  .booking-api-actions{grid-template-columns:1fr}
+}
+
+/* v0.50 — historical CNT voyages are accessible without crowding live work. */
+.cnt-archive-toggle{border:1px solid #b9d4dd;color:#20566b;background:#f4fafc;
+  border-radius:9px;min-height:44px;font-size:12px;font-weight:850;line-height:1.25;
+  padding:9px 12px;margin:6px 0 12px;text-align:center;cursor:pointer;width:100%}
+.cnt-archive-toggle[aria-pressed="true"]{background:#e3f2f7;border-color:#007087}
+.cnt-archive-toggle:focus-visible{outline:3px solid #6cb2c7;outline-offset:2px}
+.cnt-archive-toggle[hidden]{display:none!important}
+
+/* v0.60 — TFG booking and published delivery location. */
+.booking-overview,.booking-tfg-overview{background:#fff;border-color:#dbe6ec;gap:9px;padding:16px}
+.booking-overview .booking-vessel-label,.booking-tfg-overview .booking-vessel-label{color:#5b7382}
+.booking-overview .booking-vessel-name,.booking-tfg-overview .booking-vessel-name{color:#102f43;letter-spacing:-.025em}
+.booking-voyage{display:flex;align-items:center;gap:9px;justify-self:start;
+  max-width:100%;padding:6px 10px;border-radius:7px;background:#edf4f8;color:#244b61}
+.booking-voyage>span{font-size:10px;font-weight:750;letter-spacing:.06em}
+.booking-voyage>strong{font-size:13px;overflow-wrap:anywhere;min-width:0}
+.booking-tfg-status{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:12px 14px;margin:10px 0;border:1px solid #dbe6ec;border-radius:12px;background:#f5f8fa}
+.booking-tfg-status[data-state="good"]{background:#effaf4;border-color:#b5ddc8}
+.booking-tfg-status[data-state="bad"]{background:#fff3f5;border-color:#efc4cf}
+.booking-tfg-status>.booking-vessel-label{font-size:10px;color:#466273;line-height:1.4}
+.booking-tfg-status>.result-label{font-size:12px;white-space:normal;text-align:center;
+  flex-shrink:1;min-width:0;overflow-wrap:anywhere}
+.delivery-spot.delivery-spot-terminal{background:#102f43;border:1px solid #20485e;
+  border-radius:17px;padding:17px 16px 0;gap:13px;color:#fff;
+  box-shadow:0 7px 18px #102f4314}
+.delivery-spot-top{display:flex;align-items:center;gap:12px;min-width:0}
+.delivery-spot-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:48px;
+  border:1px solid #52758a;border-radius:12px;background:#1b4056;color:#b6e5ec}
+.delivery-spot-icon svg{width:27px;height:27px}
+.delivery-spot-heading{display:grid;gap:6px;min-width:0}
+.delivery-spot-terminal .delivery-spot-label{color:#b7d0de;font-size:10px;letter-spacing:.09em}
+.delivery-spot-terminal .delivery-spot-value{color:#fff;font-size:clamp(24px,6vw,29px);
+  font-weight:900;line-height:1.12;letter-spacing:-.025em;overflow-wrap:anywhere}
+.delivery-spot-options{display:grid;gap:5px}
+.delivery-choice-or{font-size:10px;line-height:1.4;font-weight:500;letter-spacing:.04em;color:#b7d0de}
+.delivery-verification-warning{justify-self:start;font-size:10px;line-height:1.4;
+  font-weight:800;color:#ffe9b0;background:#62450c;border:1px solid #a17b34;
+  padding:5px 8px;border-radius:6px;overflow-wrap:anywhere}
+.delivery-chip-tfg .delivery-chip-caution{display:block;color:#925914;font-size:10px;line-height:1.3;margin-top:3px}
+.delivery-depot-status{justify-self:start;font-size:9px;line-height:1.4;font-weight:800;
+  letter-spacing:.035em;color:#cef0e2;background:#214d49;border:1px solid #527a70;
+  padding:4px 7px;border-radius:5px;margin-top:3px}
+.delivery-source-details{border-top:1px solid #416175;min-width:0}
+.delivery-source-details>summary{cursor:pointer;min-height:44px;padding:13px 0;
+  color:#d2e4ee;font-size:11px;font-weight:650;line-height:1.5}
+.delivery-source-details>summary:focus-visible{outline:3px solid #8edee8;outline-offset:3px;border-radius:3px}
+.delivery-source-details .delivery-spot-source{font-size:10px;font-weight:800;line-height:1.5;color:#bdd3e0}
+.delivery-source-details .delivery-spot-note{color:#d2e1eb;font-size:11.5px;font-weight:400}
+.delivery-source-details .facts{border-color:#416175;margin:12px 0 16px}
+.delivery-source-details .fact{border-color:#416175;color:#fff;font-size:11px}
+.delivery-source-details .fact span{color:#bdd3e0}
+.delivery-source-details .fact strong{color:#fff}
+.delivery-chip.delivery-chip-terminal{background:#edf4f8;border-color:#cadce5}
+.delivery-chip-terminal .delivery-chip-label{color:#526f80}
+.delivery-chip-terminal .delivery-chip-value{color:#143e57}
+@media(max-width:360px){
+  .booking-tfg-status{align-items:flex-start;gap:7px;padding:11px}
+  .booking-tfg-status>.result-label{font-size:11px;padding:7px 8px}
+  .delivery-spot.delivery-spot-terminal{padding:15px 13px 0}
+  .delivery-spot-top{gap:10px}
+  .delivery-spot-icon{flex-basis:36px;width:36px;height:43px}
+}

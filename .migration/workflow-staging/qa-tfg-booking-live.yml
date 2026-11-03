@@ -1,0 +1,24 @@
+name: Verifica booking TFG Cloudflare (codice sintetico)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'cloudflare/index.mjs'
+      - 'cloudflare/tfg_booking.mjs'
+      - 'scripts/qa_tfg_booking_live_backend.py'
+      - '.github/workflows/qa-tfg-booking-live.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests
+      - name: POST synthetic booking to Cloudflare TFG adapter
+        run: python -m scripts.qa_tfg_booking_live_backend

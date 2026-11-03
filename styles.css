@@ -1,0 +1,1479 @@
+:root{color-scheme:dark;--ink:#ecf5ff;--muted:#9fb0c5;--dark:#0a162a;--panel:#122139;--border:#2b3b52;--mint:#4ecbba;--green:#74e4ae;--red:#ff9c99;--amber:#ffd38d}*{box-sizing:border-box}html{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 52% -20%,#18375a,transparent 55%),var(--dark);color:var(--ink);line-height:1.48}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:var(--mint)}:focus-visible{outline:3px solid #7de9d3;outline-offset:3px}.shell{width:min(100%,720px);margin:auto;padding:0 18px max(30px,env(safe-area-inset-bottom))}.top{display:flex;align-items:center;gap:12px;padding:25px 0 19px;border-bottom:1px solid var(--border)}.brandmark{display:grid;place-items:center;background:#1a3a4b;border-radius:14px;width:47px;height:47px;flex-shrink:0}.brandmark svg{width:34px}.top h1{font-size:18px;letter-spacing:-.4px;margin:1px 0 0;line-height:1.15}.eyebrow{font-size:9px;letter-spacing:1.7px;font-weight:800;color:var(--mint)}.pill{margin-left:auto;font-size:10px;font-weight:800;letter-spacing:.5px;padding:7px 9px;border-radius:99px;border:1px solid var(--border);white-space:nowrap}.testing{color:#aed9d3;background:#153635}.hero{padding:37px 4px 29px}.kicker{display:flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:1.5px;font-size:10px;color:var(--mint);font-weight:800}.status-dot{width:7px;height:7px;background:var(--mint);border-radius:50%;box-shadow:0 0 0 4px #4ecbba25}.hero h2{font-size:clamp(32px,7vw,50px);line-height:1.11;letter-spacing:-1.6px;margin:13px 0}.hero h2 span{color:var(--mint)}.hero p{color:var(--muted);margin:0;max-width:510px;font-size:14px}.panel{background:linear-gradient(160deg,#152742,#101e33);border:1px solid #31415a;border-radius:19px;padding:22px;box-shadow:0 18px 44px #0002}.panel-head{display:flex;justify-content:space-between;gap:12px;align-items:center}.panel h3,.sources h3{font-size:18px;letter-spacing:-.4px;margin:0}.step{font-size:11px;color:var(--muted)}fieldset{border:0;margin:24px 0 21px;padding:0}legend,.field-label{font-size:12px;font-weight:750;margin-bottom:10px}.terminals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.terminals legend{grid-column:1/-1}.terminal-choice{cursor:pointer;display:flex;align-items:flex-start;justify-content:center;flex-direction:column;min-height:77px;padding:12px 10px;border-radius:12px;background:#0e1c30;border:1px solid #344761;transition:.15s}.terminal-choice:has(input:checked){border-color:var(--mint);background:#143a42;box-shadow:inset 0 0 0 1px #4ecbba44}.terminal-choice input{position:absolute;opacity:0;width:1px;height:1px}.terminal-choice:has(input:focus-visible){outline:3px solid #7de9d3}.terminal-title{font-size:11px;font-weight:850;overflow-wrap:anywhere}.terminal-sub{font-size:11px;color:var(--muted);margin-top:4px}.field-label{display:block}.query-wrap{position:relative}.query-wrap input{width:100%;height:56px;background:#0a1729;border:1px solid #40546d;border-radius:11px;color:var(--ink);padding:0 46px 0 15px;font-weight:650;letter-spacing:.3px;outline:none}.query-wrap input:focus{border-color:var(--mint);box-shadow:0 0 0 3px #4ecbba23}.query-wrap input::placeholder{color:#7b8da4}.clear-btn{background:none;border:0;color:#b3c6d8;position:absolute;right:7px;top:7px;height:42px;width:36px;cursor:pointer;font-size:23px}.field-help{color:var(--muted);font-size:11px;margin:9px 0 20px}.primary,.secondary-btn{border:0;border-radius:10px;min-height:50px;padding:12px 16px;font-weight:800;text-decoration:none;display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer}.primary{background:var(--mint);color:#082525;width:100%}.primary:hover{background:#7ee1d5}.secondary-btn{background:#203754;color:var(--ink);border:1px solid #35536c}.results-panel{margin-top:16px}.results-panel[hidden]{display:none}.rheader{display:flex;align-items:center;justify-content:space-between;gap:12px}.rheader h3{font-size:17px}.result-notice{font-size:13px;color:var(--muted);margin:12px 0 17px}.result-label{display:inline-flex;gap:7px;align-items:center;border-radius:30px;padding:7px 10px;font-size:11px;font-weight:850;letter-spacing:.2px}.result-label.neutral{color:#d5e6f8;background:#32455f}.result-label.warn{color:var(--amber);background:#513e2c}.result-label.good{color:var(--green);background:#224438}.result-label.bad{color:var(--red);background:#542d3b}.result-label .dot{width:7px;height:7px;border-radius:50%;background:currentColor}.facts{display:grid;gap:0;margin:12px 0 18px;border:1px solid var(--border);border-radius:12px;overflow:hidden}.fact{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:11px 12px;border-bottom:1px solid var(--border);font-size:12px}.fact:last-child{border:0}.fact span{color:var(--muted)}.fact strong{text-align:right;overflow-wrap:anywhere;max-width:62%}.note{border-left:3px solid var(--amber);padding:10px 12px;background:#40332355;border-radius:0 8px 8px 0;font-size:12px;color:#f1d7af;margin:12px 0}.actions{display:grid;gap:10px}.actions a{color:inherit}.tiny{font-size:11px;color:var(--muted)}.mini-field{display:grid;gap:5px;font-size:12px;font-weight:700}.mini-field input,.mini-field select{background:#0c1a2c;color:var(--ink);border:1px solid #475971;border-radius:8px;padding:11px;min-width:0;font:inherit}.manual-form{display:grid;gap:12px;border-top:1px solid var(--border);padding-top:16px;margin-top:18px}.manual-form h4{margin:0;font-size:13px}.manual-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.voyage{border:1px solid var(--border);border-radius:13px;padding:13px;margin-top:12px;background:#11283e}.voyage h4{font-size:16px;margin:3px 0 7px}.voyage .facts{margin:9px 0}.empty{padding:14px;border:1px dashed #51647e;border-radius:11px;color:var(--muted);font-size:13px}.sources{padding:30px 4px 22px}.sources p{color:var(--muted);font-size:12px;margin:8px 0 16px}.source-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.source-grid a{border:1px solid var(--border);border-radius:10px;padding:12px 9px;background:#152841;color:var(--ink);text-decoration:none;font-size:11px;display:flex;gap:4px;justify-content:space-between;align-items:center}.source-grid a span{color:var(--mint)}footer{border-top:1px solid var(--border);padding-top:20px;color:#869cb3;font-size:10px;text-align:center}@media(max-width:460px){.top{gap:8px}.top h1{font-size:16px}.pill{font-size:9px;padding:5px 7px}.panel{padding:16px}.terminal-choice{padding:10px 7px;min-height:75px}.terminal-title{font-size:10px}.source-grid a{font-size:10px;padding:10px 7px}.hero{padding-top:28px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.result-actions{margin-top:12px}
+
+.ports{grid-template-columns:repeat(2,minmax(0,1fr))}.ports .terminal-title{font-size:16px}.ports .terminal-choice{min-height:87px}.port-source-grid{display:grid;gap:12px;margin-top:16px}.port-source{padding:14px;background:#0c2036;border:1px solid var(--border);border-radius:12px;display:grid;gap:10px}.port-source h4{margin:0;font-size:14px}.port-source .tiny{margin:0}.port-source .secondary-btn{min-height:40px;font-size:12px}
+
+/* SCT schedule picker: native dropdown works on Android, iOS and desktop. */
+.sct-picker{display:grid;gap:8px;margin-bottom:21px;padding:15px 13px;background:#0c2236;border:1px solid #366175;border-radius:13px}
+.sct-picker[hidden]{display:none}
+.picker-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.picker-heading .field-label{margin-bottom:0;max-width:70%}
+.text-btn{border:1px solid #45667b;background:#14334b;color:#a5e9e1;border-radius:8px;padding:8px 10px;min-height:38px;cursor:pointer;white-space:nowrap;font-size:11px;font-weight:800}
+.vessel-select{appearance:auto;display:block;min-height:54px;width:100%;background:#0a1729;color:var(--ink);border:1px solid #537185;border-radius:10px;padding:10px 11px;font-size:13px}
+.vessel-select:disabled{opacity:.7}
+.vessel-select option{background:#0e1c30;color:#ecf5ff}
+.picker-status{color:#9ed9ce;font-size:11px;margin:0;line-height:1.6}
+.picker-status.stale{color:var(--amber)}
+@media(max-width:460px){.picker-heading .field-label{max-width:62%}.text-btn{font-size:10px;padding:8px}}
+
+
+/* Salerno: filtri touch-friendly con layout a una colonna sui telefoni stretti */
+.picker-filter-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:10px}
+.picker-filter-grid .mini-field{min-width:0;color:var(--ink)}
+.picker-filter-grid input,.picker-filter-grid select{width:100%;height:48px;font-size:13px}
+.picker-check{display:flex;align-items:flex-start;gap:10px;font-size:12px;font-weight:600;cursor:pointer;color:var(--ink);padding:4px 0}
+.picker-check input{flex-shrink:0;appearance:auto;accent-color:var(--mint);width:20px;height:20px;margin:0}
+.picker-disclaimer{color:var(--muted);font-size:11px;margin:2px 0 0}
+.result-label.unknown{color:var(--amber);background:#513e2c}
+@media(max-width:460px){.picker-filter-grid{grid-template-columns:1fr}.picker-heading{align-items:center}.picker-filter-grid input,.picker-filter-grid select{height:50px}}
+
+/* v0.6: la ricerca manuale booking è riservata al solo porto di Napoli. */
+#napoli-booking-controls[hidden]{display:none}
+
+/*
+ * CONTAINER BOOKING · Tema LTS Registro Viaggi
+ * Linguaggio grafico derivato da:
+ * https://github.com/pasqualemilano0-rgb/LTS-Registro-Viaggi
+ * Stessa palette, schede, bordi, gerarchia e pulsanti.
+ * Nessun asset/logo o dato operativo viene condiviso tra i progetti.
+ */
+:root {
+  color-scheme: light;
+  --ink: #162f3d;
+  --muted: #738591;
+  --dark: #f3f7f9;
+  --panel: #ffffff;
+  --border: #e3ebef;
+  --mint: #006f89;
+  --green: #156f55;
+  --red: #ba1745;
+  --amber: #94641b;
+  --teal: #006f89;
+  --teal-dark: #005b72;
+  --wash: #e7f3f6;
+  --line: #e3ebef;
+  --shadow: 0 4px 20px #1934470a;
+}
+html {
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f7f9;
+}
+body {
+  min-height: 100dvh;
+  color: var(--ink);
+  background: #f3f7f9;
+  line-height: 1.5;
+  -webkit-tap-highlight-color: transparent;
+}
+button, input, select, textarea { font-family: inherit; }
+button, input, select, a { touch-action: manipulation; }
+button { cursor: pointer; }
+button:disabled { opacity: .58; cursor: not-allowed; }
+:focus-visible { outline: 3px solid #48b9d1; outline-offset: 3px; }
+a { color: var(--teal); }
+h1, h2, h3, h4 { font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: -.035em; }
+.shell { width: min(100%, 760px); padding: 0 18px max(30px, env(safe-area-inset-bottom)); }
+
+/* Barra superiore, come LTS: bianco, linea sottile e marchio su fondo turchese tenue. */
+.top {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  margin: 0 -18px;
+  padding: 18px 18px 15px;
+  min-height: 82px;
+  gap: 14px;
+}
+.brandmark {
+  background: var(--wash);
+  border: 1px solid #d4eaf0;
+  box-shadow: none;
+  border-radius: 13px;
+  width: 47px;
+  height: 47px;
+}
+.brandmark svg path[fill="#4ecbba"] { fill: #006f89; }
+.brandmark svg path[fill="#d8e8fa"] { fill: #a9d7e2; }
+.brandmark svg path[stroke="#4ecbba"] { stroke: #006f89; }
+.top h1 { color: var(--ink); font-size: 18px; letter-spacing: -.045em; font-weight: 800; }
+.eyebrow {
+  color: #718a96;
+  letter-spacing: .12em;
+  font-size: 9px;
+  font-weight: 750;
+}
+.pill.testing {
+  color: var(--teal);
+  background: var(--wash);
+  border: 1px solid #d0e7ec;
+  border-radius: 9px;
+  padding: 8px 10px;
+  font-weight: 750;
+  letter-spacing: 0;
+}
+
+/* Testata petrolio sfumata, equivalente alle section-hero di LTS. */
+.hero {
+  margin: 20px 0 18px;
+  padding: 25px 24px;
+  background: linear-gradient(115deg,#005f77,#087d94);
+  color: #fff;
+  border-radius: 17px;
+  box-shadow: none;
+}
+.hero .kicker { color: #d3edf1; font-size: 10px; letter-spacing: .12em; }
+.hero .status-dot {
+  background: #b7e8e7;
+  box-shadow: 0 0 0 4px #b7e8e733;
+}
+.hero h2 {
+  font-size: clamp(29px, 5.4vw, 36px);
+  letter-spacing: -.052em;
+  line-height: 1.15;
+  margin: 12px 0 11px;
+  font-weight: 800;
+}
+.hero h2 span { color: #d9f8f5; }
+.hero p { color: #e3f1f4; font-size: 13px; max-width: 500px; }
+
+/* Schede bianche e struttura dei moduli LTS. */
+.panel {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  border-radius: 19px;
+  padding: 22px;
+  color: var(--ink);
+}
+.panel-head h3 { font-size: 18px; color: var(--ink); font-weight: 800; }
+.step {
+  color: var(--teal);
+  background: var(--wash);
+  padding: 7px 10px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 650;
+}
+fieldset { margin: 22px 0 20px; }
+legend, .field-label {
+  color: #526b79;
+  font-size: 12px;
+  font-weight: 700;
+}
+.terminal-choice {
+  min-height: 88px;
+  background: #f4f9fb;
+  color: var(--ink);
+  border: 1px solid #d7e7ed;
+  border-radius: 13px;
+  box-shadow: none;
+  padding: 15px;
+}
+.terminal-choice:hover { border-color: #a3cbd5; }
+.terminal-choice:has(input:checked) {
+  background: var(--wash);
+  border-color: #7db5c3;
+  box-shadow: inset 0 0 0 1px #8cbfcd;
+  color: var(--teal);
+}
+.terminal-choice:has(input:focus-visible) {
+  outline: 3px solid #48b9d1;
+  outline-offset: 2px;
+}
+.ports .terminal-title {
+  color: var(--ink);
+  font-family: Manrope, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+.terminal-choice:has(input:checked) .terminal-title { color: var(--teal); }
+.terminal-sub { color: #738b98; font-size: 11px; }
+
+/* Ricerca navi SCT, stessi campi dei moduli LTS. */
+.sct-picker {
+  background: #f5fafb;
+  border: 1px solid #dbe9ed;
+  border-radius: 15px;
+  padding: 17px;
+  gap: 11px;
+  box-shadow: none;
+}
+.sct-picker[hidden], #napoli-booking-controls[hidden], .results-panel[hidden] { display: none; }
+.picker-heading { align-items: center; }
+.picker-heading .field-label { color: var(--ink); font-size: 14px; font-weight: 800; }
+.text-btn {
+  color: var(--teal);
+  background: #fff;
+  border: 1px solid #d3e5eb;
+  border-radius: 10px;
+  min-height: 44px;
+  padding: 10px 13px;
+  box-shadow: none;
+}
+.text-btn:hover, .secondary-btn:hover { background: #edf7f9; }
+.mini-field { color: #526b79; font-size: 12px; font-weight: 700; }
+.query-wrap input,
+.picker-filter-grid input,
+.picker-filter-grid select,
+.vessel-select,
+.mini-field input,
+.mini-field select {
+  background: #fbfcfd;
+  color: var(--ink);
+  border: 1px solid #dce6eb;
+  border-radius: 13px;
+  box-shadow: none;
+  font-size: 16px;
+  min-height: 49px;
+  padding: 12px 14px;
+}
+.query-wrap input { height: 54px; padding-right: 48px; font-weight: 650; }
+.query-wrap input::placeholder,
+.picker-filter-grid input::placeholder { color: #9aabb4; }
+.query-wrap input:focus,
+.picker-filter-grid input:focus,
+.picker-filter-grid select:focus,
+.vessel-select:focus,
+.mini-field input:focus,
+.mini-field select:focus {
+  outline: 0;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px #006f8918;
+}
+.vessel-select { background: #fff; min-height: 54px; width: 100%; }
+.vessel-select option { color: var(--ink); background: #fff; }
+.vessel-select:disabled { background: #f0f5f7; opacity: .65; }
+.clear-btn { color: #8096a1; border-radius: 10px; }
+.clear-btn:hover { background: var(--wash); color: var(--teal); }
+.picker-check { color: #526b79; font-size: 12px; }
+.picker-check input { accent-color: var(--teal); width: 20px; min-height: 20px; }
+.picker-status { color: #557b8a; font-size: 11px; }
+.picker-status.stale { color: #94641b; }
+.picker-disclaimer { color: #738591; font-size: 11px; }
+.field-help { color: #738591; font-size: 12px; }
+
+/* Pulsanti coordinati a LTS. */
+.primary {
+  background: var(--teal);
+  color: #fff;
+  border-radius: 13px;
+  min-height: 50px;
+  box-shadow: 0 4px 8px #006f8912;
+  font-weight: 750;
+}
+.primary:hover { background: var(--teal-dark); }
+.secondary-btn {
+  background: #fff;
+  border: 1px solid #dce6eb;
+  color: var(--teal);
+  border-radius: 12px;
+  min-height: 46px;
+  font-weight: 700;
+}
+
+/* Risultati e cartellini stato: contrasto leggibile anche su display mobile. */
+.results-panel { margin-top: 16px; }
+.rheader h3 { color: var(--ink); font-weight: 800; }
+.result-notice { color: #738591; font-size: 12px; }
+.result-label { font-weight: 750; font-size: 11px; border-radius: 9px; padding: 8px 10px; }
+.result-label.neutral { color: var(--teal); background: var(--wash); }
+.result-label.unknown, .result-label.warn { color: #855d13; background: #fff3d8; }
+.result-label.good { color: #106349; background: #e5f5ee; }
+.result-label.bad { color: #ba1745; background: #fff0f4; }
+.facts { border: 1px solid #e3ebef; border-radius: 12px; margin: 13px 0 17px; }
+.fact { border-bottom: 1px solid #e3ebef; color: var(--ink); padding: 11px 12px; }
+.fact span { color: #718590; }
+.fact strong { color: var(--ink); }
+.note {
+  border-left: 3px solid #c08a36;
+  background: #fff8e9;
+  color: #79571f;
+  border-radius: 0 10px 10px 0;
+  font-size: 12px;
+}
+.voyage {
+  border: 1px solid #e3ebef;
+  border-radius: 14px;
+  background: #fff;
+  padding: 15px;
+  box-shadow: 0 3px 15px #19344705;
+}
+.voyage h4 { color: var(--ink); }
+.port-source {
+  background: #f5fafb;
+  color: var(--ink);
+  border: 1px solid #e1ebef;
+  border-radius: 13px;
+}
+.port-source h4 { color: var(--teal); }
+.tiny, .empty { color: #738591; }
+.empty { border: 1px dashed #c5dbe2; background: #f7fafb; }
+
+/* Fonti e piè di pagina. */
+.sources { padding-top: 30px; }
+.sources h3 { color: var(--ink); font-size: 18px; font-weight: 800; }
+.sources p { color: #738591; }
+.source-grid a {
+  background: #fff;
+  color: var(--teal);
+  border: 1px solid #e3ebef;
+  border-radius: 12px;
+  min-height: 49px;
+  box-shadow: var(--shadow);
+  font-size: 11px;
+  font-weight: 700;
+}
+.source-grid a span { color: var(--teal); }
+footer { border-top: 1px solid #e3ebef; color: #8396a1; }
+
+/* Adattamenti del linguaggio LTS a una sola schermata operativa. */
+@media (max-width: 480px) {
+  .shell { padding-left: 16px; padding-right: 16px; }
+  .top { margin-left: -16px; margin-right: -16px; padding: 15px 16px; gap: 10px; min-height: 76px; }
+  .top h1 { font-size: 16px; }
+  .brandmark { width: 42px; height: 42px; flex-shrink: 0; }
+  .pill.testing { padding: 7px 8px; font-size: 9px; white-space: normal; text-align: center; }
+  .hero { margin: 16px 0; padding: 23px 20px; border-radius: 15px; }
+  .hero h2 { font-size: 30px; }
+  .hero p { font-size: 12px; line-height: 1.65; }
+  .panel { padding: 17px; border-radius: 16px; }
+  .panel-head { gap: 10px; }
+  .panel-head h3 { font-size: 17px; }
+  .ports { gap: 10px; }
+  .terminal-choice { min-height: 86px; padding: 12px 11px; }
+  .ports .terminal-title { font-size: 16px; }
+  .terminal-sub { font-size: 10px; }
+  .sct-picker { padding: 13px; }
+  .picker-heading .field-label { font-size: 13px; }
+  .text-btn { font-size: 11px; white-space: nowrap; }
+  .source-grid { grid-template-columns: 1fr; }
+  .source-grid a { padding: 13px 14px; font-size: 12px; }
+}
+@media (max-width: 355px) {
+  .hero h2 { font-size: 27px; }
+  .pill.testing { display: none; }
+  .panel-head .step { font-size: 10px; }
+  .ports .terminal-title { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
+
+
+/* Logo originale LTS, usato dal suo sito pubblico. */
+.top .lts-brand-logo {
+  display: block;
+  width: 116px;
+  max-width: 30vw;
+  height: 46px;
+  object-fit: contain;
+  object-position: center left;
+  flex-shrink: 0;
+}
+.top .app-brand-copy {
+  flex: 1 1 auto;
+  min-width: 0;
+  border-left: 1px solid var(--line);
+  padding-left: 16px;
+  line-height: 1.3;
+}
+.top .app-brand-copy .eyebrow { display: block; }
+.top .app-brand-copy h1 {
+  margin: 4px 0 0;
+  overflow-wrap: break-word;
+}
+@media (max-width: 520px) {
+  .top .lts-brand-logo { width: 98px; height: 43px; max-width: 28vw; }
+  .top .app-brand-copy { padding-left: 11px; }
+  .top .app-brand-copy h1 { font-size: 15px; }
+  .top .app-brand-copy .eyebrow { font-size: 8px; }
+  .top .pill.testing { display: none; }
+}
+@media (max-width: 350px) {
+  .top .lts-brand-logo { width: 84px; height: 39px; }
+  .top .app-brand-copy { padding-left: 9px; }
+  .top .app-brand-copy h1 { font-size: 14px; }
+}
+/* Le risorse grafiche della barra superiore rimangono utilizzabili se l'immagine
+   LTS non è temporaneamente disponibile: titolo Container Booking indipendente. */
+
+
+
+/* v0.8 · LTS compatto: le navi e gli avvisi sono la parte principale. */
+.hero.compact-hero {
+  margin: 12px 0 14px;
+  padding: 17px 20px;
+  min-height: auto;
+}
+.hero.compact-hero .kicker { font-size: 9px; margin-bottom: 4px; }
+.hero.compact-hero h2 {
+  font-size: clamp(22px,4.5vw,29px);
+  line-height: 1.16;
+  margin: 6px 0 5px;
+}
+.hero.compact-hero p { font-size: 12px; line-height: 1.4; }
+.search-panel { padding: 17px 19px; }
+.search-panel fieldset { margin: 14px 0 16px; }
+.search-panel .terminal-choice { min-height: 66px; padding: 10px 12px; }
+.search-panel .ports .terminal-title { font-size: 15px; }
+.search-panel .terminal-sub { font-size: 10px; }
+.sct-picker {
+  background: #fff;
+  border: 0;
+  padding: 0;
+  gap: 11px;
+}
+.sct-picker .picker-heading { margin: 2px 0; display:flex; justify-content:space-between; }
+.sct-picker .picker-heading h3 {
+  margin: 0;
+  color: #162f3d;
+  font-size: 17px;
+  font-weight: 800;
+}
+.ops-alert {
+  background: #e7f3f6;
+  color: #005b72;
+  border-left: 4px solid #006f89;
+  border-radius: 9px;
+  padding: 11px 12px;
+  font-size: 12px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+.ops-alert[data-state="warning"] {
+  background: #fff3d8;
+  border-color: #bb7b1f;
+  color: #81550e;
+}
+.ops-alert[data-state="loading"] {
+  color: #738591;
+  background: #f2f6f8;
+  border-color: #9eafb8;
+}
+.sct-picker .picker-filter-grid {
+  grid-template-columns: 1.3fr .8fr;
+  gap: 9px;
+  margin: 1px 0;
+}
+.sct-picker .mini-field { gap: 5px; font-size: 11px; }
+.sct-picker .picker-filter-grid input,
+.sct-picker .picker-filter-grid select {
+  min-height: 47px;
+  height: 47px;
+  font-size: 15px;
+  padding: 9px 11px;
+}
+.sct-picker .picker-check {
+  padding: 3px 0 7px;
+  font-size: 12px;
+  align-items: center;
+  color: #49616e;
+}
+.sct-picker .picker-check input { width: 18px; height: 18px; min-height: 18px; }
+.vessel-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #162f3d;
+  font-size: 13px;
+  border-bottom: 1px solid #e3ebef;
+  padding: 6px 1px 8px;
+}
+#sct-vessel-count {
+  color: #738591;
+  font-size: 11px;
+  font-weight: 650;
+}
+.vessel-list { display: grid; gap: 8px; }
+.vessel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 78px;
+  text-align: left;
+  color: #162f3d;
+  background: #fff;
+  border: 1px solid #dfebef;
+  border-radius: 13px;
+  padding: 11px 13px;
+  font-size: 13px;
+  box-shadow: 0 2px 8px #19344704;
+  -webkit-tap-highlight-color: transparent;
+}
+.vessel-row:hover { border-color: #9fc6d1; background: #f7fbfc; }
+.vessel-row:focus-visible { outline: 3px solid #48b9d1; outline-offset: 2px; }
+.vessel-row.selected {
+  background: #edf7f9;
+  border-color: #006f89;
+  box-shadow: inset 0 0 0 1px #006f89;
+}
+.vessel-main { display:grid; gap:4px; min-width:0; flex:1; }
+.vessel-name {
+  font-family: Manrope,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #162f3d;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+.vessel-meta {
+  font-size: 11px;
+  color: #718590;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.vessel-right {
+  flex: 0 1 46%;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  justify-content: flex-end;
+  min-width:0;
+}
+.vessel-right .result-label {
+  font-size: 10px;
+  padding: 7px 9px;
+  text-align:center;
+  line-height:1.3;
+  white-space: normal;
+  justify-content: center;
+  max-width: 170px;
+}
+.row-chevron { font-size: 22px; color: #899ca6; font-weight: 500; }
+.show-more {
+  background: #e7f3f6;
+  color: #006f89;
+  border: 1px solid #cfe6eb;
+  border-radius: 11px;
+  padding: 12px;
+  width: 100%;
+  min-height: 45px;
+  font-weight: 750;
+  font-size: 12px;
+}
+.show-more[hidden] { display: none; }
+.sct-picker .picker-status { color: #718590; font-size: 10px; margin: 2px 0; }
+.sct-picker .picker-disclaimer { font-size: 10px; margin-top: 0; }
+.results-panel { scroll-margin-top: 10px; }
+.results-panel .rheader { align-items: start; }
+.results-panel .rheader h3 { font-size: 18px; }
+.results-panel .voyage { margin-top: 10px; }
+.results-panel .voyage > .result-label { font-size: 12px; padding: 9px 11px; }
+.results-panel .voyage h4 { font-size: 20px; font-weight: 800; margin: 9px 0 8px; }
+.sources {
+  padding: 16px 0 12px;
+  border-top: 1px solid #e3ebef;
+  margin-top: 24px;
+}
+.sources summary {
+  font-size: 12px;
+  font-weight: 750;
+  color: #006f89;
+  cursor: pointer;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+.sources[open] summary { margin-bottom: 8px; }
+.sources p { margin: 3px 0 12px; }
+.sources .source-grid { margin: 12px 0; }
+footer { padding: 12px 0 18px; border: 0; font-size: 10px; }
+@media (max-width: 480px) {
+  .hero.compact-hero { margin: 10px 0 12px; padding: 15px 16px; }
+  .hero.compact-hero h2 { font-size: 24px; }
+  .hero.compact-hero p { font-size: 11px; }
+  .search-panel { padding: 15px 14px; }
+  .search-panel .terminal-choice { min-height: 70px; padding: 10px; }
+  .sct-picker .picker-filter-grid { grid-template-columns: 1fr .83fr; }
+  .sct-picker .picker-filter-grid input,
+  .sct-picker .picker-filter-grid select { min-height: 47px; font-size: 14px; padding: 9px; }
+  .vessel-row { padding: 11px; min-height: 73px; gap: 7px; }
+  .vessel-main { min-width:0; }
+  .vessel-name { font-size: 13px; }
+  .vessel-right { flex-basis: 48%; gap: 4px; }
+  .vessel-right .result-label { font-size: 9px; padding: 6px 7px; }
+  .row-chevron { font-size: 19px; }
+}
+@media (max-width: 340px) {
+  .sct-picker .picker-filter-grid { grid-template-columns:1fr; }
+  .vessel-right { flex-basis: 44%; }
+  .vessel-meta { font-size: 10px; }
+}
+
+
+/* v0.9 · Risultato TFG copiato dal portale ufficiale. */
+.tfg-import {
+  background: #f5fafb;
+  border: 1px solid #dce9ee;
+  border-radius: 14px;
+  padding: 14px;
+  margin: 16px 0;
+}
+.tfg-import > summary {
+  cursor: pointer;
+  color: #006f89;
+  font-weight: 800;
+  font-size: 13px;
+  min-height: 42px;
+  display:flex;
+  align-items:center;
+}
+.tfg-import[open] > summary { margin-bottom: 8px; }
+.tfg-import .tiny { margin: 0 0 12px; font-size: 12px; line-height: 1.55; }
+.tfg-textarea {
+  width: 100%;
+  display: block;
+  color: #162f3d;
+  background: #fff;
+  border: 1px solid #dce6eb;
+  border-radius: 11px;
+  resize: vertical;
+  padding: 11px 12px;
+  font: 14px/1.5 "DM Sans",system-ui,sans-serif;
+  min-height: 115px;
+  max-height: 300px;
+}
+.tfg-textarea:focus {
+  outline: 0;
+  border-color: #006f89;
+  box-shadow: 0 0 0 3px #006f8920;
+}
+.tfg-import .actions { display:flex; flex-wrap:wrap; gap:9px; margin: 11px 0; }
+.tfg-import .actions > * { flex: 1 1 160px; width:auto; font-size:12px; justify-content:center; }
+.napoli-booking-actions .secondary-btn { width:100%; }
+.tfg-parsed {
+  background: #fff;
+  padding: 14px;
+  border: 1px solid #dce6eb;
+  border-radius: 12px;
+}
+.destination-highlight {
+  display:grid;
+  gap:5px;
+  margin: 12px 0;
+  padding: 15px;
+  background: #e7f3f6;
+  border: 1px solid #a0cbd6;
+  border-radius: 12px;
+}
+.destination-caption { font-size: 10px; font-weight:800; color:#527985; letter-spacing:.04em; }
+.destination-title {
+  font:800 clamp(20px,4.5vw,27px)/1.15 Manrope,system-ui,sans-serif;
+  color:#005b72;
+}
+.tfg-parsed .secondary-btn { width:100%; margin-top:10px; font-size:12px; }
+.tfg-output:empty {display:none}
+
+
+/* v0.10 · Napoli: risultato compatto, luogo di scarico e avvisi prima dei dettagli */
+.results-panel .rheader {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.results-panel .rheader h3 {font-size:17px;margin:0}
+.napoli-reference {
+  margin-top:9px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  background:#f5fafb;
+  border:1px solid #dce9ed;
+  border-radius:12px;
+  padding:10px 13px;
+}
+.napoli-reference-number {display:grid;gap:2px;min-width:0}
+.napoli-reference-number strong {
+  color:#162f3d;
+  font:800 19px/1.3 Manrope,system-ui,sans-serif;
+  overflow-wrap:anywhere;
+}
+.napoli-small-label {
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.09em;
+  color:#738591;
+}
+.napoli-reference .secondary-btn {
+  width:auto;
+  min-height:42px;
+  padding:8px 13px;
+  flex-shrink:0;
+  font-size:12px;
+}
+.napoli-operational-status {
+  display:grid;
+  gap:7px;
+  padding:10px 0;
+  color:#765c25;
+  font-size:12px;
+  font-weight:750;
+}
+.napoli-operational-status span {
+  background:#fff6e2;
+  border:1px solid #f1dfb7;
+  padding:9px 12px;
+  border-radius:9px;
+}
+.napoli-primary-check {
+  border-top:1px solid #e3ebef;
+  margin:6px 0 12px;
+  padding-top:15px;
+}
+.napoli-primary-check h4 {
+  margin:0 0 4px;
+  color:#162f3d;
+  font-size:15px;
+  font-weight:800;
+}
+.napoli-primary-check > .tiny {margin:0 0 12px}
+.napoli-primary-check > .primary {
+  min-height:49px;
+  justify-content:center;
+  font-size:13px;
+}
+.napoli-primary-check .tfg-import {
+  padding:12px;
+  margin:13px 0 0;
+  background:#f5fafb;
+}
+.napoli-primary-check .tfg-import > summary {font-size:13px;min-height:34px;}
+.napoli-primary-check .tfg-textarea {min-height:88px}
+.napoli-primary-check .tfg-parsed {margin-top:12px}
+.napoli-alternatives {
+  border-top:1px solid #e3ebef;
+  margin-top:12px;
+  padding:7px 0 10px;
+}
+.napoli-alternatives summary {
+  display:flex;
+  align-items:center;
+  min-height:45px;
+  color:#006f89;
+  font-size:12px;
+  font-weight:750;
+  cursor:pointer;
+}
+.napoli-extra-links {display:grid;gap:8px;padding:7px 0 10px}
+.napoli-extra-links .secondary-btn {
+  justify-content:center;
+  width:100%;
+  min-height:43px;
+  font-size:12px;
+}
+.results-panel > .ops-alert[data-state="warning"] {
+  margin-top:8px;
+  font-size:12px;
+}
+@media(max-width:480px) {
+ .napoli-reference-number strong {font-size:17px}
+ .napoli-primary-check .tfg-import .actions {display:grid;grid-template-columns:1fr 1fr}
+ .napoli-primary-check .tfg-import .actions > * {min-width:0;font-size:11px;padding:10px 7px}
+}
+@media(max-width:340px) {
+ .napoli-primary-check .tfg-import .actions {grid-template-columns:1fr}
+}
+
+
+/* v0.11 · cross-check del programma pubblico TFG */
+.tfg-cross-check {
+  margin-top:14px;
+  border-top:1px solid #dbe7eb;
+  padding-top:13px;
+}
+.tfg-cross-check h4 {
+  margin:0 0 10px;
+  color:#162f3d;
+  font-size:15px;
+  font-weight:800;
+}
+.tfg-check-content>.result-label {margin-bottom:7px}
+.tfg-check-content>.facts {margin:8px 0}
+.tfg-check-content>.ops-alert {margin:9px 0}
+.tfg-check-content>.secondary-btn {
+  display:flex;
+  text-decoration:none;
+  justify-content:center;
+  font-size:12px;
+  min-height:44px;
+  width:100%;
+  margin-top:10px;
+}
+
+
+/* v0.12: manual app refresh, separated from the vessel schedule refresh. */
+.app-footer {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  padding:15px 0 22px;
+}
+.app-footer span {flex:1; min-width:160px}
+.app-refresh {
+  font:700 12px "DM Sans",system-ui,sans-serif;
+  background:#e7f3f6;
+  color:#006f89;
+  border:1px solid #c4e1e8;
+  border-radius:10px;
+  min-height:44px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+.app-refresh:focus-visible {outline:3px solid #48b9d1;outline-offset:2px}
+.app-refresh:disabled {opacity:.65;cursor:wait}
+
+
+/* v0.13 — flotta TFG: visualizzazione prioritaria di navi e avvisi a Napoli. */
+.tfg-fleet{
+  display:grid;
+  gap:12px;
+  margin:14px 0 0;
+  background:#fff;
+  border:1px solid #e0ebee;
+  border-radius:17px;
+  padding:17px;
+  box-shadow:0 3px 16px #19344709;
+}
+.tfg-fleet[hidden]{display:none}
+.tfg-fleet .picker-heading{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.tfg-fleet .picker-heading h3{margin:0;font-size:17px;color:#162f3d}
+.tfg-fleet .mini-field{display:grid;gap:6px;color:#506879;font-size:12px;font-weight:750}
+.tfg-fleet .mini-field input{
+  width:100%;min-height:47px;border:1px solid #dce6eb;
+  border-radius:11px;padding:11px 12px;background:#fff;color:#162f3d;
+  font-size:16px;
+}
+.tfg-fleet .mini-field input:focus{outline:2px solid #b4d9e4;border-color:#006f89}
+.tfg-direct-link{display:flex;justify-content:center;min-height:44px;font-size:12px;text-decoration:none}
+.tfg-fleet .vessel-list{display:grid;gap:8px}
+@media(max-width:480px){.tfg-fleet{padding:13px}.tfg-fleet .picker-heading h3{font-size:15px}}
+
+
+/* v0.14 — Terminal switch Napoli, navi TFG e CO.NA.TE.CO. */
+.napoli-terminal-switch {
+  background:#fff;
+  border:1px solid #e0ebef;
+  border-radius:16px;
+  box-shadow:0 3px 14px #19344709;
+  padding:13px 16px;
+  margin:14px 0 0;
+}
+.napoli-terminal-switch[hidden],.tfg-fleet[hidden],.cnt-fleet[hidden] {
+  display:none!important;
+}
+.napoli-terminal-switch .vessel-list-heading {padding:0 0 9px;margin-bottom:11px}
+.napoli-terminal-tabs {display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.terminal-tab {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:48px;
+  position:relative;
+  background:#f5fafb;
+  border:1px solid #dce9ef;
+  border-radius:11px;
+  color:#526d7a;
+  font:750 13px "DM Sans",system-ui,sans-serif;
+  text-align:center;
+  cursor:pointer;
+  padding:9px;
+}
+.terminal-tab:has(input:checked) {
+  color:#006f89;
+  background:#e7f3f6;
+  border-color:#7db5c3;
+  box-shadow:inset 0 0 0 1px #7db5c3;
+}
+.terminal-tab input {
+  position:absolute;
+  width:100%;
+  height:100%;
+  opacity:0;
+  cursor:pointer;
+}
+.terminal-tab:has(input:focus-visible) {outline:3px solid #48b9d1;outline-offset:2px}
+.cnt-fleet{margin:11px 0 0}
+.cnt-fleet .picker-heading h3 {font-size:16px}
+.cnt-fleet .picker-disclaimer{font-size:11px;color:#738591}
+@media(max-width:400px){
+  .napoli-terminal-switch {padding:12px}
+  .terminal-tab {font-size:12px;padding:8px 5px}
+  .cnt-fleet .picker-heading h3{font-size:14px}
+}
+
+
+/* v0.16 — Marchi ufficiali CNT, TFG e SCT salvati localmente.
+   Il marchio identifica il terminal, ma non implica affiliazione. */
+.terminal-logo {
+  display:block;
+  object-fit:contain;
+  object-position:center;
+  max-width:100%;
+  flex-shrink:0;
+}
+.port-logo-choice {
+  justify-content:flex-start;
+  gap:3px;
+  min-height:103px;
+}
+.port-logo-choice .port-choice-head {
+  width:100%;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+  gap:6px;
+}
+.port-logo-choice .terminal-sub {
+  line-height:1.35;
+  min-height:1.35em;
+  overflow-wrap:anywhere;
+}
+.port-logo-pair {
+  display:flex;
+  justify-content:flex-start;
+  align-items:center;
+  gap:6px;
+  max-width:100%;
+  height:29px;
+}
+.port-logo-cnt {width:58px;height:22px;object-position:left center}
+.port-logo-sct {width:69px;height:35px;object-position:left center}
+.terminal-logo-plate {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  background:#ffea00;
+  border:1px solid #ead300;
+  border-radius:5px;
+  flex-shrink:0;
+  overflow:hidden;
+}
+.port-logo-pair .logo-plate-tfg {width:27px;height:27px}
+.port-logo-tfg {width:25px;height:24px}
+.terminal-tab {
+  min-height:83px;
+}
+.terminal-tab-body {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  width:100%;
+  min-width:0;
+  pointer-events:none;
+}
+.terminal-tab-logo-frame {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:min(110px,100%);
+  height:33px;
+}
+.terminal-tab-logo-frame.logo-plate-tfg {
+  width:48px;
+  height:34px;
+}
+.terminal-tab-logo-cnt {width:105px;height:30px}
+.terminal-tab-logo-tfg {width:42px;height:31px}
+.terminal-tab-name {
+  font-size:12px;
+  line-height:1.25;
+  font-weight:800;
+  overflow-wrap:anywhere;
+}
+.terminal-heading {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  min-width:0;
+  flex:1 1 auto;
+}
+.terminal-heading h3 {
+  min-width:0;
+  margin:0;
+  line-height:1.2;
+  overflow-wrap:anywhere;
+}
+.terminal-heading .logo-cnt {width:78px;height:27px}
+.terminal-heading .logo-sct {width:52px;height:29px}
+.terminal-heading .logo-tfg {width:35px;height:31px}
+.terminal-heading .logo-plate-tfg {width:39px;height:35px}
+.terminal-heading .terminal-logo-plate {border-radius:5px}
+.tfg-fleet .picker-heading,
+.sct-picker .picker-heading {
+  gap:10px;
+  align-items:center;
+}
+.tfg-fleet .picker-heading .text-btn,
+.sct-picker .picker-heading .text-btn {flex-shrink:0}
+@media(max-width:480px) {
+  .port-logo-choice {min-height:99px}
+  .port-logo-pair {gap:5px}
+  .port-logo-cnt {width:55px;height:20px}
+  .port-logo-pair .logo-plate-tfg {width:25px;height:25px}
+  .port-logo-tfg {width:23px;height:22px}
+  .port-logo-sct {width:65px;height:33px}
+  .terminal-tab {min-height:79px}
+  .terminal-tab-name {font-size:11px}
+  .terminal-heading {gap:7px}
+  .terminal-heading h3 {font-size:14px}
+  .terminal-heading .logo-cnt {width:65px;height:24px}
+  .terminal-heading .logo-sct {width:44px;height:27px}
+  .tfg-fleet .picker-heading,
+  .sct-picker .picker-heading {flex-wrap:wrap}
+  .tfg-fleet .picker-heading .text-btn,
+  .sct-picker .picker-heading .text-btn {margin-left:auto}
+}
+@media(max-width:355px) {
+  .port-logo-choice {padding:9px 8px}
+  .port-logo-cnt {width:48px;height:19px}
+  .port-logo-pair .logo-plate-tfg {width:24px;height:24px}
+  .port-logo-sct {width:60px;height:31px}
+  .terminal-tab-logo-cnt {width:86px;height:27px}
+  .terminal-tab-name {font-size:10px}
+}
+
+
+/* v0.17 · interfaccia rapida per autisti: pochi passaggi, testo chiaro,
+   zone di tocco ampie, booking secondario espandibile.
+   Nessuna indicazione positiva di carico nasce dal solo stile. */
+:root { color-scheme:light; }
+.sr-only {
+  position:absolute!important;
+  width:1px!important;height:1px!important;
+  padding:0!important;margin:-1px!important;
+  overflow:hidden!important;clip:rect(0,0,0,0)!important;
+  white-space:nowrap!important;border:0!important;
+}
+.truck-top {
+  min-height:64px;
+  padding-top:10px;
+  padding-bottom:10px;
+  gap:10px;
+  border-bottom:1px solid #dae6eb;
+}
+.truck-top .lts-brand-logo {
+  width:85px;
+  height:40px;
+  max-width:28vw;
+}
+.truck-top .app-brand-copy {
+  padding-left:10px;
+  border-left:1px solid #dce8ed;
+}
+.truck-top .app-brand-copy h1 {
+  margin:0;
+  font-size:18px;
+  line-height:1.2;
+}
+.truck-top .app-brand-copy .eyebrow {
+  margin-top:4px;
+  letter-spacing:.07em;
+  font-size:10px;
+}
+.truck-top .pill.testing {
+  font-size:10px;
+  font-weight:750;
+  padding:5px 7px;
+  border-radius:7px;
+}
+.driver-notice {
+  margin:11px 0 12px;
+  color:#435866;
+  background:#f3f7f9;
+  border-left:3px solid #698997;
+  padding:9px 11px;
+  border-radius:5px 9px 9px 5px;
+  font-size:12px;
+  font-weight:650;
+  line-height:1.45;
+}
+.search-panel {
+  padding:14px;
+  border-radius:17px;
+  box-shadow:0 2px 8px #19344707;
+}
+.search-panel .panel-head h2 {
+  font:800 17px/1.25 Manrope,system-ui,sans-serif;
+  letter-spacing:-.025em;
+  margin:0;
+  color:#162f3d;
+}
+.search-panel fieldset {
+  margin:11px 0 0;
+}
+.search-panel .ports {
+  gap:10px;
+}
+.search-panel .ports .port-logo-choice {
+  min-height:88px;
+  padding:11px 13px;
+  background:#f9fbfc;
+  border:2px solid #dbe7ec;
+  border-radius:13px;
+  justify-content:center;
+  gap:3px;
+}
+.search-panel .ports .port-logo-choice:has(input:checked) {
+  background:#e5f3f6;
+  border-color:#006f89;
+  box-shadow:inset 0 0 0 1px #006f89;
+}
+.search-panel .ports .port-choice-head {
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  min-height:35px;
+  gap:5px;
+}
+.search-panel .ports .terminal-title {
+  font:850 19px/1.15 Manrope,system-ui,sans-serif;
+  color:#122e3d;
+}
+.search-panel .ports .terminal-sub {
+  color:#526775;
+  font-size:11px;
+  line-height:1.3;
+  font-weight:650;
+  margin-top:4px;
+  min-height:0;
+}
+.search-panel .port-logo-pair {
+  gap:5px;
+  height:29px;
+}
+.search-panel .port-logo-cnt {
+  width:54px;
+  height:24px;
+}
+.search-panel .port-logo-sct {
+  width:55px;
+  height:34px;
+}
+.search-panel .port-logo-pair .logo-plate-tfg {
+  width:27px;height:27px;
+}
+.search-panel .port-logo-tfg {width:24px;height:23px;}
+.booking-collapsible {
+  border:1px solid #d6e6eb;
+  border-radius:12px;
+  background:#f8fbfc;
+  margin-top:13px;
+  overflow:hidden;
+}
+.booking-collapsible[hidden] {display:none!important}
+.booking-collapsible > summary {
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+  position:relative;
+  gap:3px;
+  padding:11px 45px 11px 13px;
+  min-height:64px;
+  cursor:pointer;
+  list-style:none;
+  -webkit-tap-highlight-color:transparent;
+}
+.booking-collapsible > summary::-webkit-details-marker {display:none}
+.booking-collapsible > summary::after {
+  content:'+';
+  position:absolute;
+  right:14px;top:50%;
+  transform:translateY(-50%);
+  color:#006f89;
+  font:750 25px/1 system-ui,sans-serif;
+}
+.booking-collapsible[open] > summary::after {content:'−'}
+.booking-collapsible > summary:focus-visible {
+  outline:3px solid #48b9d1;
+  outline-offset:-3px;
+}
+.booking-summary-title {
+  font:800 16px/1.25 Manrope,system-ui,sans-serif;
+  color:#005b72;
+}
+.booking-summary-hint {
+  font-size:12px;
+  font-weight:650;
+  color:#607985;
+}
+#napoli-booking-controls {
+  padding:14px;
+  border-top:1px solid #d9e9ed;
+  background:#fff;
+}
+#napoli-booking-controls[hidden] {display:none!important}
+#napoli-booking-controls .field-label {
+  color:#213b4b;
+  font-size:14px;
+  margin-bottom:8px;
+}
+#napoli-booking-controls .query-wrap input {
+  min-height:55px;
+  height:55px;
+  font-size:17px;
+  background:#fff;
+  border:2px solid #b8d1d9;
+  color:#162f3d;
+}
+#napoli-booking-controls .field-help {
+  font-size:13px;
+  line-height:1.4;
+  margin:10px 0 14px;
+}
+#napoli-booking-controls .primary {min-height:55px;font-size:16px}
+.napoli-terminal-switch {
+  margin:10px 0 0;
+  padding:12px 14px;
+  border-radius:15px;
+  box-shadow:0 2px 8px #19344707;
+}
+.napoli-terminal-switch .vessel-list-heading {
+  padding:0 0 10px;
+  margin-bottom:10px;
+  border:0;
+}
+.napoli-terminal-switch .vessel-list-heading strong {
+  font-size:16px;
+  font-weight:800;
+}
+.napoli-terminal-tabs {gap:10px}
+.napoli-terminal-tabs .terminal-tab {
+  min-height:79px;
+  padding:9px;
+  border:2px solid #dae6eb;
+  border-radius:12px;
+}
+.napoli-terminal-tabs .terminal-tab:has(input:checked){
+  border-color:#006f89;
+  background:#e5f3f6;
+  box-shadow:inset 0 0 0 1px #006f89;
+}
+.napoli-terminal-tabs .terminal-tab-name {
+  font-size:13px;
+  line-height:1.25;
+  color:#183848;
+}
+.tfg-fleet,
+.cnt-fleet {
+  margin:10px 0 0;
+  padding:14px;
+  gap:12px;
+  border-radius:15px;
+  box-shadow:0 2px 8px #19344707;
+}
+.sct-picker {
+  margin:11px 0 0;
+  padding:13px 0 0;
+  border-top:1px solid #dae6eb;
+  gap:12px;
+}
+.sct-picker .picker-heading,
+.tfg-fleet .picker-heading,
+.cnt-fleet .picker-heading {
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:0;
+}
+.sct-picker .picker-heading h3,
+.tfg-fleet .picker-heading h3,
+.cnt-fleet .picker-heading h3 {
+  font-size:17px;
+  line-height:1.2;
+}
+.sct-picker .picker-heading .text-btn,
+.tfg-fleet .picker-heading .text-btn,
+.cnt-fleet .picker-heading .text-btn {
+  padding:9px 13px;
+  min-height:48px;
+  font-size:13px;
+  font-weight:800;
+  border:1px solid #a7cbd5;
+  border-radius:10px;
+}
+.tfg-fleet .mini-field,
+.cnt-fleet .mini-field,
+.sct-picker .mini-field {
+  gap:7px;
+  color:#2c4654;
+  font-size:14px;
+  font-weight:750;
+}
+.tfg-fleet .mini-field input,
+.cnt-fleet .mini-field input,
+.sct-picker .picker-filter-grid input,
+.sct-picker .picker-filter-grid select {
+  width:100%;
+  min-height:56px;
+  height:56px;
+  border:2px solid #b5d0d9;
+  border-radius:12px;
+  background:#fff;
+  color:#183544;
+  font-size:16px;
+  padding:12px 14px;
+}
+.tfg-fleet .mini-field input::placeholder,
+.cnt-fleet .mini-field input::placeholder,
+.sct-picker .mini-field input::placeholder {color:#637985}
+.tfg-fleet .mini-field input:focus-visible,
+.cnt-fleet .mini-field input:focus-visible,
+.sct-picker .mini-field input:focus-visible,
+.sct-picker .mini-field select:focus-visible {
+  outline:3px solid #90cbd9;
+  outline-offset:1px;
+}
+.sct-picker .picker-filter-grid {gap:10px;grid-template-columns:1.3fr .9fr}
+.extra-filters {
+  border:1px solid #e0eaed;
+  border-radius:10px;
+  padding:0 12px;
+  background:#f9fbfc;
+}
+.extra-filters > summary {
+  list-style:none;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  font-size:13px;
+  font-weight:750;
+  color:#006f89;
+  cursor:pointer;
+}
+.extra-filters > summary::-webkit-details-marker {display:none}
+.extra-filters > summary::after {
+  content:'+';
+  font-size:21px;
+  margin-left:auto;
+}
+.extra-filters[open] > summary::after {content:'−'}
+.extra-filters .picker-check {
+  display:flex;
+  padding:11px 0 16px;
+  min-height:52px;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.4;
+}
+.extra-filters .picker-check input {
+  width:24px;height:24px;min-height:24px;
+}
+.ops-alert {
+  padding:13px 14px;
+  font-size:14px;
+  line-height:1.45;
+  font-weight:750;
+  border-left-width:5px;
+}
+.vessel-list-heading {
+  padding:8px 0 10px;
+  font-size:14px;
+}
+.vessel-list-heading strong {
+  color:#1a3746;
+  font-size:15px;
+  font-weight:800;
+}
+.vessel-list-heading span {
+  font-size:13px!important;
+  font-weight:700!important;
+}
+.vessel-list {gap:9px}
+.vessel-list .vessel-row {
+  min-height:88px;
+  padding:14px 13px;
+  border:2px solid #d9e8ed;
+  border-radius:13px;
+  gap:9px;
+}
+.vessel-list .vessel-name {
+  font-size:16px;
+  line-height:1.3;
+  overflow-wrap:anywhere;
+}
+.vessel-list .vessel-meta {
+  font-size:13px;
+  line-height:1.4;
+  color:#546b79;
+}
+.vessel-list .vessel-right {
+  flex-basis:45%;
+  min-width:0;
+  gap:5px;
+}
+.vessel-list .result-label {
+  font-size:12px;
+  line-height:1.25;
+  padding:9px 10px;
+  white-space:normal;
+  text-align:left;
+  overflow-wrap:anywhere;
+}
+.show-more {
+  min-height:52px;
+  font-size:14px;
+  font-weight:800;
+}
+.picker-status,
+.picker-disclaimer {
+  font-size:12px;
+  line-height:1.45;
+}
+.tfg-direct-link {
+  min-height:50px;
+  font-size:13px;
+}
+.results-panel .rheader h3 {font-size:19px}
+.results-panel .result-notice {font-size:14px;line-height:1.5}
+.results-panel .fact {font-size:14px;min-height:52px}
+.results-panel .result-label {font-size:12px;line-height:1.35}
+.results-panel .note {font-size:14px}
+.sources {margin-top:10px;padding:14px 3px 12px}
+.sources summary {min-height:46px;font-size:14px}
+@media(max-width:480px) {
+  .truck-top {min-height:60px;padding:9px 14px;gap:8px;}
+  .truck-top .lts-brand-logo {width:71px;height:36px;max-width:24vw}
+  .truck-top .app-brand-copy {padding-left:9px}
+  .truck-top .app-brand-copy h1 {font-size:17px}
+  .truck-top .app-brand-copy .eyebrow {font-size:9px}
+  .truck-top .pill.testing {display:none}
+  .search-panel {padding:13px}
+  .search-panel .ports .terminal-title {font-size:18px}
+  .search-panel .ports .port-logo-choice {padding:10px;min-height:85px}
+  .sct-picker .picker-filter-grid {grid-template-columns:1fr;gap:10px}
+  .sct-picker .picker-heading h3,
+  .tfg-fleet .picker-heading h3,
+  .cnt-fleet .picker-heading h3 {font-size:16px}
+  .tfg-fleet,.cnt-fleet {padding:13px}
+  .vessel-list .vessel-row {min-height:87px;padding:12px;gap:7px}
+  .vessel-list .vessel-name {font-size:15px}
+  .vessel-list .vessel-meta {font-size:12px}
+  .vessel-list .vessel-right {flex-basis:47%}
+  .vessel-list .result-label {font-size:11px;padding:8px}
+}
+@media(max-width:340px) {
+  .search-panel .ports {gap:7px}
+  .search-panel .ports .port-logo-choice {padding:9px 7px;min-height:83px}
+  .search-panel .ports .terminal-title {font-size:17px}
+  .search-panel .ports .port-logo-cnt {width:45px;height:21px}
+  .search-panel .ports .port-logo-sct {width:46px;height:28px}
+  .search-panel .ports .port-logo-pair .logo-plate-tfg {width:24px;height:24px}
+  .search-panel .ports .port-logo-tfg {width:22px;height:21px}
+  .napoli-terminal-tabs .terminal-tab-name {font-size:11px}
+  .vessel-list .vessel-right {flex-basis:45%}
+  .vessel-list .result-label {font-size:10.5px;padding:7px}
+}
+@media(prefers-reduced-motion:reduce) {
+ .booking-collapsible,.extra-filters {scroll-behavior:auto}
+}

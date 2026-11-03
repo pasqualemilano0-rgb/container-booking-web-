@@ -1,0 +1,38 @@
+name: QA diagnosi CO.NA.TE.CO.
+on:
+  push:
+    branches: [qa/tfg-v013]
+    paths:
+      - 'scripts/qa_conateco_site.py'
+      - 'scripts/qa_conateco_tls.py'
+      - 'scripts/conateco_verified_https.py'
+      - 'scripts/qa_conateco_javascript.py'
+      - 'scripts/qa_conateco_api.py'
+      - 'scripts/qa_conateco_api_verified.py'
+      - 'scripts/conateco_api_https.py'
+      - 'scripts/qa_conateco_forecast.py'
+      - '.github/workflows/qa-conateco.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests beautifulsoup4
+      - name: Ispeziona HTML pubblico senza inserire booking
+        run: python -m scripts.qa_conateco_site
+      - name: Analizza script pubblici del forecast e del form
+        run: python -m scripts.qa_conateco_javascript
+      - name: Verifica accesso compatibilità API con booking inesistente
+        run: python -m scripts.qa_conateco_api
+      - name: Verifica API pubblica con TLS corretto e booking inesistente
+        run: python -m scripts.qa_conateco_api_verified
+      - name: Analizza API delle quattro categorie navi pubbliche
+        run: python -m scripts.qa_conateco_forecast

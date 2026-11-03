@@ -1,0 +1,22 @@
+name: Collaudo pubblico monitor Cloudflare (produzione)
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/qa_cloudflare_monitor_public.py'
+      - '.github/workflows/qa-cloudflare-monitor-public.yml'
+permissions:
+  contents: read
+jobs:
+  public-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install requests
+      - name: Verifica produzione Cloudflare dall'esterno, nessun booking reale
+        run: python -m scripts.qa_cloudflare_monitor_public

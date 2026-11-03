@@ -1,0 +1,28 @@
+name: QA API TFG Cloudflare pubblica senza login
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'cloudflare/index.mjs'
+      - 'cloudflare/parse_tfg.mjs'
+      - 'scripts/qa_tfg_public_backend.py'
+      - '.github/workflows/qa-tfg-public.yml'
+  schedule:
+    - cron: '17 */6 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: qa-tfg-public-read-only
+  cancel-in-progress: true
+jobs:
+  anonymous-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Richiesta anonima API navi TFG, CORS e integrità dati
+        run: python scripts/qa_tfg_public_backend.py

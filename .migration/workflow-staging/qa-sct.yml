@@ -1,0 +1,28 @@
+name: QA approfondita SCT Salerno
+on:
+  push:
+    branches: [qa/tfg-v013]
+    paths:
+      - 'scripts/qa_sct_public.py'
+      - 'scripts/fetch_sct.py'
+      - 'tests/test_fetch_sct.py'
+      - '.github/workflows/qa-sct.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Requirements
+        run: pip install requests beautifulsoup4
+      - name: Inspect public SCT source and parser
+        run: python -m scripts.qa_sct_public
+      - name: SCT parser tests
+        run: python -m unittest tests.test_fetch_sct -v

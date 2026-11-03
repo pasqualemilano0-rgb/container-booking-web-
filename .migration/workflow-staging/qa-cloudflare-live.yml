@@ -1,0 +1,59 @@
+name: QA Cloudflare Worker pubblicato
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qa-cloudflare-live.yml'
+permissions:
+  contents: read
+jobs:
+  verify-public-api:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verifica URL pubblico, CORS, salute e programma TFG
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json,urllib.request,urllib.error
+          base="https://container-booking-backend.pasqualemilano0.workers.dev"
+          origin="https://pasqualemilano0-rgb.github.io"
+          failed=False
+          for part in ("/api/health","/api/cnt","/api/sct","/api/tfg"):
+              req=urllib.request.Request(base+part,headers={"Origin":origin,"User-Agent":"ContainerBookingWorkerSmoke/1.0"})
+              try:
+                  with urllib.request.urlopen(req,timeout=35) as response:
+                      content=response.read(1000000)
+                      data=json.loads(content)
+                      status=response.status
+                      cors=response.headers.get("Access-Control-Allow-Origin")
+              except urllib.error.HTTPError as e:
+                  status=e.code
+                  cors=e.headers.get("Access-Control-Allow-Origin")
+                  try:data=json.loads(e.read())
+                  except Exception:data={}
+              except Exception as e:
+                  print("FAIL",part,type(e).__name__,str(e)[:220])
+                  failed=True;continue
+              print(part,"HTTP",status,"CORS",cors,"rows",len(data.get("rows",[])),"live",data.get("live"),"error",data.get("error"),"reason",data.get("reason"))
+              if cors!=origin: failed=True
+              if part=="/api/health" and (status!=200 or data.get("backend")!="cloudflare-workers"):failed=True
+              if part in ("/api/cnt","/api/sct") and (status!=200 or data.get("live")!=False):failed=True
+              if part=="/api/tfg":
+                  if status!=200 or data.get("live")!=True or data.get("booking_verified")!=False:
+                      print("TFG direct reading NOT READY")
+                      failed=True
+                  else:
+                      print("TFG acquired:",data.get("acquired_at"),"Source declared update:",data.get("source_updated_at"))
+                      print("TFG vessel names:",[r.get("vessel") for r in data.get("rows",[])])
+                      snapshot_url="https://raw.githubusercontent.com/pasqualemilano0-rgb/container-booking-web-/main/data/tfg_schedule.json"
+                      with urllib.request.urlopen(snapshot_url,timeout=15) as source:
+                          previous=json.load(source)
+                      if data.get("source_updated_at")==previous.get("source_updated_at"):
+                          minimum=max(1,int(len(previous.get("rows",[]))*0.8))
+                          print("TFG matching-source comparison:",len(data["rows"]),"versus",len(previous["rows"]),"minimum",minimum)
+                          if len(data["rows"])<minimum:failed=True
+          if failed:raise SystemExit(1)
+          PY

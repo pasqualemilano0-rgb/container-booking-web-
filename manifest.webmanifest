@@ -1,0 +1,17 @@
+{
+  "name": "Container Booking Web",
+  "short_name": "ContainerBooking",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f7f9",
+  "theme_color": "#006f89",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

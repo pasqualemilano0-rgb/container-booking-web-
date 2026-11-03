@@ -1,0 +1,42 @@
+name: Sonda Cloudflare verso i tre portali ufficiali
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/qa-cloudflare-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  direct-probe:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Install requests
+        run: python -m pip install requests
+      - name: Verifica diretta senza booking tramite Cloudflare staging
+        shell: python
+        run: |
+          import json,requests
+          base="https://container-booking-monitor-stage.pasqualemilano0.workers.dev/probe?terminal="
+          results={}
+          for term in ("cnt","tfg","sct"):
+              try:
+                  r=requests.get(base+term,timeout=30,headers={"Accept":"application/json"})
+                  try:data=r.json()
+                  except ValueError:data={"status":"error","code":"NON_JSON_RESPONSE",
+                       "body_start":r.text[:120]}
+                  status=r.status_code
+              except Exception as e:
+                  status=0;data={"status":"error","code":type(e).__name__}
+              results[term]={"http":status,**data}
+              print(term,json.dumps(results[term],ensure_ascii=False),flush=True)
+          if results["sct"].get("status")!="ok":
+              try:
+                  d=requests.get(base+"sct&debug=1",timeout=30).json()
+                  print("SCT_DEBUG",json.dumps(d,ensure_ascii=False)[:5500],flush=True)
+              except Exception as exc:
+                  print("SCT_DEBUG_FAILED",type(exc).__name__,flush=True)
+          print("SOURCES_OK",sum(v.get("status")=="ok" for v in results.values()),"/3")
+          if all(v.get("status")!="ok" for v in results.values()):
+              raise RuntimeError("Cloudflare cannot currently read any official terminal")

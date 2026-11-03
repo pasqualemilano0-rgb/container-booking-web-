@@ -1,0 +1,46 @@
+name: QA completa prepubblicazione Napoli e Salerno v0.15
+on:
+  push:
+    branches: [qa/tfg-v013]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Librerie Python
+        run: pip install requests beautifulsoup4
+      - name: Sintassi JS
+        run: node --check app.js && node --check tfg_schedule.mjs && node --check tfg.mjs && node --check rules.mjs && node --check conateco_rules.mjs
+      - name: Test unitari JS
+        run: node --test tests/*.test.mjs
+      - name: Test unitari e HTML Python
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Acquisizione reale navi SCT, TFG e CONATECO per collaudo
+        run: |
+          python -m scripts.fetch_sct
+          python -m scripts.fetch_tfg_schedule
+          python -m scripts.fetch_conateco
+      - name: Browser Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+          python -m http.server 8765 --bind 127.0.0.1 >/tmp/container-qa-http.log 2>&1 &
+          sleep 2
+          node tests/qa_browser.cjs
+          node tests/qa_conateco_live.cjs
+          node tests/qa_cnt_browser.cjs
+          node tests/qa_sct_browser.cjs
+      - name: Prova HTTPS verificata e parsing reale TFG
+        run: python -m scripts.qa_tfg_live

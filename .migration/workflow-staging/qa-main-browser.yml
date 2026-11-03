@@ -1,0 +1,94 @@
+name: QA Chromium Android - Container Booking
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'driver-ui.mjs'
+      - 'auto-update.mjs'
+      - 'booking_search.mjs'
+      - 'tfg.mjs'
+      - 'tfg_booking.mjs'
+      - 'conateco_booking.mjs'
+      - 'cloudflare/**'
+      - 'styles.css'
+      - 'driver-ui.css'
+      - 'rules.mjs'
+      - 'conateco_rules.mjs'
+      - 'tfg_schedule.mjs'
+      - 'delivery_location.mjs'
+      - 'tests/**'
+      - '.github/workflows/qa-main-browser.yml'
+      - '.github/workflows/pages.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'driver-ui.mjs'
+      - 'auto-update.mjs'
+      - 'booking_search.mjs'
+      - 'tfg.mjs'
+      - 'tfg_booking.mjs'
+      - 'conateco_booking.mjs'
+      - 'cloudflare/**'
+      - 'styles.css'
+      - 'driver-ui.css'
+      - 'rules.mjs'
+      - 'conateco_rules.mjs'
+      - 'tfg_schedule.mjs'
+      - 'delivery_location.mjs'
+      - 'tests/**'
+      - '.github/workflows/qa-main-browser.yml'
+      - '.github/workflows/pages.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: container-booking-browser-qa
+  cancel-in-progress: true
+jobs:
+  chromium-mobile-smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Test Python parser e struttura pagina
+        run: |
+          pip install --disable-pip-version-check requests beautifulsoup4
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Esegui test JavaScript delle regole e dei terminal
+        run: node --test tests/*.test.mjs
+      - name: Installa Playwright Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Avvia server locale e prova tutti i terminal
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --bind 127.0.0.1 > /tmp/container-booking-qa-http.log 2>&1 &
+          sleep 2
+          node tests/qa_network_recovery.cjs
+          node tests/qa_auto_terminals.cjs
+          node tests/qa_tfg_failover.cjs
+          node tests/qa_tfg_acceptance.cjs
+          node tests/qa_booking_search.cjs
+          node tests/qa_stale_delivery.cjs
+          node tests/qa_cnt_archive.cjs
+          node tests/qa_sct_browser.cjs
+          node tests/qa_refresh_races.cjs
+          node tests/qa_public_site.cjs
+      - name: Salva screenshot solo se test falliscono
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-browser-failures
+          path: qa-results/
+          if-no-files-found: ignore

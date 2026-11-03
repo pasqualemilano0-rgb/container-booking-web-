@@ -1,0 +1,29 @@
+name: Diagnostica API booking CO.NA.TE.CO. (solo codici sintetici)
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/qa_booking_endpoint_diagnostic.py'
+      - '.github/workflows/qa-booking-endpoint.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnostic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install requests beautifulsoup4
+      - name: Read public booking form and test synthetic booking with verified HTTPS
+        run: python -m scripts.qa_booking_endpoint_diagnostic
+
+      - name: Browser Chromium — TLS e CORS da origine GitHub Pages
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+          node scripts/qa_conateco_browser_live.cjs

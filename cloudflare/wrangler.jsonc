@@ -1,0 +1,26 @@
+{
+  "name": "container-booking-backend",
+  "main": "./index.mjs",
+  "compatibility_date": "2026-10-31",
+  "workers_dev": true,
+  "kv_namespaces": [
+    {
+      "binding": "SCHEDULES_KV",
+      "id": "0f3ce70b4e934cb3b8d78083a2ef5f23"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "*/15 * * * *"
+    ]
+  },
+  "ratelimits": [
+    {"name":"BOOKING_CLIENT_LIMIT","namespace_id":"62731","simple":{"limit":20,"period":60}},
+    {"name":"BOOKING_GLOBAL_LIMIT","namespace_id":"62732","simple":{"limit":180,"period":60}},
+    {"name":"TFG_CLIENT_LIMIT","namespace_id":"62733","simple":{"limit":45,"period":60}},
+    {"name":"TFG_GLOBAL_LIMIT","namespace_id":"62734","simple":{"limit":300,"period":60}}
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

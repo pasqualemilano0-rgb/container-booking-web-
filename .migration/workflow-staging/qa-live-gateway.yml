@@ -1,0 +1,22 @@
+name: QA pubblica HTTP e rate limiting (una tantum)
+# Manual only: a real 429 probe must not run on every PR update.
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: container-booking-live-429-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+jobs:
+  controlled-production-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Public HTTP and safe malformed-payload 429 verification
+        # Intentionally invalid booking value; no actual booking or official
+        # TFG request. Stops after first 429, maximum 32 paced small POSTs.
+        run: node tests/qa_live_gateway.cjs

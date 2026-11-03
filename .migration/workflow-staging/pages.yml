@@ -1,0 +1,106 @@
+name: Test e aggiornamento navi Container Booking
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # SCT, TFG e CO.NA.TE.CO. ogni 15 minuti. GitHub può ritardare.
+    - cron: '7 * * * *'
+    - cron: '22,37,52 * * * *'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: container-booking-verify-and-refresh
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    # Keep source and UI checks on pushes/manual runs; cron is for data refresh.
+    if: github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installa librerie di test
+        run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Controlla sintassi JavaScript
+        run: node --check app.js && node --check driver-ui.mjs && node --check rules.mjs && node --check tfg.mjs && node --check tfg_schedule.mjs && node --check conateco_rules.mjs && node --check delivery_location.mjs && node --check conateco_booking.mjs && node --check tfg_booking.mjs && node --check booking_search.mjs && node --check conateco_fleet.mjs
+      - name: Controlla sintassi backend Cloudflare
+        run: |
+          for file in cloudflare/*.mjs; do node --check "$file"; done
+      - name: Test delle regole operative
+        run: node --test tests/*.test.mjs
+      - name: Test dei parser e della pagina
+        run: python -m unittest discover -s tests -p 'test_*.py'
+  refresh:
+    # Independent of UI/markup tests: a test failure must never freeze
+    # the official vessel snapshots for drivers.
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Installa dipendenze per il recupero programmi
+        run: pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Leggi programma navi pubblico SCT (ogni 15 minuti)
+        run: |
+          python -m scripts.fetch_sct || echo "SCT non disponibile: conserva i dati precedenti e mostra avviso."
+      - name: Controlla programma navi pubblico TFG (ogni 15 minuti)
+        run: |
+          python -m scripts.fetch_tfg_schedule || echo "TFG non disponibile: mantieni dati precedenti e avviso."
+      - name: Controlla navi pubbliche CO.NA.TE.CO. (ogni 15 minuti)
+        run: |
+          python -m scripts.fetch_conateco || echo "CONATECO non disponibile: mantieni la copia precedente."
+      - name: Pubblica snapshot navi senza conflitti sul ramo main
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- data/sct.json data/tfg_schedule.json data/conateco.json; then
+            echo 'Nessuna variazione nel programma.'
+            exit 0
+          fi
+          # Salva i dati acquisiti in una directory temporanea. I commit di
+          # altri job possono aver aggiornato main durante il download.
+          candidates="$(mktemp -d)"
+          trap 'rm -rf "$candidates"' EXIT
+          mkdir -p "$candidates/data"
+          cp data/sct.json data/tfg_schedule.json data/conateco.json "$candidates/data/"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4; do
+            git fetch --no-tags origin main
+            # Solo sulla copia temporanea del runner: non tocca l'utente.
+            git reset --hard origin/main
+            python -m scripts.publish_snapshots "$candidates"
+            if git diff --quiet -- data/sct.json data/tfg_schedule.json data/conateco.json; then
+              echo "I dati in main sono gia' piu' recenti o identici."
+              exit 0
+            fi
+            git add data/sct.json data/tfg_schedule.json data/conateco.json
+            git commit -m "Aggiorna programmi navi SCT, TFG e CONATECO [skip ci]"
+            if git push origin HEAD:main; then
+              echo "Snapshot aggiornati e pubblicati."
+              exit 0
+            fi
+            echo "main modificato da un altro job: riprovo su dati nuovi ($attempt/4)."
+            sleep "$((attempt * 2))"
+          done
+          echo "Impossibile salvare snapshot dopo quattro tentativi." >&2
+          exit 1
+
+# GitHub Pages pubblica UNA SOLA volta dal ramo main/root.
+# Non usare actions/deploy-pages qui: evitiamo la competizione tra due publisher.

@@ -43,9 +43,26 @@ jobs:
           pip install --disable-pip-version-check requests beautifulsoup4
           node --test tests/*.test.mjs
           python -m unittest discover -s tests -p 'test_*.py'
-      - name: Ripristina main con la nuova cronologia
+      - name: Ripristina i file applicativi senza modificare i workflow protetti
         shell: bash
         run: |
           set -euo pipefail
-          git push --force-with-lease="refs/heads/main:$GITHUB_SHA" origin '1e1e32e3cc2491abda9ef6b29a7fac8f728ba1c1:refs/heads/main'
-          echo 'Ripristino completato: codice originale e cronologia nuova, 123 file.'
+          target='1e1e32e3cc2491abda9ef6b29a7fac8f728ba1c1'
+          test "$(git rev-parse "$target^{tree}")" = 'fceefb72f892541b49b1a580acb9c6cc0cf0d9e1'
+          mkdir -p .migration/workflow-staging
+          for file in /tmp/container-booking-clean/.github/workflows/*.yml; do
+            cp "$file" ".migration/workflow-staging/$(basename "$file")"
+          done
+          tar -C /tmp/container-booking-clean --exclude='./.github/workflows' -cf - . | tar -xf -
+          git rm -f .migration/clean-single-commit.bundle
+          git add -A
+          if git diff --cached --name-only | grep '^.github/workflows/'; then
+            echo 'Non modificare i workflow con il token GitHub Actions.' >&2
+            exit 1
+          fi
+          test "$(find .migration/workflow-staging -maxdepth 1 -name '*.yml' | wc -l)" -eq 18
+          git config user.name 'Repository maintenance'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'Restore application sources'
+          git push origin 'HEAD:refs/heads/main'
+          echo 'File applicativi pubblicati; i workflow verranno ripristinati con permessi dedicati.'

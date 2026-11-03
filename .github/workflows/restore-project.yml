@@ -1,0 +1,51 @@
+name: Ripristino sorgenti progetto
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/restore-project.yml']
+permissions:
+  contents: write
+jobs:
+  restore:
+    if: github.repository == 'pasqualemilano0-rgb/container-booking-web-'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          persist-credentials: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Controlla il bundle sorgente e il commit iniziale
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git hash-object .migration/clean-single-commit.bundle)" = '6a4b1ca545119062a5f225404304e45e0b294112'
+          git bundle verify .migration/clean-single-commit.bundle
+          git fetch .migration/clean-single-commit.bundle refs/heads/main
+          target="$(git rev-parse FETCH_HEAD)"
+          test "$target" = '1e1e32e3cc2491abda9ef6b29a7fac8f728ba1c1'
+          test "$(git rev-list --count "$target")" = '1'
+          test "$(git rev-parse "$target^{tree}")" = 'fceefb72f892541b49b1a580acb9c6cc0cf0d9e1'
+          test "$(git ls-tree -r --name-only "$target" | wc -l)" -eq 123
+          mkdir /tmp/container-booking-clean
+          git archive "$target" | tar -x -C /tmp/container-booking-clean
+      - name: Prova codice e regole dei terminali prima del ripristino
+        shell: bash
+        working-directory: /tmp/container-booking-clean
+        run: |
+          set -euo pipefail
+          pip install --disable-pip-version-check requests beautifulsoup4
+          node --test tests/*.test.mjs
+          python -m unittest discover -s tests -p 'test_*.py'
+      - name: Ripristina main con la nuova cronologia
+        shell: bash
+        run: |
+          set -euo pipefail
+          git push --force-with-lease="refs/heads/main:$GITHUB_SHA" origin '1e1e32e3cc2491abda9ef6b29a7fac8f728ba1c1:refs/heads/main'
+          echo 'Ripristino completato: codice originale e cronologia nuova, 123 file.'

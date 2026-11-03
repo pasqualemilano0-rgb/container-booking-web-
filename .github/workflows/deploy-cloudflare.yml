@@ -13,7 +13,22 @@ concurrency:
   group: cloudflare-container-booking-deploy
   cancel-in-progress: false
 jobs:
+  verify:
+    name: Validate Cloudflare backend
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Check backend modules and automated tests
+        run: |
+          set -euo pipefail
+          for file in cloudflare/*.mjs; do node --check "$file"; done
+          node --test tests/cloudflare_*.test.mjs
   deploy:
+    needs: verify
     # No external account is changed until its owner enables the variable.
     if: vars.CLOUDFLARE_DEPLOY_ENABLED == 'true'
     runs-on: ubuntu-latest

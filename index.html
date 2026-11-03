@@ -1,180 +1,19 @@
 <!doctype html>
 <html lang="it">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#006f89" />
-  <meta name="description" content="Container Booking Web: verifica operativa container Napoli e Salerno. Prototipo di test non ufficiale." />
-  <meta name="referrer" content="no-referrer" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self' https://api.conateco.it https://raw.githubusercontent.com https://container-booking-backend.pasqualemilano0.workers.dev; base-uri 'none'; object-src 'none'; form-action 'self' https://tfg.bucci.it" />
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="manifest" href="manifest.webmanifest?v=20261031-v17" />
-  <link rel="stylesheet" href="styles.css?v=20261031-lts-v17" />
-  <link rel="stylesheet" href="driver-ui.css?v=20261102-v64" />
-  <title>Container Booking • Navi e avvisi</title>
-  <script type="module" src="app.js?v=20261102-v65"></script>
-  <script type="module" src="driver-ui.mjs?v=20261031-v44"></script>
-  <script type="module" src="auto-update.mjs?v=20261031-v27"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta http-equiv="refresh" content="0; url=https://pasqualemilano0-rgb.github.io/LTS-Registro-Viaggi/">
+<meta name="referrer" content="no-referrer">
+<title>Porti e booking | LTS Registro Viaggi</title>
+<link rel="canonical" href="https://pasqualemilano0-rgb.github.io/LTS-Registro-Viaggi/">
 </head>
 <body>
-  <div class="shell">
-    <header class="top truck-top">
-      <img class="lts-brand-logo" src="assets/lts-logo.png" alt="Logo LTS Registro Viaggi" width="116" height="46" decoding="async" />
-      <div class="app-brand-copy"><h1>Container Booking</h1><span class="eyebrow">NAVI E AVVISI</span></div>
-      <span class="pill testing">NON UFFICIALE</span>
-    </header>
-    <main>
-      <p class="driver-notice" role="note">Consulta solo a veicolo fermo. Controlla sempre il sito ufficiale prima di entrare in porto.</p>
-      <section class="panel search-panel" aria-labelledby="search-title">
-        <div class="panel-head"><h2 id="search-title">Dove devi consegnare?</h2></div>
-        <fieldset class="terminals ports"><legend class="sr-only">Seleziona il porto</legend>
-          <label class="terminal-choice port-logo-choice"><input type="radio" name="port" value="napoli" checked />
-            <span class="port-choice-head"><span class="driver-port-icon" aria-hidden="true">⚓</span><span class="terminal-title">NAPOLI</span></span>
-            <span class="terminal-sub">CO.NA.TE.CO. · TFG</span></label>
-          <label class="terminal-choice port-logo-choice"><input type="radio" name="port" value="salerno" />
-            <span class="port-choice-head"><span class="driver-port-icon" aria-hidden="true">🚢</span><span class="terminal-title">SALERNO</span></span>
-            <span class="terminal-sub">SCT</span></label>
-        </fieldset>
-        <form id="search-form" autocomplete="off">
-          <div class="sct-picker" id="sct-picker" hidden>
-            <label class="driver-field-label" for="sct-filter">NOME DELLA NAVE</label>
-            <input id="sct-filter" type="search" placeholder="Inserisci nome nave" spellcheck="false" autocomplete="off" />
-            <button id="sct-search-btn" class="primary" type="button">☰ &nbsp; VEDI NAVI</button>
-            <div id="sct-alert" class="ops-alert" role="status" aria-live="polite" data-state="loading">Caricamento del programma navi…</div>
-            <div id="sct-vessel-results" class="driver-vessel-results">
-              <div class="vessel-list-heading">
-                <strong>Navi disponibili · tocca per dettagli</strong>
-                <span id="sct-vessel-count" aria-live="polite">—</span>
-              </div>
-              <div id="sct-vessel-list" class="vessel-list" aria-label="Seleziona una nave">
-                <p class="empty">Caricamento delle navi in corso…</p>
-              </div>
-              <button id="sct-show-more" type="button" class="show-more" hidden>Mostra altre navi</button>
-              <p class="picker-disclaimer">Se ci sono più viaggi, tocca quello giusto. La verifica riguarda la nave, non l'autorizzazione del booking.</p>
-            </div>
-            <details class="driver-extra">
-              <summary>Tipo container e aggiornamento</summary>
-              <label class="mini-field" for="sct-type">Tipo container
-                <select id="sct-type">
-                  <option value="all">Dry e Reefer</option>
-                  <option value="dry">Solo Dry</option>
-                  <option value="reefer">Solo Reefer</option>
-                </select>
-              </label>
-              <label class="picker-check" for="sct-only-open">
-                <input id="sct-only-open" type="checkbox" />
-                Mostra solo navi con accettazione confermata
-              </label>
-              <p id="sct-picker-status" class="picker-status" aria-live="polite"></p>
-              <button type="button" id="reload-sct" class="text-btn">Aggiorna programma navi</button>
-              <p class="picker-disclaimer">Fonte: copia periodica del Vessel Schedule SCT, non interrogazione in tempo reale.</p>
-            </details>
-          </div>
-          <details id="napoli-booking-details" class="booking-collapsible" open>
-            <summary><span class="booking-summary-title">Verifica un booking</span><span class="booking-summary-hint">Apri i controlli dei terminal</span></summary>
-            <div id="napoli-booking-controls">
-            <div class="booking-quick-select" role="group" aria-label="Terminal per la verifica booking">
-              <span class="booking-quick-title">VERIFICA BOOKING PRESSO</span>
-              <div class="booking-quick-options">
-                <button type="button" data-booking-target="cnt" aria-pressed="true">CO.NA.TE.CO.</button>
-                <button type="button" data-booking-target="tfg" aria-pressed="false">TFG</button>
-              </div>
-            </div>
-            <label class="field-label" for="query" id="query-label">Numero booking</label>
-            <div class="query-wrap"><input id="query" name="query" type="text" maxlength="65" inputmode="text" placeholder="Es. EBKG19223970" required spellcheck="false" autocapitalize="characters" aria-describedby="booking-feedback query-help" /><button class="clear-btn" type="button" id="clear-query" aria-label="Cancella ricerca">×</button></div>
-            <p id="booking-feedback" class="booking-feedback" role="alert" aria-live="assertive"></p>
-            <p class="field-help" id="query-help">CO.NA.TE.CO.: ricerca diretta sul servizio ufficiale. Il numero viene inviato solo a CO.NA.TE.CO. quando premi Cerca.</p>
-            <button class="primary" type="submit" id="search-btn">⌕  CERCA BOOKING CNT <span aria-hidden="true">›</span></button>
-            </div>
-          </details>
-          <div class="napoli-shortcuts" id="napoli-shortcuts" aria-label="Apri i programmi navi di Napoli">
-            <p class="shortcuts-heading">PROGRAMMA NAVI NAPOLI</p>
-            <div class="shortcuts-grid">
-              <button type="button" class="ship-shortcut" data-open-terminal="cnt" aria-controls="napoli-advanced" aria-pressed="true">
-                <span class="shortcut-symbol shortcut-cnt" aria-hidden="true">CNT</span>
-                <span class="shortcut-copy"><strong>CO.NA.TE.CO.</strong><small>Vedi le navi</small></span>
-                <span class="shortcut-arrow" aria-hidden="true">›</span>
-              </button>
-              <button type="button" class="ship-shortcut" data-open-terminal="tfg" aria-controls="napoli-advanced" aria-pressed="false">
-                <span class="shortcut-symbol shortcut-tfg" aria-hidden="true">TFG</span>
-                <span class="shortcut-copy"><strong>Flavio Gioia</strong><small>Vedi le navi TFG</small></span>
-                <span class="shortcut-arrow" aria-hidden="true">›</span>
-              </button>
-            </div>
-            <p class="shortcuts-tip">Programmi navi, non conferma del booking.</p>
-          </div>
-        </form>
-      </section>
-      <section class="panel results-panel" id="results" aria-live="polite" aria-label="Risultato ricerca" hidden></section>
-      <details id="napoli-advanced" class="napoli-advanced">
-        <summary>Programmi e dettagli Napoli <span>CO.NA.TE.CO. e TFG</span></summary>
-        <div class="napoli-advanced-body">
-        <section class="napoli-terminal-switch" id="napoli-terminal-switch" aria-label="Selettore terminal interno" hidden>
-        <div class="vessel-list-heading"><strong>Seleziona il terminal a Napoli</strong></div>
-        <div class="napoli-terminal-tabs">
-          <label class="terminal-tab"><input type="radio" name="napoli-terminal" value="cnt" checked />
-            <span class="terminal-tab-body">
-              <span class="terminal-tab-logo-frame"><img class="terminal-logo terminal-tab-logo-cnt" src="assets/terminal-logos/conateco.png" width="250" height="71" alt="" decoding="async" /></span>
-              <span class="terminal-tab-name">CO.NA.TE.CO.</span>
-            </span>
-          </label>
-          <label class="terminal-tab"><input type="radio" name="napoli-terminal" value="tfg" />
-            <span class="terminal-tab-body">
-              <span class="terminal-tab-logo-frame logo-plate-tfg"><img class="terminal-logo terminal-tab-logo-tfg" src="assets/terminal-logos/tfg-portal.png" width="182" height="122" alt="" decoding="async" /></span>
-              <span class="terminal-tab-name">TFG Flavio Gioia</span>
-            </span>
-          </label>
-        </div>
-      </section>
-      <section class="tfg-fleet" id="tfg-fleet" hidden aria-label="Elenco navi TFG Napoli">
-          <div class="picker-heading">
-            <span class="terminal-heading"><span class="terminal-logo-plate logo-plate-tfg"><img class="terminal-logo terminal-heading-logo logo-tfg" src="assets/terminal-logos/tfg-portal.png" width="182" height="122" alt="" decoding="async" /></span><h3>Navi TFG · Napoli</h3></span>
-            <button type="button" id="tfg-reload" class="text-btn">Aggiorna</button>
-          </div>
-          <div id="tfg-feed-alert" class="ops-alert" data-state="loading" role="status" aria-live="polite">Caricamento programma TFG…</div>
-          <label class="mini-field" for="tfg-ship-filter">Cerca nave o viaggio
-            <input id="tfg-ship-filter" type="search" placeholder="Nome nave o viaggio…" autocomplete="off" spellcheck="false" />
-          </label>
-          <div class="vessel-list-heading">
-            <strong>Navi trovate</strong><span id="tfg-vessel-count">—</span>
-          </div>
-          <div id="tfg-vessel-list" class="vessel-list" aria-label="Elenco navi TFG"></div>
-          <button type="button" id="tfg-show-more" class="show-more" hidden>Mostra altre navi</button>
-          <p id="tfg-feed-updated" class="picker-status"></p>
-          <a class="secondary-btn tfg-direct-link" target="_blank" rel="noopener noreferrer" href="https://tfg.bucci.it/@/TFGW_TP_ETA">Programma navi ufficiale TFG ↗</a>
-        </section>
-      <section class="tfg-fleet cnt-fleet" id="cnt-fleet" aria-label="Elenco navi CO.NA.TE.CO. Napoli">
-        <div class="picker-heading">
-          <span class="terminal-heading"><img class="terminal-logo terminal-heading-logo logo-cnt" src="assets/terminal-logos/conateco.png" width="250" height="71" alt="" decoding="async" /><h3>Navi CO.NA.TE.CO. · Napoli</h3></span>
-          <button type="button" id="cnt-reload" class="text-btn">Aggiorna</button>
-        </div>
-        <div id="cnt-feed-alert" class="ops-alert" data-state="loading" role="status" aria-live="polite">Caricamento Berth Forecast…</div>
-        <label class="mini-field" for="cnt-ship-filter">Cerca nave o viaggio
-          <input id="cnt-ship-filter" type="search" placeholder="Nave o viaggio d'imbarco…" autocomplete="off" spellcheck="false" />
-        </label>
-        <div class="vessel-list-heading">
-          <strong>Navi trovate</strong><span id="cnt-vessel-count">—</span>
-        </div>
-        <button type="button" id="cnt-archive-toggle" class="cnt-archive-toggle" aria-pressed="false" hidden>Mostra navi partite</button>
-        <div id="cnt-vessel-list" class="vessel-list" aria-label="Elenco navi CO.NA.TE.CO."></div>
-        <button type="button" id="cnt-show-more" class="show-more" hidden>Mostra altre navi</button>
-        <p id="cnt-feed-updated" class="picker-status"></p>
-        <p class="picker-disclaimer">CO.NA.TE.CO.: DRYPORT e INTERNO PORTO sono <strong>indicazioni presunte</strong> dal segnale depositi esterni, non una destinazione confermata. Verifica il tuo booking prima di partire.</p>
-        <a class="secondary-btn tfg-direct-link" target="_blank" rel="noopener noreferrer" href="https://www.conateco.it/berth-forecast/">Berth Forecast ufficiale ↗</a>
-      </section>
-        </div>
-      </details>
-      <details class="sources">
-        <summary>Fonti ufficiali e informazioni</summary>
-        <p>Questa web app non è affiliata ai terminal. I dati non equivalgono a un'autorizzazione di ingresso.</p>
-        <div class="source-grid">
-          <a target="_blank" rel="noopener noreferrer" href="https://www.conateco.it/booking-export/">CO.NA.TE.CO. <span>↗</span></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://tfg.bucci.it/@/TFGW_WW_BKK">TFG <span>↗</span></a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.salernocontainerterminal.com/vessel-schedule/">SCT Salerno <span>↗</span></a>
-        </div>
-      </details>
-      <footer class="app-footer"><span>Container Booking Web · v0.65 · Nessuna autorizzazione d'ingresso viene emessa dall'app.</span><span id="auto-update-status" role="status" aria-live="polite">Aggiornamenti automatici attivi</span><button type="button" hidden id="refresh-app" class="app-refresh" aria-label="Aggiornamento interno">Aggiorna app</button></footer>
-    </main>
-  </div>
+<main>
+<h1>Porti e booking è integrato in LTS Registro Viaggi</h1>
+<p>Per utilizzare la ricerca booking e consultare le navi accedi a LTS Registro Viaggi con il tuo account autorizzato, quindi apri la sezione Porti.</p>
+<p><a href="https://pasqualemilano0-rgb.github.io/LTS-Registro-Viaggi/">Apri LTS Registro Viaggi</a></p>
+</main>
 </body>
 </html>

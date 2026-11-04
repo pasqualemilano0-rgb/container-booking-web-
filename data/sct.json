@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-04T00:09:53.247996+00:00",
-  "acquired_at": "2026-11-04T00:09:53.247996+00:00",
+  "updated_at": "2026-11-04T06:30:55.004618+00:00",
+  "acquired_at": "2026-11-04T06:30:55.004618+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-04T00:09:53.247996+00:00",
+  "data_changed_at": "2026-11-04T06:30:55.004618+00:00",
   "rows": [
     {
       "vessel": "GRANDE SVEZIA",
@@ -24,15 +24,6 @@
       "status": "PENDING"
     },
     {
-      "vessel": "RACHEL BORCHARD",
-      "voyage": "1032",
-      "eta": "03/11/2026 17:00",
-      "closing": "03/11/2026 12:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
       "vessel": "ARGENTINIAN",
       "voyage": "0HWL8E1MA",
       "eta": "03/11/2026 19:00",
@@ -40,6 +31,15 @@
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
+    },
+    {
+      "vessel": "RACHEL BORCHARD",
+      "voyage": "1032",
+      "eta": "03/11/2026 20:00",
+      "closing": "03/11/2026 17:00 CLOSED",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "DEPARTED"
     },
     {
       "vessel": "AMELIE BORCHARD",

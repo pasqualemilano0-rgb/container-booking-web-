@@ -180,9 +180,9 @@
       "category": "PREVISTE",
       "voyage_id": "202600363",
       "carrier": "DIAMOND LINE",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-11-02 06:30",
       "closing": "2026-11-04 17:00",
@@ -197,8 +197,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600358",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-10-27 12:00",
@@ -265,8 +265,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600376",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-10-29 12:00",
@@ -282,8 +282,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600375",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-03 14:00",
@@ -683,5 +683,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-04T16:12:50.091904+00:00"
+  "acquired_at": "2026-11-04T20:57:42.831879+00:00"
 }

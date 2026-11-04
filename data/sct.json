@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-04T07:27:18.310872+00:00",
-  "acquired_at": "2026-11-04T07:27:18.310872+00:00",
+  "updated_at": "2026-11-04T16:12:44.203138+00:00",
+  "acquired_at": "2026-11-04T16:12:44.203138+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-04T06:30:55.004618+00:00",
+  "data_changed_at": "2026-11-04T16:12:44.203138+00:00",
   "rows": [
     {
       "vessel": "GRANDE SVEZIA",
@@ -18,7 +18,7 @@
       "vessel": "X-PRESS SAGARMALA",
       "voyage": "645W",
       "eta": "03/11/2026 14:30",
-      "closing": "03/11/2026 12:00 CLOSED",
+      "closing": "04/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -27,7 +27,7 @@
       "vessel": "ARGENTINIAN",
       "voyage": "0HWL8E1MA",
       "eta": "03/11/2026 19:00",
-      "closing": "03/11/2026 17:00 CLOSED",
+      "closing": "05/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -36,7 +36,7 @@
       "vessel": "RACHEL BORCHARD",
       "voyage": "1032",
       "eta": "03/11/2026 20:00",
-      "closing": "03/11/2026 17:00 CLOSED",
+      "closing": "04/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "DEPARTED"
@@ -54,25 +54,7 @@
       "vessel": "KINGSTON",
       "voyage": "024W",
       "eta": "04/11/2026 01:00",
-      "closing": "03/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "SARA BORCHARD",
-      "voyage": "0475",
-      "eta": "05/11/2026 00:00",
-      "closing": "04/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "MAERSK GATESHEAD",
-      "voyage": "644W",
-      "eta": "05/11/2026 00:00",
-      "closing": "05/11/2026 17:00",
+      "closing": "04/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -80,7 +62,25 @@
     {
       "vessel": "ATRIA",
       "voyage": "ATI0526E",
-      "eta": "05/11/2026 00:00",
+      "eta": "05/11/2026 03:00",
+      "closing": "05/11/2026 12:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "SARA BORCHARD",
+      "voyage": "0475",
+      "eta": "05/11/2026 06:00",
+      "closing": "04/11/2026 17:00 CLOSED",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "MAERSK GATESHEAD",
+      "voyage": "644W",
+      "eta": "05/11/2026 12:00",
       "closing": "05/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
@@ -90,7 +90,7 @@
       "vessel": "DIANE A",
       "voyage": "MAS30E26",
       "eta": "06/11/2026 00:00",
-      "closing": "05/11/2026 17:00",
+      "closing": "06/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -105,8 +105,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "MSC CORNELIA",
-      "voyage": "CD645A",
+      "vessel": "OOCL KOBE",
+      "voyage": "643N",
       "eta": "07/11/2026 00:00",
       "closing": "07/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -117,16 +117,16 @@
       "vessel": "CONTSHIP ERA",
       "voyage": "93E",
       "eta": "07/11/2026 00:00",
-      "closing": "06/11/2026 17:00",
+      "closing": "07/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {
-      "vessel": "OOCL KOBE",
-      "voyage": "643N",
+      "vessel": "MSC CORNELIA",
+      "voyage": "CD645A",
       "eta": "07/11/2026 00:00",
-      "closing": "06/11/2026 17:00",
+      "closing": "07/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -199,6 +199,15 @@
       "voyage": "GDE0526",
       "eta": "10/11/2026 08:00",
       "closing": "09/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "JOANNA BORCHARD",
+      "voyage": "1194",
+      "eta": "11/11/2026 00:00",
+      "closing": "10/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

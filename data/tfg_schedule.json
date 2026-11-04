@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-03T13:53:05+01:00",
+  "source_updated_at": "2026-11-04T15:26:04+01:00",
   "rows": [
     {
       "vessel": "CATHERINEC",
@@ -107,8 +107,8 @@
       "departure_voyage": "645W",
       "eta": "05/11/26 19:00",
       "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "",
-      "fast_corridor_cut_off": "",
+      "custom_close_time": "05/11/26 15:00:00",
+      "fast_corridor_cut_off": "05/11/26 10:00:00",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
@@ -116,20 +116,9 @@
       "vessel": "SUNAID X",
       "arrival_voyage": "018",
       "departure_voyage": "018",
-      "eta": "07/11/26",
+      "eta": "08/11/26",
       "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "",
-      "fast_corridor_cut_off": "",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
-      "vessel": "HANNA",
-      "arrival_voyage": "AGA040S19",
-      "departure_voyage": "AGA040S19",
-      "eta": "09/11/26",
-      "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "",
+      "custom_close_time": "06/11/26 15:00:00",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
@@ -140,7 +129,18 @@
       "departure_voyage": "0HWLAE1MA",
       "eta": "10/11/26",
       "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "",
+      "custom_close_time": "09/11/26 15:00:00",
+      "fast_corridor_cut_off": "",
+      "gate_cut_off": "",
+      "destination": "INTERNO PORTO"
+    },
+    {
+      "vessel": "HANNA",
+      "arrival_voyage": "AGA040S19",
+      "departure_voyage": "AGA040S19",
+      "eta": "10/11/26",
+      "acceptance": "ACCETTA CARICO",
+      "custom_close_time": "09/11/26 15:00:00",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
@@ -150,7 +150,7 @@
       "arrival_voyage": "645E",
       "departure_voyage": "646W",
       "eta": "12/11/26",
-      "acceptance": "NON ACCETTA CARICO",
+      "acceptance": "CARICO DAL 09/11/26 08:00:00",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -234,5 +234,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-04T07:27:20.436774+00:00"
+  "acquired_at": "2026-11-04T14:48:53.841386+00:00"
 }

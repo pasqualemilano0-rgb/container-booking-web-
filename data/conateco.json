@@ -3,23 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "MSC HARMONY III",
-      "voyage": "AC642A",
-      "eta": "2026-10-26 12:40",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600353",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-13 14:00",
-      "closing": "2026-10-24 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "CONTSHIP JOY",
       "voyage": "AG644A",
       "eta": "2026-10-27 00:00",
@@ -156,28 +139,11 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC ADRIANA II",
-      "voyage": "AG645A",
-      "eta": "2026-11-03 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600373",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-28 06:30",
-      "closing": "2026-11-02 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "JAN",
       "voyage": "644S",
       "eta": "2026-11-04 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600363",
       "carrier": "DIAMOND LINE",
       "acceptance_flag": "1",
@@ -187,6 +153,23 @@
       "opening": "2026-11-02 06:30",
       "closing": "2026-11-04 17:00",
       "notes": "ACCETT.RETROPORTO 29/10 07:00",
+      "source_conflict": false
+    },
+    {
+      "vessel": "MSC TIANSHAN",
+      "voyage": "MG637B",
+      "eta": "2026-11-04 00:00",
+      "vessel_status": "ANN",
+      "category": "PRESENTI",
+      "voyage_id": "202600374",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "2026-10-30 12:00",
+      "closing": "2026-11-03 17:00",
+      "notes": "ACCETT.RETROPORTO 28/10 12:00 LOAD CARGO MSC VITA",
       "source_conflict": false
     },
     {
@@ -683,5 +666,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-03T19:31:13.942956+00:00"
+  "acquired_at": "2026-11-04T00:09:58.807941+00:00"
 }

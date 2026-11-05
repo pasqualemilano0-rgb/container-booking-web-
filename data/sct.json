@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-05T12:11:57.766715+00:00",
-  "acquired_at": "2026-11-05T12:11:57.766715+00:00",
+  "updated_at": "2026-11-05T16:41:54.963177+00:00",
+  "acquired_at": "2026-11-05T16:41:54.963177+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-05T12:11:57.766715+00:00",
+  "data_changed_at": "2026-11-05T16:41:54.963177+00:00",
   "rows": [
     {
       "vessel": "AMELIE BORCHARD",
@@ -27,7 +27,7 @@
       "vessel": "ATRIA",
       "voyage": "ATI0526E",
       "eta": "05/11/2026 03:00",
-      "closing": "05/11/2026 17:00",
+      "closing": "05/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -45,7 +45,7 @@
       "vessel": "MAERSK GATESHEAD",
       "voyage": "644W",
       "eta": "05/11/2026 12:00",
-      "closing": "05/11/2026 15:00",
+      "closing": "05/11/2026 15:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -54,7 +54,7 @@
       "vessel": "DIANE A",
       "voyage": "MAS30E26",
       "eta": "06/11/2026 00:00",
-      "closing": "05/11/2026 17:00",
+      "closing": "05/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -63,7 +63,7 @@
       "vessel": "ALOPO",
       "voyage": "2026W",
       "eta": "06/11/2026 00:00",
-      "closing": "05/11/2026 17:00",
+      "closing": "05/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

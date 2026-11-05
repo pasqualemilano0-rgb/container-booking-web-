@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-05T09:49:12+01:00",
+  "source_updated_at": "2026-11-05T17:37:14+01:00",
   "rows": [
     {
       "vessel": "A LA MARINE",
@@ -73,7 +73,7 @@
       "arrival_voyage": "644E",
       "departure_voyage": "645W",
       "eta": "05/11/26 19:00",
-      "acceptance": "ACCETTA CARICO",
+      "acceptance": "NAVE CHIUSA",
       "custom_close_time": "05/11/26 15:00:00",
       "fast_corridor_cut_off": "05/11/26 10:00:00",
       "gate_cut_off": "",
@@ -201,5 +201,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-05T12:11:59.745690+00:00"
+  "acquired_at": "2026-11-05T16:41:56.911860+00:00"
 }

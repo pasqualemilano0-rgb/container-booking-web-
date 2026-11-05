@@ -3,57 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "CONTSHIP JOY",
-      "voyage": "AG644A",
-      "eta": "2026-10-27 00:00",
-      "vessel_status": "ANN",
-      "category": "PARTITE",
-      "voyage_id": "202600365",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC EDITH II",
-      "voyage": "AG644A",
-      "eta": "2026-10-27 01:45",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600359",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-26 06:30",
-      "closing": "2026-10-26 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
-      "vessel": "JAN",
-      "voyage": "641S",
-      "eta": "2026-10-27 20:40",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600354",
-      "carrier": "DIAMOND LINE",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-26 06:30",
-      "closing": "2026-10-27 12:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC LAGOS X",
       "voyage": "NL640R",
       "eta": "2026-10-28 16:40",
@@ -160,7 +109,7 @@
       "voyage": "MG637B",
       "eta": "2026-11-04 00:00",
       "vessel_status": "ANN",
-      "category": "PRESENTI",
+      "category": "PARTITE",
       "voyage_id": "202600374",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -177,7 +126,7 @@
       "voyage": "644S",
       "eta": "2026-11-05 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600363",
       "carrier": "DIAMOND LINE",
       "acceptance_flag": "0",
@@ -194,7 +143,7 @@
       "voyage": "AC643A",
       "eta": "2026-11-05 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600358",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -683,5 +632,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-04T22:34:20.650704+00:00"
+  "acquired_at": "2026-11-05T01:29:18.137754+00:00"
 }

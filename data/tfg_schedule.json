@@ -3,39 +3,6 @@
   "source_updated_at": "2026-11-04T15:26:04+01:00",
   "rows": [
     {
-      "vessel": "CATHERINEC",
-      "arrival_voyage": "FD642E",
-      "departure_voyage": "FD642E",
-      "eta": "25/10/26 06:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "26/10/26 10:00:00",
-      "fast_corridor_cut_off": "26/10/26 09:09:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
-      "vessel": "HOHE BANK",
-      "arrival_voyage": "01",
-      "departure_voyage": "01",
-      "eta": "25/10/26 06:00",
-      "acceptance": "NON ACCETTA CARICO",
-      "custom_close_time": "Partita",
-      "fast_corridor_cut_off": "",
-      "gate_cut_off": "",
-      "destination": "GENERAL CARGO"
-    },
-    {
-      "vessel": "HANNA",
-      "arrival_voyage": "AGA000S19",
-      "departure_voyage": "AGA000S19",
-      "eta": "25/10/26 21:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "26/10/26 15:00:00",
-      "fast_corridor_cut_off": "26/10/26 11:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
       "vessel": "A LA MARINE",
       "arrival_voyage": "0HWL6E1MA",
       "departure_voyage": "0HWL6E1MA",
@@ -234,5 +201,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-04T22:34:17.865704+00:00"
+  "acquired_at": "2026-11-05T01:29:14.789780+00:00"
 }

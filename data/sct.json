@@ -1,46 +1,10 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-04T22:34:15.340751+00:00",
-  "acquired_at": "2026-11-04T22:34:15.340751+00:00",
+  "updated_at": "2026-11-05T01:29:12.307254+00:00",
+  "acquired_at": "2026-11-05T01:29:12.307254+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-04T16:12:44.203138+00:00",
+  "data_changed_at": "2026-11-05T01:29:12.307254+00:00",
   "rows": [
-    {
-      "vessel": "GRANDE SVEZIA",
-      "voyage": "GSV0826",
-      "eta": "03/11/2026 11:00",
-      "closing": "03/11/2026 12:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "X-PRESS SAGARMALA",
-      "voyage": "645W",
-      "eta": "03/11/2026 14:30",
-      "closing": "04/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "ARGENTINIAN",
-      "voyage": "0HWL8E1MA",
-      "eta": "03/11/2026 19:00",
-      "closing": "05/11/2026 12:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "RACHEL BORCHARD",
-      "voyage": "1032",
-      "eta": "03/11/2026 20:00",
-      "closing": "04/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "DEPARTED"
-    },
     {
       "vessel": "AMELIE BORCHARD",
       "voyage": "0208",
@@ -132,8 +96,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "VENTO DI MAESTRALE",
-      "voyage": "534",
+      "vessel": "ULYSSE",
+      "voyage": "081126E",
       "eta": "08/11/2026 00:00",
       "closing": "07/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -141,8 +105,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "ULYSSE",
-      "voyage": "081126E",
+      "vessel": "VENTO DI MAESTRALE",
+      "voyage": "534",
       "eta": "08/11/2026 00:00",
       "closing": "07/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -213,8 +177,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "K-RIVER",
-      "voyage": "0926W",
+      "vessel": "KATHERINE BORCHARD",
+      "voyage": "1158",
       "eta": "11/11/2026 00:00",
       "closing": "10/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -222,8 +186,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "KATHERINE BORCHARD",
-      "voyage": "1158",
+      "vessel": "K-RIVER",
+      "voyage": "0926W",
       "eta": "11/11/2026 00:00",
       "closing": "10/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -235,6 +199,33 @@
       "voyage": "646W",
       "eta": "11/11/2026 00:00",
       "closing": "10/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "ASTRAIOS",
+      "voyage": "0HWLAE1MA",
+      "eta": "12/11/2026 00:00",
+      "closing": "11/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "MIRIAM BORCHARD",
+      "voyage": "1045",
+      "eta": "12/11/2026 00:00",
+      "closing": "11/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "DEPE",
+      "voyage": "DEP1426W",
+      "eta": "12/11/2026 00:00",
+      "closing": "11/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

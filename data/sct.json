@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-05T16:41:54.963177+00:00",
-  "acquired_at": "2026-11-05T16:41:54.963177+00:00",
+  "updated_at": "2026-11-05T20:37:37.592173+00:00",
+  "acquired_at": "2026-11-05T20:37:37.592173+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-05T16:41:54.963177+00:00",
+  "data_changed_at": "2026-11-05T20:37:37.592173+00:00",
   "rows": [
     {
       "vessel": "AMELIE BORCHARD",
@@ -39,7 +39,7 @@
       "closing": "04/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
-      "status": "ARRIVED"
+      "status": "DEPARTED"
     },
     {
       "vessel": "MAERSK GATESHEAD",

@@ -163,9 +163,9 @@
       "category": "PREVISTE",
       "voyage_id": "202600378",
       "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-10-31 06:30",
       "closing": "2026-11-05 17:00",
@@ -387,7 +387,7 @@
       "acceptance_flag": "0",
       "acceptance_icon": "",
       "stop_cargo": "",
-      "external_depot": "",
+      "external_depot": "S",
       "opening": "",
       "closing": "",
       "notes": "ACCETT.RETROPORTO 06/11 07:00",
@@ -666,5 +666,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-05T16:41:59.936714+00:00"
+  "acquired_at": "2026-11-05T20:37:42.596703+00:00"
 }

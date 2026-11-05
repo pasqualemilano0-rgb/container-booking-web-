@@ -91,12 +91,12 @@
       "vessel": "MSC ADRIANA II",
       "voyage": "AG645A",
       "eta": "2026-11-03 14:30",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
+      "vessel_status": "CHI",
+      "category": "PARTITE",
       "voyage_id": "202600373",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "CHIUSA",
       "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-10-28 06:30",
@@ -122,23 +122,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "JAN",
-      "voyage": "644S",
-      "eta": "2026-11-05 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600363",
-      "carrier": "DIAMOND LINE",
-      "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-11-02 06:30",
-      "closing": "2026-11-04 17:00",
-      "notes": "ACCETT.RETROPORTO 29/10 07:00",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC GRETA III",
       "voyage": "AC643A",
       "eta": "2026-11-05 00:00",
@@ -151,8 +134,25 @@
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-10-27 12:00",
-      "closing": "2026-11-04 17:00",
+      "closing": "2026-11-05 12:00",
       "notes": "LOAD ALSO LEVANTE CARGO",
+      "source_conflict": false
+    },
+    {
+      "vessel": "JAN",
+      "voyage": "644S",
+      "eta": "2026-11-05 01:10",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600363",
+      "carrier": "DIAMOND LINE",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
+      "external_depot": "",
+      "opening": "2026-11-02 06:30",
+      "closing": "2026-11-04 17:00",
+      "notes": "ACCETT.RETROPORTO 29/10 07:00",
       "source_conflict": false
     },
     {
@@ -632,5 +632,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-05T03:27:15.885249+00:00"
+  "acquired_at": "2026-11-05T08:23:06.859667+00:00"
 }

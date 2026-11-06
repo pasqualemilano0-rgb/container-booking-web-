@@ -146,9 +146,9 @@
       "category": "PRESENTI",
       "voyage_id": "202600370",
       "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-11-02 06:30",
       "closing": "2026-11-06 14:00",
@@ -159,12 +159,12 @@
       "vessel": "JOLLY BLUE",
       "voyage": "368",
       "eta": "2026-11-06 07:20",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
+      "vessel_status": "CHI",
+      "category": "PRESENTI",
       "voyage_id": "202600378",
       "carrier": "LINEA I.MESSINA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "CHIUSA",
       "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-10-31 06:30",
@@ -190,15 +190,32 @@
       "source_conflict": false
     },
     {
+      "vessel": "MSC ARICA",
+      "voyage": "MG645W",
+      "eta": "2026-11-08 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600376",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "2026-10-29 12:00",
+      "closing": "2026-11-07 12:00",
+      "notes": "RIACCETT.CARICO 07/11 07:00",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC CHIARA X",
       "voyage": "FD644E",
-      "eta": "2026-11-08 00:00",
+      "eta": "2026-11-09 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
       "voyage_id": "202600375",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-03 14:00",
@@ -218,26 +235,9 @@
       "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
-      "opening": "2026-11-07 06:30",
+      "opening": "2026-11-07 07:00",
       "closing": "2026-11-09 17:00",
       "notes": "",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC ARICA",
-      "voyage": "MG645W",
-      "eta": "2026-11-10 00:00",
-      "vessel_status": "PRE",
-      "category": "PREVISTE",
-      "voyage_id": "202600376",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "2026-10-29 12:00",
-      "closing": "2026-11-10 12:00",
-      "notes": "RIACCETT.CARICO 09/11 06:30",
       "source_conflict": false
     },
     {
@@ -320,8 +320,8 @@
       "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
-      "opening": "",
-      "closing": "",
+      "opening": "2026-11-09 12:00",
+      "closing": "2027-11-12 17:00",
       "notes": "",
       "source_conflict": false
     },
@@ -339,7 +339,7 @@
       "external_depot": "",
       "opening": "",
       "closing": "",
-      "notes": "",
+      "notes": "ACCETT.RETROPORTO 09/11 07:00",
       "source_conflict": false
     },
     {
@@ -390,7 +390,7 @@
       "external_depot": "",
       "opening": "",
       "closing": "",
-      "notes": "",
+      "notes": "ACCETT.RETROPORTO 10/11 07:00",
       "source_conflict": false
     },
     {
@@ -649,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-06T09:46:52.194633+00:00"
+  "acquired_at": "2026-11-06T16:57:07.501418+00:00"
 }

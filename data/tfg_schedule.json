@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-06T07:04:06+01:00",
+  "source_updated_at": "2026-11-06T16:12:26+01:00",
   "rows": [
     {
       "vessel": "X PRESS SALWEEN",
@@ -64,7 +64,7 @@
       "eta": "08/11/26",
       "acceptance": "ACCETTA CARICO",
       "custom_close_time": "09/11/26 10:00:00",
-      "fast_corridor_cut_off": "",
+      "fast_corridor_cut_off": "06/11/26 14:00:00",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
@@ -179,5 +179,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-06T09:46:48.706716+00:00"
+  "acquired_at": "2026-11-06T16:57:04.412787+00:00"
 }

@@ -3,28 +3,6 @@
   "source_updated_at": "2026-11-05T17:51:37+01:00",
   "rows": [
     {
-      "vessel": "A LA MARINE",
-      "arrival_voyage": "0HWL6E1MA",
-      "departure_voyage": "0HWL6E1MA",
-      "eta": "26/10/26 08:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "27/10/26 15:00:00",
-      "fast_corridor_cut_off": "26/10/26 10:30:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
-      "vessel": "SUNAID X",
-      "arrival_voyage": "017",
-      "departure_voyage": "017",
-      "eta": "26/10/26 17:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "27/10/26 15:00:00",
-      "fast_corridor_cut_off": "23/10/26 10:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
       "vessel": "X PRESS SALWEEN",
       "arrival_voyage": "643E",
       "departure_voyage": "644W",
@@ -201,5 +179,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-05T22:21:49.346264+00:00"
+  "acquired_at": "2026-11-06T01:29:43.645693+00:00"
 }

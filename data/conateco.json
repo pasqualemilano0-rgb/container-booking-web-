@@ -160,7 +160,7 @@
       "voyage": "368",
       "eta": "2026-11-06 07:20",
       "vessel_status": "CHI",
-      "category": "PRESENTI",
+      "category": "PARTITE",
       "voyage_id": "202600378",
       "carrier": "LINEA I.MESSINA",
       "acceptance_flag": "0",
@@ -649,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-06T22:08:39.564800+00:00"
+  "acquired_at": "2026-11-06T23:02:12.985374+00:00"
 }

@@ -191,7 +191,7 @@
     },
     {
       "vessel": "MSC CHIARA X",
-      "voyage": "FD644A",
+      "voyage": "FD644E",
       "eta": "2026-11-08 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
@@ -327,7 +327,7 @@
     },
     {
       "vessel": "MSC ADONIS",
-      "voyage": "FD645A",
+      "voyage": "FD645E",
       "eta": "2026-11-13 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
@@ -565,7 +565,7 @@
     },
     {
       "vessel": "MSC CHARLESTON",
-      "voyage": "FD647A",
+      "voyage": "FD647E",
       "eta": "2026-11-26 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
@@ -649,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-06T09:17:52.564131+00:00"
+  "acquired_at": "2026-11-06T09:46:52.194633+00:00"
 }

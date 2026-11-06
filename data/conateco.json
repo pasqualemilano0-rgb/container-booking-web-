@@ -122,28 +122,28 @@
       "source_conflict": false
     },
     {
-      "vessel": "JOLLY BLUE",
-      "voyage": "368",
-      "eta": "2026-11-06 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600378",
-      "carrier": "LINEA I.MESSINA",
+      "vessel": "MSC GRETA III",
+      "voyage": "AC643A",
+      "eta": "2026-11-05 22:30",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600358",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "",
       "stop_cargo": "S",
       "external_depot": "",
-      "opening": "2026-10-31 06:30",
-      "closing": "2026-11-05 17:00",
-      "notes": "",
+      "opening": "2026-10-27 12:00",
+      "closing": "2026-11-05 12:00",
+      "notes": "LOAD ALSO LEVANTE CARGO",
       "source_conflict": false
     },
     {
       "vessel": "JOLLY GIADA",
       "voyage": "326",
-      "eta": "2026-11-07 00:00",
+      "eta": "2026-11-06 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600370",
       "carrier": "LINEA I.MESSINA",
       "acceptance_flag": "1",
@@ -153,6 +153,23 @@
       "opening": "2026-11-02 06:30",
       "closing": "2026-11-06 14:00",
       "notes": "ACCETT.RETROPORTO 29/10 07:00",
+      "source_conflict": false
+    },
+    {
+      "vessel": "JOLLY BLUE",
+      "voyage": "368",
+      "eta": "2026-11-06 07:20",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600378",
+      "carrier": "LINEA I.MESSINA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
+      "external_depot": "",
+      "opening": "2026-10-31 06:30",
+      "closing": "2026-11-05 17:00",
+      "notes": "",
       "source_conflict": false
     },
     {
@@ -632,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-06T02:35:07.040519+00:00"
+  "acquired_at": "2026-11-06T09:17:52.564131+00:00"
 }

@@ -139,23 +139,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "JOLLY GIADA",
-      "voyage": "326",
-      "eta": "2026-11-06 00:00",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
-      "voyage_id": "202600370",
-      "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-11-02 06:30",
-      "closing": "2026-11-06 14:00",
-      "notes": "ACCETT.RETROPORTO 29/10 07:00",
-      "source_conflict": false
-    },
-    {
       "vessel": "JOLLY BLUE",
       "voyage": "368",
       "eta": "2026-11-06 07:20",
@@ -170,6 +153,23 @@
       "opening": "2026-10-31 06:30",
       "closing": "2026-11-05 17:00",
       "notes": "",
+      "source_conflict": false
+    },
+    {
+      "vessel": "JOLLY GIADA",
+      "voyage": "326",
+      "eta": "2026-11-06 23:10",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600370",
+      "carrier": "LINEA I.MESSINA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
+      "external_depot": "",
+      "opening": "2026-11-02 06:30",
+      "closing": "2026-11-06 14:00",
+      "notes": "ACCETT.RETROPORTO 29/10 07:00",
       "source_conflict": false
     },
     {
@@ -197,8 +197,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600376",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-10-29 12:00",
@@ -231,8 +231,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600369",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-07 07:00",
@@ -282,8 +282,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600384",
       "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-07 06:30",
@@ -320,8 +320,8 @@
       "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
-      "opening": "2026-11-09 12:00",
-      "closing": "2027-11-12 17:00",
+      "opening": "2026-11-10 06:30",
+      "closing": "2026-11-12 17:00",
       "notes": "",
       "source_conflict": false
     },
@@ -649,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-07T02:43:39.914294+00:00"
+  "acquired_at": "2026-11-07T08:51:24.409062+00:00"
 }

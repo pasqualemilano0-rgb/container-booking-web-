@@ -3,23 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "MSC NORDIC F",
-      "voyage": "YE644A",
-      "eta": "2026-10-31 07:10",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600367",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "EMPTY DISCHARGE",
-      "source_conflict": false
-    },
-    {
       "vessel": "KOTKA",
       "voyage": "MG644W",
       "eta": "2026-11-01 00:00",
@@ -139,45 +122,11 @@
       "source_conflict": false
     },
     {
-      "vessel": "Carla",
-      "voyage": "632S",
-      "eta": "2026-11-08 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600393",
-      "carrier": "DIAMOND LINE",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "IMPORT CALL",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC ARICA",
-      "voyage": "MG645W",
-      "eta": "2026-11-08 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600376",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-29 12:00",
-      "closing": "2026-11-07 12:00",
-      "notes": "RIACCETT.CARICO 07/11 07:00",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC CHIARA X",
       "voyage": "FD644E",
       "eta": "2026-11-09 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600375",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "1",
@@ -194,7 +143,7 @@
       "voyage": "AC644A",
       "eta": "2026-11-09 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600369",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "1",
@@ -615,5 +564,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-08T20:31:00.733445+00:00"
+  "acquired_at": "2026-11-08T23:39:41.842001+00:00"
 }

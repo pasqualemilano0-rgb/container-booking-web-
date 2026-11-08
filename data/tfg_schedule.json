@@ -3,17 +3,6 @@
   "source_updated_at": "2026-11-06T16:12:26+01:00",
   "rows": [
     {
-      "vessel": "X PRESS SALWEEN",
-      "arrival_voyage": "643E",
-      "departure_voyage": "644W",
-      "eta": "29/10/26 06:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "29/10/26 15:00:00",
-      "fast_corridor_cut_off": "28/10/26 15:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
       "vessel": "ARGENTINIAN",
       "arrival_voyage": "0HWL8E1MA",
       "departure_voyage": "0HWL8E1MA",
@@ -179,5 +168,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-08T20:30:57.046435+00:00"
+  "acquired_at": "2026-11-08T23:39:39.328548+00:00"
 }

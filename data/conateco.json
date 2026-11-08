@@ -3,40 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "AMERICA",
-      "voyage": "FD643E",
-      "eta": "2026-10-30 15:40",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600371",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-28 06:30",
-      "closing": "2026-10-30 17:00",
-      "notes": "ACCETT.RETROPORTO 26/10 07:00",
-      "source_conflict": false
-    },
-    {
-      "vessel": "JOLLY BLUE",
-      "voyage": "367",
-      "eta": "2026-10-30 16:00",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600364",
-      "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-26 06:30",
-      "closing": "2026-10-29 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC NORDIC F",
       "voyage": "YE644A",
       "eta": "2026-10-31 07:10",
@@ -177,7 +143,7 @@
       "voyage": "632S",
       "eta": "2026-11-08 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600393",
       "carrier": "DIAMOND LINE",
       "acceptance_flag": "0",
@@ -194,7 +160,7 @@
       "voyage": "MG645W",
       "eta": "2026-11-08 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600376",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -649,5 +615,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-07T22:56:05.560234+00:00"
+  "acquired_at": "2026-11-08T00:28:34.531106+00:00"
 }

@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-06T16:12:26+01:00",
+  "source_updated_at": "2026-11-09T14:21:06+01:00",
   "rows": [
     {
       "vessel": "ARGENTINIAN",
@@ -50,20 +50,20 @@
       "vessel": "SUNAID X",
       "arrival_voyage": "018",
       "departure_voyage": "018",
-      "eta": "08/11/26",
-      "acceptance": "ACCETTA CARICO",
+      "eta": "08/11/26 21:00",
+      "acceptance": "NAVE CHIUSA",
       "custom_close_time": "09/11/26 10:00:00",
       "fast_corridor_cut_off": "06/11/26 14:00:00",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
     {
-      "vessel": "ASTRAIOS",
-      "arrival_voyage": "0HWLAE1MA",
-      "departure_voyage": "0HWLAE1MA",
-      "eta": "10/11/26",
-      "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "09/11/26 15:00:00",
+      "vessel": "MSC LILA F",
+      "arrival_voyage": "AJ643R",
+      "departure_voyage": "AJ643R",
+      "eta": "09/11/26 06:00",
+      "acceptance": "NAVE CHIUSA",
+      "custom_close_time": "09/11/26 10:00:00",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
@@ -72,9 +72,20 @@
       "vessel": "HANNA",
       "arrival_voyage": "AGA040S19",
       "departure_voyage": "AGA040S19",
-      "eta": "10/11/26",
+      "eta": "10/11/26 06:00",
       "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "09/11/26 15:00:00",
+      "custom_close_time": "10/11/26 12:00:00",
+      "fast_corridor_cut_off": "09/11/26 14:30:00",
+      "gate_cut_off": "",
+      "destination": "INTERNO PORTO"
+    },
+    {
+      "vessel": "ASTRAIOS",
+      "arrival_voyage": "0HWLAE1MA",
+      "departure_voyage": "0HWLAE1MA",
+      "eta": "11/11/26 06:00",
+      "acceptance": "ACCETTA CARICO",
+      "custom_close_time": "10/11/26 15:00:00",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
@@ -84,17 +95,17 @@
       "arrival_voyage": "645E",
       "departure_voyage": "646W",
       "eta": "12/11/26",
-      "acceptance": "CARICO DAL 09/11/26 08:00:00",
+      "acceptance": "ACCETTA CARICO",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
     {
-      "vessel": "SUNAID X",
-      "arrival_voyage": "019",
-      "departure_voyage": "019",
-      "eta": "14/11/26",
+      "vessel": "GSL CHATEAU DIF",
+      "arrival_voyage": "FMX0C0S19",
+      "departure_voyage": "FMX0C0S19",
+      "eta": "13/11/26",
       "acceptance": "NON ACCETTA CARICO",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
@@ -106,7 +117,7 @@
       "arrival_voyage": "AGA060S19",
       "departure_voyage": "AGA060S19",
       "eta": "16/11/26",
-      "acceptance": "NON ACCETTA CARICO",
+      "acceptance": "CARICO DAL 11/11/26 08:00:00",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -117,7 +128,7 @@
       "arrival_voyage": "0HWLCE1MA",
       "departure_voyage": "0HWLCE1MA",
       "eta": "17/11/26",
-      "acceptance": "NON ACCETTA CARICO",
+      "acceptance": "CARICO DAL 11/11/26 08:00:00",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -129,6 +140,17 @@
       "departure_voyage": "647W",
       "eta": "19/11/26",
       "acceptance": "NON ACCETTA CARICO",
+      "custom_close_time": "",
+      "fast_corridor_cut_off": "",
+      "gate_cut_off": "",
+      "destination": "INTERNO PORTO"
+    },
+    {
+      "vessel": "SUNAID X",
+      "arrival_voyage": "019",
+      "departure_voyage": "019",
+      "eta": "20/11/26",
+      "acceptance": "CARICO DAL 10/11/26 08:00:00",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -168,5 +190,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-09T06:41:47.668779+00:00"
+  "acquired_at": "2026-11-09T16:54:11.470767+00:00"
 }

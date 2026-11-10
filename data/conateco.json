@@ -194,7 +194,7 @@
       "voyage": "ZD643R",
       "eta": "2026-11-11 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600403",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -211,7 +211,7 @@
       "voyage": "AJ643R",
       "eta": "2026-11-11 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600402",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -734,5 +734,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-10T21:27:09.888613+00:00"
+  "acquired_at": "2026-11-10T23:12:23.655636+00:00"
 }

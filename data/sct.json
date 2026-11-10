@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-10T15:49:25.683212+00:00",
-  "acquired_at": "2026-11-10T15:49:25.683212+00:00",
+  "updated_at": "2026-11-10T17:42:44.593337+00:00",
+  "acquired_at": "2026-11-10T17:42:44.593337+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-10T15:49:25.683212+00:00",
+  "data_changed_at": "2026-11-10T17:42:44.593337+00:00",
   "rows": [
     {
       "vessel": "X-PRESS ANTLIA",
@@ -36,7 +36,7 @@
       "vessel": "MEDKON NLS",
       "voyage": "324",
       "eta": "10/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -45,7 +45,7 @@
       "vessel": "JAKARTA EXPRESS",
       "voyage": "14W46",
       "eta": "10/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -63,7 +63,7 @@
       "vessel": "ECO OSTRO",
       "voyage": "646W",
       "eta": "10/11/2026 07:45",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -81,7 +81,7 @@
       "vessel": "KATHERINE BORCHARD",
       "voyage": "1158",
       "eta": "11/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -90,7 +90,7 @@
       "vessel": "RACHEL BORCHARD",
       "voyage": "1033",
       "eta": "11/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -99,7 +99,7 @@
       "vessel": "JOANNA BORCHARD",
       "voyage": "1194",
       "eta": "11/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -117,7 +117,7 @@
       "vessel": "K-RIVER",
       "voyage": "0926W",
       "eta": "11/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
+      "closing": "10/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

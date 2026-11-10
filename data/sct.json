@@ -1,24 +1,15 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-10T09:39:57.051618+00:00",
-  "acquired_at": "2026-11-10T09:39:57.051618+00:00",
+  "updated_at": "2026-11-10T15:49:25.683212+00:00",
+  "acquired_at": "2026-11-10T15:49:25.683212+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-10T09:39:57.051618+00:00",
+  "data_changed_at": "2026-11-10T15:49:25.683212+00:00",
   "rows": [
     {
       "vessel": "X-PRESS ANTLIA",
       "voyage": "020W",
       "eta": "09/11/2026 00:00",
       "closing": "09/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "LIDER TRABZON",
-      "voyage": "1126",
-      "eta": "09/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -39,7 +30,7 @@
       "closing": "09/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
-      "status": "ARRIVED"
+      "status": "DEPARTED"
     },
     {
       "vessel": "MEDKON NLS",
@@ -109,6 +100,15 @@
       "voyage": "1194",
       "eta": "11/11/2026 00:00",
       "closing": "10/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "LIDER TRABZON",
+      "voyage": "1126",
+      "eta": "11/11/2026 00:00",
+      "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

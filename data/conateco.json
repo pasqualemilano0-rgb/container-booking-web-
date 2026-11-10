@@ -3,23 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "KOTKA",
-      "voyage": "MG644W",
-      "eta": "2026-11-01 00:00",
-      "vessel_status": "ANN",
-      "category": "PARTITE",
-      "voyage_id": "202600368",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "2026-10-27 12:00",
-      "closing": "",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC ADRIANA II",
       "voyage": "AG645A",
       "eta": "2026-11-03 14:30",
@@ -160,7 +143,7 @@
       "voyage": "AC644A",
       "eta": "2026-11-09 00:00",
       "vessel_status": "ANN",
-      "category": "PRESENTI",
+      "category": "PARTITE",
       "voyage_id": "202600369",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -177,7 +160,7 @@
       "voyage": "AG646A",
       "eta": "2026-11-10 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600383",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "1",
@@ -194,7 +177,7 @@
       "voyage": "FD644E",
       "eta": "2026-11-10 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600375",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -333,8 +316,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600377",
       "carrier": "DIAMOND LINE",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-10 06:30",
@@ -666,5 +649,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-09T17:25:07.671063+00:00"
+  "acquired_at": "2026-11-10T00:42:59.727287+00:00"
 }

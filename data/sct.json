@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-10T01:27:47.012484+00:00",
-  "acquired_at": "2026-11-10T01:27:47.012484+00:00",
+  "updated_at": "2026-11-10T07:47:27.243405+00:00",
+  "acquired_at": "2026-11-10T07:47:27.243405+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-10T00:42:54.495084+00:00",
+  "data_changed_at": "2026-11-10T07:47:27.243405+00:00",
   "rows": [
     {
       "vessel": "X-PRESS ANTLIA",
@@ -69,6 +69,15 @@
       "status": "PENDING"
     },
     {
+      "vessel": "ECO OSTRO",
+      "voyage": "646W",
+      "eta": "10/11/2026 07:45",
+      "closing": "10/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
       "vessel": "GRANDE INGHILTERRA",
       "voyage": "GDE0526",
       "eta": "10/11/2026 08:00",
@@ -98,15 +107,6 @@
     {
       "vessel": "JOANNA BORCHARD",
       "voyage": "1194",
-      "eta": "11/11/2026 00:00",
-      "closing": "10/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "ECO OSTRO",
-      "voyage": "646W",
       "eta": "11/11/2026 00:00",
       "closing": "10/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",

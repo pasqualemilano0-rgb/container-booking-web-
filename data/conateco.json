@@ -564,6 +564,23 @@
       "source_conflict": false
     },
     {
+      "vessel": "MSC ADRIANA II",
+      "voyage": "AG649A",
+      "eta": "2026-11-29 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600408",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
       "vessel": "RIJNBORG",
       "voyage": "096S",
       "eta": "2026-11-29 00:00",
@@ -588,6 +605,23 @@
       "category": "PREVISTE",
       "voyage_id": "202600405",
       "carrier": "LINEA I.MESSINA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
+      "vessel": "MSC GISELLE",
+      "voyage": "NL645R",
+      "eta": "2026-12-04 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600409",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
       "acceptance_icon": "",
       "stop_cargo": "",
@@ -649,5 +683,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-10T01:27:52.290054+00:00"
+  "acquired_at": "2026-11-10T07:47:33.233304+00:00"
 }

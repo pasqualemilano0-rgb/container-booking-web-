@@ -125,12 +125,12 @@
       "vessel": "MSC ARICA",
       "voyage": "MG645W",
       "eta": "2026-11-08 19:30",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
+      "vessel_status": "CHI",
+      "category": "PARTITE",
       "voyage_id": "202600376",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "CHIUSA",
       "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-10-29 12:00",
@@ -156,23 +156,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "CONTSHIP JOY",
-      "voyage": "AG646A",
-      "eta": "2026-11-10 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600383",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "2026-11-09 09:30",
-      "closing": "2026-11-09 17:00",
-      "notes": "LOAD ALSO CARGO EX ROSSELLA",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC CHIARA X",
       "voyage": "FD644E",
       "eta": "2026-11-10 00:00",
@@ -187,6 +170,23 @@
       "opening": "2026-11-03 14:00",
       "closing": "2026-11-09 17:00",
       "notes": "ACCETT.RETROPORTO 30/10 12:00 RIACCETT.CONATECO 06/11 14:00",
+      "source_conflict": false
+    },
+    {
+      "vessel": "CONTSHIP JOY",
+      "voyage": "AG646A",
+      "eta": "2026-11-10 10:30",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600383",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
+      "external_depot": "",
+      "opening": "2026-11-09 09:30",
+      "closing": "2026-11-09 17:00",
+      "notes": "LOAD ALSO CARGO EX ROSSELLA",
       "source_conflict": false
     },
     {
@@ -259,7 +259,7 @@
     },
     {
       "vessel": "MSC LEA II",
-      "voyage": "AG648A",
+      "voyage": "AG647A",
       "eta": "2026-11-13 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
@@ -615,12 +615,63 @@
       "source_conflict": false
     },
     {
+      "vessel": "TBN",
+      "voyage": "FD647E",
+      "eta": "2026-12-03 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600410",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC GISELLE",
       "voyage": "NL645R",
       "eta": "2026-12-04 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
       "voyage_id": "202600409",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
+      "vessel": "MSC ROSSELLA II",
+      "voyage": "AC648A",
+      "eta": "2026-12-04 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600411",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
+      "vessel": "MSC LUCY",
+      "voyage": "MG649W",
+      "eta": "2026-12-05 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600412",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
       "acceptance_icon": "",
@@ -683,5 +734,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-10T07:47:33.233304+00:00"
+  "acquired_at": "2026-11-10T09:40:03.096556+00:00"
 }

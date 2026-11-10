@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-10T07:47:27.243405+00:00",
-  "acquired_at": "2026-11-10T07:47:27.243405+00:00",
+  "updated_at": "2026-11-10T09:39:57.051618+00:00",
+  "acquired_at": "2026-11-10T09:39:57.051618+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-10T07:47:27.243405+00:00",
+  "data_changed_at": "2026-11-10T09:39:57.051618+00:00",
   "rows": [
     {
       "vessel": "X-PRESS ANTLIA",
@@ -141,15 +141,6 @@
       "status": "PENDING"
     },
     {
-      "vessel": "VENTO DI GRECALE",
-      "voyage": "637",
-      "eta": "12/11/2026 00:00",
-      "closing": "07/11/2026 10:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
       "vessel": "KOBE EXPRESS",
       "voyage": "645W",
       "eta": "12/11/2026 00:00",
@@ -163,6 +154,15 @@
       "voyage": "1045",
       "eta": "12/11/2026 00:00",
       "closing": "11/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "VENTO DI GRECALE",
+      "voyage": "637",
+      "eta": "12/11/2026 00:00",
+      "closing": "07/11/2026 10:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -186,15 +186,6 @@
       "status": "PENDING"
     },
     {
-      "vessel": "MEDKON PERLA",
-      "voyage": "645E",
-      "eta": "14/11/2026 00:00",
-      "closing": "13/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
       "vessel": "CRISTINA A",
       "voyage": "MAS31E26",
       "eta": "14/11/2026 00:00",
@@ -204,10 +195,10 @@
       "status": "PENDING"
     },
     {
-      "vessel": "ELYSSA",
-      "voyage": "151126E",
-      "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "vessel": "MEDKON PERLA",
+      "voyage": "645E",
+      "eta": "14/11/2026 00:00",
+      "closing": "13/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -222,12 +213,12 @@
       "status": "PENDING"
     },
     {
-      "vessel": "MSC BARBADOS",
-      "voyage": "CD647A",
+      "vessel": "ELYSSA",
+      "voyage": "151126E",
       "eta": "15/11/2026 00:00",
       "closing": "14/11/2026 10:00",
-      "acceptance_dry": "CARGO NOT ACCEPTED",
-      "acceptance_reef": "CARGO NOT ACCEPTED",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {
@@ -258,17 +249,8 @@
       "status": "PENDING"
     },
     {
-      "vessel": "JUDITH BORCHARD",
-      "voyage": "1076",
-      "eta": "17/11/2026 00:00",
-      "closing": "16/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "GREEN OCEAN",
-      "voyage": "647W",
+      "vessel": "OYKU A",
+      "voyage": "535",
       "eta": "17/11/2026 00:00",
       "closing": "16/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -285,8 +267,17 @@
       "status": "PENDING"
     },
     {
-      "vessel": "OYKU A",
-      "voyage": "535",
+      "vessel": "GREEN OCEAN",
+      "voyage": "647W",
+      "eta": "17/11/2026 00:00",
+      "closing": "16/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "JUDITH BORCHARD",
+      "voyage": "1076",
       "eta": "17/11/2026 00:00",
       "closing": "16/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",

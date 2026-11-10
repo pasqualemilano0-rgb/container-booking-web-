@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-10T16:34:39+01:00",
+  "source_updated_at": "2026-11-10T21:58:55+01:00",
   "rows": [
     {
       "vessel": "ARGENTINIAN",
@@ -117,7 +117,7 @@
       "arrival_voyage": "AGA060S19",
       "departure_voyage": "AGA060S19",
       "eta": "16/11/26",
-      "acceptance": "CARICO DAL 11/11/26 08:00:00",
+      "acceptance": "ACCETTA CARICO",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -128,7 +128,7 @@
       "arrival_voyage": "0HWLCE1MA",
       "departure_voyage": "0HWLCE1MA",
       "eta": "17/11/26",
-      "acceptance": "CARICO DAL 11/11/26 08:00:00",
+      "acceptance": "ACCETTA CARICO",
       "custom_close_time": "",
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
@@ -190,5 +190,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-10T17:42:46.458954+00:00"
+  "acquired_at": "2026-11-10T21:27:06.249789+00:00"
 }

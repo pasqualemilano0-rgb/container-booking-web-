@@ -209,9 +209,9 @@
     {
       "vessel": "MSC LILA F",
       "voyage": "AJ643R",
-      "eta": "2026-11-11 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
+      "eta": "2026-11-11 13:25",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
       "voyage_id": "202600402",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -292,6 +292,23 @@
       "source_conflict": false
     },
     {
+      "vessel": "MSC PAMIRA III",
+      "voyage": "AC645A",
+      "eta": "2026-11-15 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600372",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC SWEDEN VI",
       "voyage": "MG646W",
       "eta": "2026-11-15 00:00",
@@ -321,24 +338,7 @@
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-10 06:30",
-      "closing": "2026-11-12 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC PAMIRA III",
-      "voyage": "AC645A",
-      "eta": "2026-11-17 00:00",
-      "vessel_status": "PRE",
-      "category": "PREVISTE",
-      "voyage_id": "202600372",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
+      "closing": "2026-11-13 17:00",
       "notes": "",
       "source_conflict": false
     },
@@ -350,23 +350,6 @@
       "category": "PREVISTE",
       "voyage_id": "202600391",
       "carrier": "LINEA I.MESSINA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC BRITTANY",
-      "voyage": "NL643R",
-      "eta": "2026-11-19 00:00",
-      "vessel_status": "PRE",
-      "category": "PREVISTE",
-      "voyage_id": "202600385",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
       "acceptance_icon": "",
       "stop_cargo": "",
@@ -394,8 +377,25 @@
       "source_conflict": false
     },
     {
+      "vessel": "MSC BRITTANY",
+      "voyage": "NL643R",
+      "eta": "2026-11-20 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600385",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC HARMONY III",
-      "voyage": "AC646A",
+      "voyage": "AC647A",
       "eta": "2026-11-22 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
@@ -564,6 +564,23 @@
       "source_conflict": false
     },
     {
+      "vessel": "TBN",
+      "voyage": "AC648A",
+      "eta": "2026-11-29 00:00",
+      "vessel_status": "PRE",
+      "category": "PREVISTE",
+      "voyage_id": "202600396",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC ADRIANA II",
       "voyage": "AG649A",
       "eta": "2026-12-01 00:00",
@@ -615,23 +632,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC GRETA III",
-      "voyage": "AC647A",
-      "eta": "2026-12-03 00:00",
-      "vessel_status": "PRE",
-      "category": "PREVISTE",
-      "voyage_id": "202600396",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC GISELLE",
       "voyage": "NL645R",
       "eta": "2026-12-04 00:00",
@@ -649,12 +649,12 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC LUCY",
-      "voyage": "MG649W",
-      "eta": "2026-12-05 00:00",
+      "vessel": "MSC GRETA III",
+      "voyage": "AC649A",
+      "eta": "2026-12-04 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
-      "voyage_id": "202600412",
+      "voyage_id": "202600411",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
       "acceptance_icon": "",
@@ -666,12 +666,12 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC ROSSELLA II",
-      "voyage": "AC648A",
+      "vessel": "MSC LUCY",
+      "voyage": "MG649W",
       "eta": "2026-12-05 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
-      "voyage_id": "202600411",
+      "voyage_id": "202600412",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
       "acceptance_icon": "",
@@ -734,5 +734,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-11T08:13:36.056223+00:00"
+  "acquired_at": "2026-11-11T14:06:21.149445+00:00"
 }

@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-10T21:58:55+01:00",
+  "source_updated_at": "2026-11-11T14:43:13+01:00",
   "rows": [
     {
       "vessel": "ARGENTINIAN",
@@ -94,10 +94,10 @@
       "vessel": "X PRESS SALWEEN",
       "arrival_voyage": "645E",
       "departure_voyage": "646W",
-      "eta": "12/11/26",
+      "eta": "12/11/26 06:00",
       "acceptance": "ACCETTA CARICO",
-      "custom_close_time": "",
-      "fast_corridor_cut_off": "",
+      "custom_close_time": "12/11/26 15:00:00",
+      "fast_corridor_cut_off": "11/11/26 10:30:00",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
@@ -157,7 +157,7 @@
       "destination": "INTERNO PORTO"
     },
     {
-      "vessel": "HENNEKE RAMBOW",
+      "vessel": "HANNA",
       "arrival_voyage": "AGA080S19",
       "departure_voyage": "AGA080S19",
       "eta": "23/11/26",
@@ -188,7 +188,29 @@
       "fast_corridor_cut_off": "",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
+    },
+    {
+      "vessel": "ARGENTINIAN",
+      "arrival_voyage": "0HWLGE1MA",
+      "departure_voyage": "0HWLGE1MA",
+      "eta": "01/12/26",
+      "acceptance": "NON ACCETTA CARICO",
+      "custom_close_time": "",
+      "fast_corridor_cut_off": "",
+      "gate_cut_off": "",
+      "destination": "INTERNO PORTO"
+    },
+    {
+      "vessel": "X PRESS SAGARMALA",
+      "arrival_voyage": "648E",
+      "departure_voyage": "648W",
+      "eta": "03/12/26",
+      "acceptance": "NON ACCETTA CARICO",
+      "custom_close_time": "",
+      "fast_corridor_cut_off": "",
+      "gate_cut_off": "",
+      "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-11T08:13:33.280699+00:00"
+  "acquired_at": "2026-11-11T14:06:18.449103+00:00"
 }

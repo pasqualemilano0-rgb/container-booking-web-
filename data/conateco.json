@@ -303,7 +303,7 @@
       "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "",
-      "opening": "",
+      "opening": "2026-11-12 12:00",
       "closing": "",
       "notes": "",
       "source_conflict": false
@@ -734,5 +734,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-11T14:06:21.149445+00:00"
+  "acquired_at": "2026-11-11T16:13:27.232416+00:00"
 }

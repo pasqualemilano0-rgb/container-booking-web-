@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-11T14:06:17.289539+00:00",
-  "acquired_at": "2026-11-11T14:06:17.289539+00:00",
+  "updated_at": "2026-11-11T16:13:21.600092+00:00",
+  "acquired_at": "2026-11-11T16:13:21.600092+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-11T14:06:17.289539+00:00",
+  "data_changed_at": "2026-11-11T16:13:21.600092+00:00",
   "rows": [
     {
       "vessel": "JAKARTA EXPRESS",
@@ -42,19 +42,19 @@
       "status": "PENDING"
     },
     {
-      "vessel": "LIDER TRABZON",
-      "voyage": "1126",
+      "vessel": "RACHEL BORCHARD",
+      "voyage": "1033",
       "eta": "11/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {
-      "vessel": "RACHEL BORCHARD",
-      "voyage": "1033",
+      "vessel": "LIDER TRABZON",
+      "voyage": "1126",
       "eta": "11/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -72,7 +72,7 @@
       "vessel": "ASTRAIOS",
       "voyage": "0HWLAE1MA",
       "eta": "11/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -81,7 +81,7 @@
       "vessel": "KATHERINE BORCHARD",
       "voyage": "1158",
       "eta": "11/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -99,7 +99,7 @@
       "vessel": "MIRIAM BORCHARD",
       "voyage": "1045",
       "eta": "12/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -108,7 +108,7 @@
       "vessel": "DEPE",
       "voyage": "DEP1426W",
       "eta": "12/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -117,7 +117,7 @@
       "vessel": "VENTO DI GRECALE",
       "voyage": "637",
       "eta": "12/11/2026 00:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -126,7 +126,7 @@
       "vessel": "MEDKON NLS",
       "voyage": "324",
       "eta": "12/11/2026 06:00",
-      "closing": "11/11/2026 17:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -213,6 +213,15 @@
       "status": "PENDING"
     },
     {
+      "vessel": "OYKU A",
+      "voyage": "535",
+      "eta": "17/11/2026 00:00",
+      "closing": "16/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
       "vessel": "JUDITH BORCHARD",
       "voyage": "1076",
       "eta": "17/11/2026 00:00",
@@ -240,15 +249,6 @@
       "status": "PENDING"
     },
     {
-      "vessel": "OYKU A",
-      "voyage": "535",
-      "eta": "17/11/2026 00:00",
-      "closing": "16/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
       "vessel": "XIN NAN TONG",
       "voyage": "644N",
       "eta": "17/11/2026 00:00",
@@ -258,12 +258,12 @@
       "status": "PENDING"
     },
     {
-      "vessel": "CMA CGM GUILD",
-      "voyage": "FMX070N19",
-      "eta": "18/11/2026 00:00",
-      "closing": "19/11/2026 17:00",
-      "acceptance_dry": "CARGO NOT ACCEPTED",
-      "acceptance_reef": "CARGO NOT ACCEPTED",
+      "vessel": "KARANFIL",
+      "voyage": "171126",
+      "eta": "17/11/2026 08:00",
+      "closing": "16/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {

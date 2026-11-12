@@ -1,19 +1,10 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-12T05:53:12.081598+00:00",
-  "acquired_at": "2026-11-12T05:53:12.081598+00:00",
+  "updated_at": "2026-11-12T10:55:51.826156+00:00",
+  "acquired_at": "2026-11-12T10:55:51.826156+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-12T02:53:10.240331+00:00",
+  "data_changed_at": "2026-11-12T10:55:51.826156+00:00",
   "rows": [
-    {
-      "vessel": "RACHEL BORCHARD",
-      "voyage": "1033",
-      "eta": "11/11/2026 00:00",
-      "closing": "11/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
     {
       "vessel": "KATHERINE BORCHARD",
       "voyage": "1158",
@@ -24,10 +15,10 @@
       "status": "PENDING"
     },
     {
-      "vessel": "LIDER TRABZON",
-      "voyage": "1126",
+      "vessel": "RACHEL BORCHARD",
+      "voyage": "1033",
       "eta": "11/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -81,7 +72,7 @@
       "vessel": "VENTO DI GRECALE",
       "voyage": "637",
       "eta": "12/11/2026 00:00",
-      "closing": "11/11/2026 17:00 CLOSED",
+      "closing": "12/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -99,16 +90,7 @@
       "vessel": "CRISTINA A",
       "voyage": "MAS31E26",
       "eta": "13/11/2026 00:00",
-      "closing": "13/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "VENTO DI MELTEMI",
-      "voyage": "599",
-      "eta": "13/11/2026 08:00",
-      "closing": "12/11/2026 17:00",
+      "closing": "14/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -118,6 +100,24 @@
       "voyage": "645E",
       "eta": "14/11/2026 00:00",
       "closing": "13/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "LIDER TRABZON",
+      "voyage": "1126",
+      "eta": "15/11/2026 00:00",
+      "closing": "14/11/2026 10:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "ELYSSA",
+      "voyage": "151126E",
+      "eta": "15/11/2026 00:00",
+      "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -135,16 +135,7 @@
       "vessel": "K-RIVER",
       "voyage": "0926W",
       "eta": "15/11/2026 00:00",
-      "closing": "10/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "ELYSSA",
-      "voyage": "151126E",
-      "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -243,6 +234,15 @@
       "vessel": "ADRASTOS",
       "voyage": "0HWLCE1MA",
       "eta": "18/11/2026 00:00",
+      "closing": "17/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "VENTO DI MELTEMI",
+      "voyage": "599",
+      "eta": "18/11/2026 08:00",
       "closing": "17/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",

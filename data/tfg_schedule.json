@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-11T15:44:57+01:00",
+  "source_updated_at": "2026-11-12T07:40:03+01:00",
   "rows": [
     {
       "vessel": "ARGENTINIAN",
@@ -212,5 +212,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-12T05:53:13.110946+00:00"
+  "acquired_at": "2026-11-12T10:55:52.806812+00:00"
 }

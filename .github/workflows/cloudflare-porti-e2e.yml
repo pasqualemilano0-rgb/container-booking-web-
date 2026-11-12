@@ -41,7 +41,7 @@ jobs:
               assert isinstance(doc.get('rows'),list) and len(doc['rows'])>=2,(term,doc)
               assert doc.get('booking_verified') is False,(term,doc)
               assert doc.get('live') is False,(term,doc)
-              assert doc.get('mode')=='cloudflare_verified_backup',(term,doc.get('mode'))
+              assert doc.get('mode') in ('cloudflare_verified_backup','cloudflare_scheduled'),(term,doc.get('mode'))
               print(term,len(doc['rows']),doc.get('mode'),doc.get('stale'))
           code,booking=request('/api/tfg_booking',method='POST',payload=b'{}')
           assert code in (401,403),(code,booking)

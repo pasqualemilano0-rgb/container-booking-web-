@@ -1,0 +1,18 @@
+version: 2.1
+# Offline regression only: no secrets, production API calls, or deployments.
+workflows:
+  essential-offline:
+    jobs:
+      - booking-regression
+jobs:
+  booking-regression:
+    docker:
+      - image: cimg/node:22.13
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: Essential offline regression
+          command: |
+            set -eu
+            node --test tests/booking_search.test.mjs tests/cloudflare_tfg_booking.test.mjs tests/cloudflare_rate_limit.test.mjs tests/cloudflare_worker.test.mjs tests/tfg_schedule.test.mjs tests/conateco_rules.test.mjs

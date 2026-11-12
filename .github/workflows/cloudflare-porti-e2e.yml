@@ -46,5 +46,5 @@ jobs:
           assert booking.get('booking_authorized') is not True,(code,booking)
           code,query=request('/api/tfg_booking?forbidden=1',method='POST',payload=b'{}')
           assert code in (400,401,403),(code,query)
-          print('Staging HTTP smoke passed; no authenticated Booking request was made')
+          print('Cloudflare backup recovery E2E passed; no authenticated Booking request was made')
           PY

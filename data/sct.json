@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-12T10:55:51.826156+00:00",
-  "acquired_at": "2026-11-12T10:55:51.826156+00:00",
+  "updated_at": "2026-11-12T11:43:27.636180+00:00",
+  "acquired_at": "2026-11-12T11:43:27.636180+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-12T10:55:51.826156+00:00",
+  "data_changed_at": "2026-11-12T11:43:27.636180+00:00",
   "rows": [
     {
       "vessel": "KATHERINE BORCHARD",
@@ -54,7 +54,7 @@
       "vessel": "KOBE EXPRESS",
       "voyage": "645W",
       "eta": "12/11/2026 00:00",
-      "closing": "12/11/2026 12:00",
+      "closing": "12/11/2026 12:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

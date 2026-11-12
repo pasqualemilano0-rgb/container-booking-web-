@@ -159,17 +159,34 @@
       "vessel": "MSC CHIARA X",
       "voyage": "FD644E",
       "eta": "2026-11-10 13:05",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
+      "vessel_status": "CHI",
+      "category": "PARTITE",
       "voyage_id": "202600375",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "CHIUSA",
       "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-11-03 14:00",
       "closing": "2026-11-09 17:00",
       "notes": "ACCETT.RETROPORTO 30/10 12:00 RIACCETT.CONATECO 06/11 14:00",
+      "source_conflict": false
+    },
+    {
+      "vessel": "MSC KATALIN II",
+      "voyage": "ZD643R",
+      "eta": "2026-11-11 00:00",
+      "vessel_status": "ANN",
+      "category": "PARTITE",
+      "voyage_id": "202600403",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "",
+      "stop_cargo": "",
+      "external_depot": "",
+      "opening": "",
+      "closing": "",
+      "notes": "",
       "source_conflict": false
     },
     {
@@ -350,8 +367,8 @@
       "category": "PREVISTE",
       "voyage_id": "202600387",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-12 12:00",
@@ -683,5 +700,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-12T10:55:55.239373+00:00"
+  "acquired_at": "2026-11-12T11:43:32.027130+00:00"
 }

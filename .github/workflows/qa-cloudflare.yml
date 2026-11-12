@@ -1,11 +1,5 @@
 name: QA Cloudflare Workers Backend
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'cloudflare/**'
-      - 'tests/cloudflare_*.test.mjs'
-      - '.github/workflows/qa-cloudflare.yml'
   pull_request:
     branches: [main]
     paths:

@@ -231,10 +231,10 @@
       "category": "PREVISTE",
       "voyage_id": "202600380",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
+      "acceptance_flag": "1",
+      "acceptance_icon": "ACCETTA_CARICO",
       "stop_cargo": "",
-      "external_depot": "S",
+      "external_depot": "",
       "opening": "2026-11-12 06:30",
       "closing": "2026-11-12 17:00",
       "notes": "ACCETT.RETROPORTO 06/11 07:00",
@@ -700,5 +700,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-12T03:24:48.438592+00:00"
+  "acquired_at": "2026-11-12T05:49:07.315852+00:00"
 }

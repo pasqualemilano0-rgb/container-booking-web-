@@ -4,6 +4,7 @@ workflows:
   essential-offline:
     jobs:
       - booking-regression
+      - porti-snapshot-regression
 jobs:
   booking-regression:
     docker:
@@ -16,3 +17,19 @@ jobs:
           command: |
             set -eu
             node --test tests/booking_search.test.mjs tests/cloudflare_tfg_booking.test.mjs tests/cloudflare_rate_limit.test.mjs tests/cloudflare_worker.test.mjs tests/tfg_schedule.test.mjs tests/conateco_rules.test.mjs
+
+  porti-snapshot-regression:
+    docker:
+      - image: cimg/python:3.12
+    resource_class: small
+    steps:
+      - checkout
+      - run:
+          name: Install offline parser test dependencies
+          command: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - run:
+          name: Vessel fetch and snapshot publishing regression
+          command: |
+            set -eu
+            python -m unittest discover -s tests -p 'test_fetch_*.py' -v
+            python -m unittest discover -s tests -p 'test_publish_snapshots.py' -v

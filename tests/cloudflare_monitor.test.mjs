@@ -125,7 +125,16 @@ test('cron refresh writes three independent verified public schedules to KV',asy
  assert.equal(status.terminals.cnt.state,'ok');
  assert.equal(status.terminals.sct.state,'ok');
  assert.equal(status.terminals.tfg.state,'ok');
- assert.equal(env.SCHEDULES_KV.writes.length,6);
+ // Each of CNT/TFG/SCT writes a verified backup, current schedule and status.
+ const writes=env.SCHEDULES_KV.writes;
+ assert.equal(writes.length,9);
+ assert.equal(new Set(writes).size,9,'Do not overwrite distinct KV recovery keys');
+ for(const terminal of Object.keys(SPECS)){
+  assert.ok(writes.includes('schedule:'+terminal),terminal+' schedule missing');
+  assert.ok(writes.includes('status:'+terminal),terminal+' status missing');
+  assert.equal(writes.filter(k=>k.startsWith('backup:v1:'+terminal+':')).length,1,
+    terminal+' must archive exactly one verified recovery point');
+ }
 });
 test('any source HTTP failure preserves last good snapshot and reports the error',async()=>{
  const env={SCHEDULES_KV:new FakeKV()};

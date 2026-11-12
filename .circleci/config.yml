@@ -16,7 +16,7 @@ jobs:
           name: Essential offline regression
           command: |
             set -eu
-            node --test tests/booking_search.test.mjs tests/cloudflare_tfg_booking.test.mjs tests/cloudflare_rate_limit.test.mjs tests/cloudflare_worker.test.mjs tests/tfg_schedule.test.mjs tests/conateco_rules.test.mjs
+            node --test tests/cloudflare_porti_backup.test.mjs tests/booking_search.test.mjs tests/cloudflare_tfg_booking.test.mjs tests/cloudflare_rate_limit.test.mjs tests/cloudflare_worker.test.mjs tests/tfg_schedule.test.mjs tests/conateco_rules.test.mjs
 
   porti-snapshot-regression:
     docker:

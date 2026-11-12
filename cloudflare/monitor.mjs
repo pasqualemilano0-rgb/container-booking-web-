@@ -235,7 +235,13 @@ export async function archiveVerifiedSchedule(env,terminal,doc,now=new Date()){
   const acquired=Date.parse(doc.acquired_at);
   if(!Number.isFinite(acquired)||acquired>now.getTime()+300000)throw Error('BACKUP_TIMESTAMP');
   const archiveKey='backup:v1:'+terminal+':'+new Date(acquired).toISOString();
-  await env.SCHEDULES_KV.put(archiveKey,JSON.stringify(doc),{expirationTtl:7*24*60*60});
+  try{
+    await env.SCHEDULES_KV.put(archiveKey,JSON.stringify(doc),{expirationTtl:7*24*60*60});
+  }catch(e){
+    // Backup failures must not interrupt live vessel schedules or Booking.
+    console.error('PORTI_BACKUP_WRITE_FAILED',terminal,String(e?.message??e));
+    return null;
+  }
   return archiveKey;
 }
 

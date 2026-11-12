@@ -1,4 +1,4 @@
-name: Cloudflare Porti staging API smoke
+name: Cloudflare Porti staging backup recovery E2E
 on:
   pull_request:
     paths:
@@ -38,6 +38,8 @@ jobs:
               assert doc.get('source') and doc.get('acquired_at'),(term,doc)
               assert isinstance(doc.get('rows'),list) and len(doc['rows'])>=2,(term,doc)
               assert doc.get('booking_verified') is False,(term,doc)
+              assert doc.get('live') is False,(term,doc)
+              assert doc.get('mode')=='cloudflare_verified_backup',(term,doc.get('mode'))
               print(term,len(doc['rows']),doc.get('mode'),doc.get('stale'))
           code,booking=request('/api/tfg_booking',method='POST',payload=b'{}')
           assert code in (401,403),(code,booking)

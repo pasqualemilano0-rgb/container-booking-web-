@@ -18,3 +18,15 @@ test('rejects invalid and future snapshots without writes',async()=>{
  await assert.rejects(archiveVerifiedSchedule(env,'unknown',doc,now));
  assert.equal(count,0);
 });
+
+test('backup KV failure is logged and does not propagate to the schedule refresh',async()=>{
+ const env={SCHEDULES_KV:{put:async()=>{throw Error('KV_WRITE_FAILED');}}};
+ const original=console.error;const errors=[];
+ console.error=(...args)=>errors.push(args);
+ try{
+  const key=await archiveVerifiedSchedule(env,'sct',doc,now);
+  assert.equal(key,null);
+  assert.equal(errors.length,1);
+  assert.equal(errors[0][0],'PORTI_BACKUP_WRITE_FAILED');
+ }finally{console.error=original;}
+});

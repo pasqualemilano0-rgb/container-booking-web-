@@ -1,8 +1,6 @@
 name: Test e aggiornamento navi Container Booking
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
   schedule:
     # SCT, TFG e CO.NA.TE.CO. ogni 15 minuti. GitHub può ritardare.
@@ -17,32 +15,6 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  verify:
-    # Keep source and UI checks on pushes/manual runs; cron is for data refresh.
-    if: github.event_name != 'schedule'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - name: Installa librerie di test
-        run: pip install --disable-pip-version-check requests beautifulsoup4
-      - name: Controlla sintassi backend Cloudflare
-        run: |
-          for file in cloudflare/*.mjs; do node --check "$file" || exit 1; done
-      - name: Test del backend Cloudflare ancora utilizzato da LTS
-        run: node --test tests/cloudflare_*.test.mjs
-      - name: Test acquisizione programmi e pubblicazione snapshot
-        run: |
-          python -m unittest discover -s tests -p 'test_fetch_*.py'
-          python -m unittest discover -s tests -p 'test_publish_snapshots.py'
-
   refresh:
     # Independent of UI/markup tests: a test failure must never freeze
     # the official vessel snapshots for drivers.

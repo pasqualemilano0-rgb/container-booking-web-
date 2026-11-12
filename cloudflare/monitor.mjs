@@ -286,7 +286,9 @@ export async function refreshTerminal(env,terminal,deps={},now=new Date()){
     }
     next.monitor_origin='cloudflare_official_read';
     if(!old||!Number.isFinite(toMs(old.acquired_at))||toMs(next.acquired_at)>toMs(old.acquired_at)){
-      await archiveVerifiedSchedule(env,terminal,next,now);
+      // Archive only changed schedules: avoid 288 extra writes/day on free KV.
+      if(!old||JSON.stringify(old.rows)!==JSON.stringify(next.rows))
+        await archiveVerifiedSchedule(env,terminal,next,now);
       await env.SCHEDULES_KV.put(key(terminal),JSON.stringify(next));
     }
     const last_error_code=null;
@@ -314,7 +316,8 @@ export async function refreshTerminal(env,terminal,deps={},now=new Date()){
         ||toMs(candidate.acquired_at)>toMs(old.acquired_at);
       const selected=newer?candidate:old;
       if(newer){
-        await archiveVerifiedSchedule(env,terminal,candidate,now);
+        if(!old||JSON.stringify(old.rows)!==JSON.stringify(candidate.rows))
+          await archiveVerifiedSchedule(env,terminal,candidate,now);
         await env.SCHEDULES_KV.put(key(terminal),JSON.stringify(candidate));
       }
       const status={state:'fallback',last_error_code:code,last_attempt_at:now.toISOString(),

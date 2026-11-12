@@ -3,6 +3,8 @@ on:
   pull_request:
     paths:
       - '.github/workflows/cloudflare-porti-e2e.yml'
+      - 'tests/booking-auth.test.mjs'
+      - 'tests/booking-worker-fixture/**'
   workflow_dispatch:
 permissions:
   contents: read
@@ -48,3 +50,14 @@ jobs:
           assert code in (400,401,403),(code,query)
           print('Cloudflare backup recovery E2E passed; no authenticated Booking request was made')
           PY
+
+  booking-unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test Booking auth and rate limits with mocked session verifier
+        run: node --test tests/booking-auth.test.mjs

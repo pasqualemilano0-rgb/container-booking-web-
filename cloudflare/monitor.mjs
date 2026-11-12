@@ -226,6 +226,19 @@ export async function fetchPublicSnapshot(terminal,fetcher=fetch,now=new Date())
     live:false,booking_verified:false};
 }
 const key=t=>'schedule:'+t,stat=t=>'status:'+t;
+// Versioned recovery points in the existing Cloudflare KV namespace.
+// Separate keys protect against accidental overwrites, not account/KV outages.
+// Retention: 7 days. Do not expose these keys through public API routes.
+export async function archiveVerifiedSchedule(env,terminal,doc,now=new Date()){
+  if(!env?.SCHEDULES_KV||!Object.hasOwn(SPECS,terminal)
+     ||!checkSnapshot(terminal,doc,now))throw Error('BACKUP_INVALID');
+  const acquired=Date.parse(doc.acquired_at);
+  if(!Number.isFinite(acquired)||acquired>now.getTime()+300000)throw Error('BACKUP_TIMESTAMP');
+  const archiveKey='backup:v1:'+terminal+':'+new Date(acquired).toISOString();
+  await env.SCHEDULES_KV.put(archiveKey,JSON.stringify(doc),{expirationTtl:7*24*60*60});
+  return archiveKey;
+}
+
 export async function readSchedule(env,terminal,now=new Date()){
   const saved=await env?.SCHEDULES_KV?.get(key(terminal),'json');
   if(!checkSnapshot(terminal,saved,now))return null;
@@ -273,6 +286,7 @@ export async function refreshTerminal(env,terminal,deps={},now=new Date()){
     }
     next.monitor_origin='cloudflare_official_read';
     if(!old||!Number.isFinite(toMs(old.acquired_at))||toMs(next.acquired_at)>toMs(old.acquired_at)){
+      await archiveVerifiedSchedule(env,terminal,next,now);
       await env.SCHEDULES_KV.put(key(terminal),JSON.stringify(next));
     }
     const last_error_code=null;
@@ -299,7 +313,10 @@ export async function refreshTerminal(env,terminal,deps={},now=new Date()){
       const newer=!old||!Number.isFinite(toMs(old.acquired_at))
         ||toMs(candidate.acquired_at)>toMs(old.acquired_at);
       const selected=newer?candidate:old;
-      if(newer)await env.SCHEDULES_KV.put(key(terminal),JSON.stringify(candidate));
+      if(newer){
+        await archiveVerifiedSchedule(env,terminal,candidate,now);
+        await env.SCHEDULES_KV.put(key(terminal),JSON.stringify(candidate));
+      }
       const status={state:'fallback',last_error_code:code,last_attempt_at:now.toISOString(),
         last_success_at:now.toISOString(),source_updated_at:selected?.source_updated_at??null,
         rows:selected?.rows?.length??0};

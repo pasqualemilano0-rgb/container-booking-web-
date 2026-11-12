@@ -20,7 +20,7 @@ jobs:
           import json, os, urllib.request, urllib.error
           base=os.environ['BASE']
           def request(path, method='GET', payload=None):
-              headers={'Accept':'application/json'}
+              headers={'Accept':'application/json','User-Agent':'Mozilla/5.0 (compatible; LTS-Staging-CI/1.0; +https://github.com/pasqualemilano0-rgb/container-booking-web-)'}
               if payload is not None: headers['Content-Type']='application/json'
               req=urllib.request.Request(base+path, data=payload, headers=headers, method=method)
               try:

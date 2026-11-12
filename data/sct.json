@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-12T11:43:27.636180+00:00",
-  "acquired_at": "2026-11-12T11:43:27.636180+00:00",
+  "updated_at": "2026-11-12T18:50:47.891067+00:00",
+  "acquired_at": "2026-11-12T18:50:47.891067+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-12T11:43:27.636180+00:00",
+  "data_changed_at": "2026-11-12T18:50:47.891067+00:00",
   "rows": [
     {
       "vessel": "KATHERINE BORCHARD",
@@ -72,7 +72,7 @@
       "vessel": "VENTO DI GRECALE",
       "voyage": "637",
       "eta": "12/11/2026 00:00",
-      "closing": "12/11/2026 17:00",
+      "closing": "12/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -126,7 +126,7 @@
       "vessel": "MASTERY D",
       "voyage": "0926E",
       "eta": "15/11/2026 00:00",
-      "closing": "12/11/2026 17:00",
+      "closing": "12/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

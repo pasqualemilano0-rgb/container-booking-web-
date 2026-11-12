@@ -3,23 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "MSC ADRIANA II",
-      "voyage": "AG645A",
-      "eta": "2026-11-03 14:30",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600373",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-28 06:30",
-      "closing": "2026-11-02 17:00",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC TIANSHAN",
       "voyage": "MG637B",
       "eta": "2026-11-04 00:00",
@@ -190,23 +173,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC KATALIN II",
-      "voyage": "ZD643R",
-      "eta": "2026-11-11 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600403",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "",
-      "stop_cargo": "",
-      "external_depot": "",
-      "opening": "",
-      "closing": "",
-      "notes": "",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC LILA F",
       "voyage": "AJ643R",
       "eta": "2026-11-11 13:25",
@@ -228,7 +194,7 @@
       "voyage": "371",
       "eta": "2026-11-12 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600384",
       "carrier": "LINEA I.MESSINA",
       "acceptance_flag": "1",
@@ -245,7 +211,7 @@
       "voyage": "FD645E",
       "eta": "2026-11-12 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600381",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "1",
@@ -734,5 +700,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-11T22:43:28.883269+00:00"
+  "acquired_at": "2026-11-12T02:53:14.836512+00:00"
 }

@@ -1,49 +1,22 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-11T22:43:24.631719+00:00",
-  "acquired_at": "2026-11-11T22:43:24.631719+00:00",
+  "updated_at": "2026-11-12T02:53:10.240331+00:00",
+  "acquired_at": "2026-11-12T02:53:10.240331+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-11T21:22:51.980943+00:00",
+  "data_changed_at": "2026-11-12T02:53:10.240331+00:00",
   "rows": [
-    {
-      "vessel": "JAKARTA EXPRESS",
-      "voyage": "14W46",
-      "eta": "10/11/2026 00:00",
-      "closing": "10/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "MSC CORNELIA",
-      "voyage": "CD645A",
-      "eta": "10/11/2026 02:00",
-      "closing": "07/11/2026 12:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "ECO OSTRO",
-      "voyage": "646W",
-      "eta": "10/11/2026 07:45",
-      "closing": "10/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "GRANDE INGHILTERRA",
-      "voyage": "GDE0526",
-      "eta": "10/11/2026 08:00",
-      "closing": "09/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO NOT ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
     {
       "vessel": "RACHEL BORCHARD",
       "voyage": "1033",
+      "eta": "11/11/2026 00:00",
+      "closing": "11/11/2026 17:00 CLOSED",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "KATHERINE BORCHARD",
+      "voyage": "1158",
       "eta": "11/11/2026 00:00",
       "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -78,9 +51,9 @@
       "status": "PENDING"
     },
     {
-      "vessel": "KATHERINE BORCHARD",
-      "voyage": "1158",
-      "eta": "11/11/2026 00:00",
+      "vessel": "MIRIAM BORCHARD",
+      "voyage": "1045",
+      "eta": "12/11/2026 00:00",
       "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
@@ -91,15 +64,6 @@
       "voyage": "645W",
       "eta": "12/11/2026 00:00",
       "closing": "12/11/2026 12:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
-      "vessel": "MIRIAM BORCHARD",
-      "voyage": "1045",
-      "eta": "12/11/2026 00:00",
-      "closing": "11/11/2026 17:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -159,10 +123,10 @@
       "status": "PENDING"
     },
     {
-      "vessel": "MSC ELENI",
-      "voyage": "CD646A",
+      "vessel": "MASTERY D",
+      "voyage": "0926E",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "12/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -177,17 +141,17 @@
       "status": "PENDING"
     },
     {
-      "vessel": "MASTERY D",
-      "voyage": "0926E",
+      "vessel": "ELYSSA",
+      "voyage": "151126E",
       "eta": "15/11/2026 00:00",
-      "closing": "12/11/2026 17:00",
+      "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {
-      "vessel": "ELYSSA",
-      "voyage": "151126E",
+      "vessel": "MSC ELENI",
+      "voyage": "CD646A",
       "eta": "15/11/2026 00:00",
       "closing": "14/11/2026 10:00",
       "acceptance_dry": "CARGO ACCEPTED",
@@ -213,10 +177,10 @@
       "status": "PENDING"
     },
     {
-      "vessel": "OYKU A",
-      "voyage": "535",
+      "vessel": "LIVORNO EXPRESS",
+      "voyage": "88W47",
       "eta": "17/11/2026 00:00",
-      "closing": "16/11/2026 17:00",
+      "closing": "17/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -240,10 +204,10 @@
       "status": "PENDING"
     },
     {
-      "vessel": "LIVORNO EXPRESS",
-      "voyage": "88W47",
+      "vessel": "OYKU A",
+      "voyage": "535",
       "eta": "17/11/2026 00:00",
-      "closing": "17/11/2026 17:00",
+      "closing": "16/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -280,6 +244,15 @@
       "voyage": "0HWLCE1MA",
       "eta": "18/11/2026 00:00",
       "closing": "17/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "NAAMA BORCHARD",
+      "voyage": "0139",
+      "eta": "19/11/2026 00:00",
+      "closing": "18/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

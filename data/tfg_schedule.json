@@ -3,28 +3,6 @@
   "source_updated_at": "2026-11-12T14:08:54+01:00",
   "rows": [
     {
-      "vessel": "ARGENTINIAN",
-      "arrival_voyage": "0HWL8E1MA",
-      "departure_voyage": "0HWL8E1MA",
-      "eta": "02/11/26 07:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "02/11/26 15:00:00",
-      "fast_corridor_cut_off": "30/10/26 11:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
-      "vessel": "HENNEKE RAMBOW",
-      "arrival_voyage": "AGA020S19",
-      "departure_voyage": "AGA020S19",
-      "eta": "02/11/26 11:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "02/11/26 15:00:00",
-      "fast_corridor_cut_off": "03/11/26 10:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
       "vessel": "MSC GRETA III",
       "arrival_voyage": "AC641R",
       "departure_voyage": "AC641R",
@@ -212,5 +190,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-12T19:10:13.932263+00:00"
+  "acquired_at": "2026-11-13T00:12:43.642771+00:00"
 }

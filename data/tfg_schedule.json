@@ -1,6 +1,6 @@
 {
   "source": "https://tfg.bucci.it/@/TFGW_TP_ETA",
-  "source_updated_at": "2026-11-13T07:38:43+01:00",
+  "source_updated_at": "2026-11-13T15:33:56+01:00",
   "rows": [
     {
       "vessel": "MSC GRETA III",
@@ -83,10 +83,10 @@
       "vessel": "GSL CHATEAU DIF",
       "arrival_voyage": "FMX0C0S19",
       "departure_voyage": "FMX0C0S19",
-      "eta": "14/11/26",
-      "acceptance": "NON ACCETTA CARICO",
-      "custom_close_time": "ANNULLATA",
-      "fast_corridor_cut_off": "",
+      "eta": "15/11/26",
+      "acceptance": "ACCETTA CARICO",
+      "custom_close_time": "",
+      "fast_corridor_cut_off": "13/11/26 15:00:00",
       "gate_cut_off": "",
       "destination": "INTERNO PORTO"
     },
@@ -190,5 +190,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-13T07:50:24.044719+00:00"
+  "acquired_at": "2026-11-13T15:26:20.883216+00:00"
 }

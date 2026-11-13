@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-13T07:50:22.738871+00:00",
-  "acquired_at": "2026-11-13T07:50:22.738871+00:00",
+  "updated_at": "2026-11-13T15:26:19.691469+00:00",
+  "acquired_at": "2026-11-13T15:26:19.691469+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-13T00:12:42.476528+00:00",
+  "data_changed_at": "2026-11-13T15:26:19.691469+00:00",
   "rows": [
     {
       "vessel": "MIRIAM BORCHARD",
@@ -51,19 +51,19 @@
       "status": "PENDING"
     },
     {
-      "vessel": "CRISTINA A",
-      "voyage": "MAS31E26",
-      "eta": "13/11/2026 00:00",
-      "closing": "14/11/2026 12:00",
+      "vessel": "MEDKON PERLA",
+      "voyage": "645E",
+      "eta": "14/11/2026 00:00",
+      "closing": "13/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
     },
     {
-      "vessel": "MEDKON PERLA",
-      "voyage": "645E",
-      "eta": "14/11/2026 00:00",
-      "closing": "13/11/2026 17:00",
+      "vessel": "CRISTINA A",
+      "voyage": "MAS31E26",
+      "eta": "15/11/2026 00:00",
+      "closing": "14/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -90,7 +90,7 @@
       "vessel": "MASTERY D",
       "voyage": "0926E",
       "eta": "15/11/2026 00:00",
-      "closing": "12/11/2026 17:00 CLOSED",
+      "closing": "14/11/2026 12:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -159,15 +159,6 @@
       "status": "PENDING"
     },
     {
-      "vessel": "OYKU A",
-      "voyage": "535",
-      "eta": "17/11/2026 00:00",
-      "closing": "16/11/2026 17:00",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
-    {
       "vessel": "XIN NAN TONG",
       "voyage": "644N",
       "eta": "17/11/2026 00:00",
@@ -215,6 +206,15 @@
     {
       "vessel": "NAAMA BORCHARD",
       "voyage": "0139",
+      "eta": "19/11/2026 00:00",
+      "closing": "18/11/2026 17:00",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "OYKU A",
+      "voyage": "535",
       "eta": "19/11/2026 00:00",
       "closing": "18/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",

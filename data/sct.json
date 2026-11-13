@@ -1,9 +1,9 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-13T16:12:15.931236+00:00",
-  "acquired_at": "2026-11-13T16:12:15.931236+00:00",
+  "updated_at": "2026-11-13T21:31:02.292902+00:00",
+  "acquired_at": "2026-11-13T21:31:02.292902+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-13T16:12:15.931236+00:00",
+  "data_changed_at": "2026-11-13T21:31:02.292902+00:00",
   "rows": [
     {
       "vessel": "MIRIAM BORCHARD",
@@ -72,7 +72,7 @@
       "vessel": "MSC ELENI",
       "voyage": "CD646A",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "17/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -81,7 +81,7 @@
       "vessel": "K-RIVER",
       "voyage": "0926W",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 12:00",
+      "closing": "17/11/2026 14:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

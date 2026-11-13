@@ -1,0 +1,63 @@
+name: Cloudflare Porti staging backup recovery E2E
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/cloudflare-porti-e2e.yml'
+      - 'tests/booking-auth.test.mjs'
+      - 'tests/booking-worker-fixture/**'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  staging-http:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Verify staging API, schedule shape and unauthorized Booking
+        shell: bash
+        env:
+          BASE: https://container-booking-porti-backup-stage.pasqualemilano0.workers.dev
+        run: |
+          python3 - <<'PY'
+          import json, os, urllib.request, urllib.error
+          base=os.environ['BASE']
+          def request(path, method='GET', payload=None):
+              headers={'Accept':'application/json','User-Agent':'Mozilla/5.0 (compatible; LTS-Staging-CI/1.0; +https://github.com/pasqualemilano0-rgb/container-booking-web-)'}
+              if payload is not None: headers['Content-Type']='application/json'
+              req=urllib.request.Request(base+path, data=payload, headers=headers, method=method)
+              try:
+                  with urllib.request.urlopen(req,timeout=25) as res:
+                      return res.status,json.loads(res.read(1000000))
+              except urllib.error.HTTPError as e:
+                  return e.code,json.loads(e.read(1000000))
+          code,health=request('/api/health')
+          assert code==200 and health.get('status')=='ok',(code,health)
+          code,status=request('/api/monitor/status')
+          assert code==200,(code,status)
+          for term,path in [('cnt','/api/cnt'),('tfg','/api/tfg/snapshot'),('sct','/api/sct')]:
+              code,doc=request(path)
+              assert code==200,(term,code,doc)
+              assert doc.get('source') and doc.get('acquired_at'),(term,doc)
+              assert isinstance(doc.get('rows'),list) and len(doc['rows'])>=2,(term,doc)
+              assert doc.get('booking_verified') is False,(term,doc)
+              assert doc.get('live') is False,(term,doc)
+              assert doc.get('mode') in ('cloudflare_verified_backup','cloudflare_scheduled'),(term,doc.get('mode'))
+              print(term,len(doc['rows']),doc.get('mode'),doc.get('stale'))
+          code,booking=request('/api/tfg_booking',method='POST',payload=b'{}')
+          assert code in (401,403),(code,booking)
+          assert booking.get('booking_authorized') is not True,(code,booking)
+          code,query=request('/api/tfg_booking?forbidden=1',method='POST',payload=b'{}')
+          assert code in (400,401,403),(code,query)
+          print('Cloudflare backup recovery E2E passed; no authenticated Booking request was made')
+          PY
+
+  booking-unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Test Booking auth and rate limits with mocked session verifier
+        run: node --test tests/booking-auth.test.mjs

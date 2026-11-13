@@ -321,7 +321,7 @@
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-16 06:30",
-      "closing": "",
+      "closing": "2026-11-18 17:00",
       "notes": "",
       "source_conflict": false
     },
@@ -337,8 +337,8 @@
       "acceptance_icon": "",
       "stop_cargo": "",
       "external_depot": "S",
-      "opening": "",
-      "closing": "",
+      "opening": "2026-11-17 06:30",
+      "closing": "2026-11-20 17:00",
       "notes": "ACCETT.RETROPORTO 13/11 14:00",
       "source_conflict": false
     },
@@ -632,5 +632,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-13T15:26:24.313041+00:00"
+  "acquired_at": "2026-11-13T16:12:19.256895+00:00"
 }

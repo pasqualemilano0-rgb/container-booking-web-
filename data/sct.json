@@ -1,24 +1,15 @@
 {
   "source": "https://www.salernocontainerterminal.com/ca/an/vessel_schedule.php",
-  "updated_at": "2026-11-14T08:04:15.042366+00:00",
-  "acquired_at": "2026-11-14T08:04:15.042366+00:00",
+  "updated_at": "2026-11-14T16:59:48.716533+00:00",
+  "acquired_at": "2026-11-14T16:59:48.716533+00:00",
   "source_updated_at": null,
-  "data_changed_at": "2026-11-14T01:39:45.413933+00:00",
+  "data_changed_at": "2026-11-14T16:59:48.716533+00:00",
   "rows": [
-    {
-      "vessel": "MEDKON PERLA",
-      "voyage": "645E",
-      "eta": "14/11/2026 00:00",
-      "closing": "13/11/2026 17:00 CLOSED",
-      "acceptance_dry": "CARGO ACCEPTED",
-      "acceptance_reef": "CARGO ACCEPTED",
-      "status": "PENDING"
-    },
     {
       "vessel": "CRISTINA A",
       "voyage": "MAS31E26",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 12:00",
+      "closing": "14/11/2026 12:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -45,7 +36,7 @@
       "vessel": "MASTERY D",
       "voyage": "0926E",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 12:00",
+      "closing": "14/11/2026 12:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -54,7 +45,7 @@
       "vessel": "ELYSSA",
       "voyage": "151126E",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 10:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -63,7 +54,7 @@
       "vessel": "LIDER TRABZON",
       "voyage": "1126",
       "eta": "15/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 10:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -72,7 +63,7 @@
       "vessel": "BERNHARD SCHULTE",
       "voyage": "275W",
       "eta": "16/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 10:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -81,7 +72,7 @@
       "vessel": "GRANDE ANGOLA",
       "voyage": "GRA0726",
       "eta": "16/11/2026 08:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 10:00 CLOSED",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"
@@ -90,7 +81,16 @@
       "vessel": "XIN NAN TONG",
       "voyage": "644N",
       "eta": "17/11/2026 00:00",
-      "closing": "14/11/2026 10:00",
+      "closing": "14/11/2026 10:00 CLOSED",
+      "acceptance_dry": "CARGO ACCEPTED",
+      "acceptance_reef": "CARGO ACCEPTED",
+      "status": "PENDING"
+    },
+    {
+      "vessel": "MEDKON PERLA",
+      "voyage": "645E",
+      "eta": "17/11/2026 00:00",
+      "closing": "16/11/2026 17:00",
       "acceptance_dry": "CARGO ACCEPTED",
       "acceptance_reef": "CARGO ACCEPTED",
       "status": "PENDING"

@@ -173,23 +173,6 @@
       "source_conflict": false
     },
     {
-      "vessel": "MSC ADONIS",
-      "voyage": "FD645E",
-      "eta": "2026-11-14 00:00",
-      "vessel_status": "PRE",
-      "category": "PRESENTI",
-      "voyage_id": "202600381",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-11-11 06:30",
-      "closing": "2026-11-13 10:00",
-      "notes": "ACCETT.RETROPORTO 09/11 07:00",
-      "source_conflict": false
-    },
-    {
       "vessel": "MSC LEA II",
       "voyage": "AG647A",
       "eta": "2026-11-14 02:15",
@@ -207,6 +190,23 @@
       "source_conflict": false
     },
     {
+      "vessel": "MSC ADONIS",
+      "voyage": "FD645E",
+      "eta": "2026-11-14 09:10",
+      "vessel_status": "ARR",
+      "category": "ORMEGGIATE",
+      "voyage_id": "202600381",
+      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
+      "external_depot": "",
+      "opening": "2026-11-11 06:30",
+      "closing": "2026-11-13 10:00",
+      "notes": "ACCETT.RETROPORTO 09/11 07:00",
+      "source_conflict": false
+    },
+    {
       "vessel": "MSC SARA ELENA",
       "voyage": "NL642R",
       "eta": "2026-11-15 00:00",
@@ -216,7 +216,7 @@
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "1",
       "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "",
+      "stop_cargo": "N",
       "external_depot": "",
       "opening": "2026-11-12 06:30",
       "closing": "2026-11-13 17:00",
@@ -226,7 +226,7 @@
     {
       "vessel": "MSC SWEDEN VI",
       "voyage": "MG646W",
-      "eta": "2026-11-16 00:00",
+      "eta": "2026-11-17 00:00",
       "vessel_status": "PRE",
       "category": "PREVISTE",
       "voyage_id": "202600382",
@@ -236,7 +236,7 @@
       "stop_cargo": "",
       "external_depot": "",
       "opening": "2026-11-10 14:00",
-      "closing": "2026-11-16 10:00",
+      "closing": "2026-11-16 12:00",
       "notes": "",
       "source_conflict": false
     },
@@ -404,10 +404,10 @@
       "acceptance_flag": "0",
       "acceptance_icon": "",
       "stop_cargo": "",
-      "external_depot": "",
+      "external_depot": "S",
       "opening": "",
       "closing": "",
-      "notes": "",
+      "notes": "ACCETT.RETROPORTO 16/11 14:00",
       "source_conflict": false
     },
     {
@@ -598,5 +598,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-14T08:04:19.780798+00:00"
+  "acquired_at": "2026-11-14T10:16:01.304278+00:00"
 }

@@ -3,40 +3,6 @@
   "source_updated_at": null,
   "rows": [
     {
-      "vessel": "JAN",
-      "voyage": "644S",
-      "eta": "2026-11-05 01:10",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600363",
-      "carrier": "DIAMOND LINE",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-11-02 06:30",
-      "closing": "2026-11-04 17:00",
-      "notes": "ACCETT.RETROPORTO 29/10 07:00",
-      "source_conflict": false
-    },
-    {
-      "vessel": "MSC GRETA III",
-      "voyage": "AC643A",
-      "eta": "2026-11-05 22:30",
-      "vessel_status": "CHI",
-      "category": "PARTITE",
-      "voyage_id": "202600358",
-      "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "0",
-      "acceptance_icon": "CHIUSA",
-      "stop_cargo": "S",
-      "external_depot": "",
-      "opening": "2026-10-27 12:00",
-      "closing": "2026-11-05 12:00",
-      "notes": "LOAD ALSO LEVANTE CARGO",
-      "source_conflict": false
-    },
-    {
       "vessel": "JOLLY BLUE",
       "voyage": "368",
       "eta": "2026-11-06 07:20",
@@ -211,7 +177,7 @@
       "voyage": "FD645E",
       "eta": "2026-11-14 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600381",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -228,7 +194,7 @@
       "voyage": "AG647A",
       "eta": "2026-11-14 00:00",
       "vessel_status": "PRE",
-      "category": "PREVISTE",
+      "category": "PRESENTI",
       "voyage_id": "202600389",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
@@ -632,5 +598,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-13T22:32:46.197412+00:00"
+  "acquired_at": "2026-11-14T01:39:49.906361+00:00"
 }

@@ -3,17 +3,6 @@
   "source_updated_at": "2026-11-13T20:30:19+01:00",
   "rows": [
     {
-      "vessel": "MSC GRETA III",
-      "arrival_voyage": "AC641R",
-      "departure_voyage": "AC641R",
-      "eta": "03/11/26 06:00",
-      "acceptance": "NAVE CHIUSA",
-      "custom_close_time": "03/11/26 14:00:00",
-      "fast_corridor_cut_off": "03/11/26 09:00:00",
-      "gate_cut_off": "",
-      "destination": "INTERNO PORTO"
-    },
-    {
       "vessel": "X PRESS SAGARMALA",
       "arrival_voyage": "644E",
       "departure_voyage": "645W",
@@ -190,5 +179,5 @@
       "destination": "INTERNO PORTO"
     }
   ],
-  "acquired_at": "2026-11-13T22:32:42.826666+00:00"
+  "acquired_at": "2026-11-14T01:39:46.683889+00:00"
 }

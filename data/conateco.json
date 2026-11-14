@@ -176,12 +176,12 @@
       "vessel": "MSC LEA II",
       "voyage": "AG647A",
       "eta": "2026-11-14 02:15",
-      "vessel_status": "ARR",
-      "category": "ORMEGGIATE",
+      "vessel_status": "CHI",
+      "category": "PRESENTI",
       "voyage_id": "202600389",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
       "acceptance_flag": "0",
-      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "acceptance_icon": "CHIUSA",
       "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-11-11 06:30",
@@ -214,9 +214,9 @@
       "category": "PREVISTE",
       "voyage_id": "202600380",
       "carrier": "MEDITERRANEAN SHIPPING CO. GENEVA",
-      "acceptance_flag": "1",
-      "acceptance_icon": "ACCETTA_CARICO",
-      "stop_cargo": "N",
+      "acceptance_flag": "0",
+      "acceptance_icon": "NO_ACCETTA_CARICO",
+      "stop_cargo": "S",
       "external_depot": "",
       "opening": "2026-11-12 06:30",
       "closing": "2026-11-13 17:00",
@@ -598,5 +598,5 @@
       "source_conflict": false
     }
   ],
-  "acquired_at": "2026-11-14T10:16:01.304278+00:00"
+  "acquired_at": "2026-11-14T15:08:12.519683+00:00"
 }
